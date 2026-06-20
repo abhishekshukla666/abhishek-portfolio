@@ -1,0 +1,82 @@
+baseURL: ""
+languageCode: en-us
+title: Abhishek Shukla
+theme: PaperMod
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags
+      weight: 30
+
+params:
+  # theme
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideMeta: false
+
+  # for enchanced SEO
+  env: production
+
+  # Home Page
+  profileMode:
+    enabled: true
+    title: "Abhishek Shukla"
+    subtitle: Hello 🙏🏼 I'm Abhishek, as a tech enthusiast I possess a robust background as an iOS Software Engineer, accumulating more than 12+ years of dedicated experience in the development of mobile applications. Proficient in leveraging advanced iOS development skills, app performance optimization, Test-Driven Development(TDD), languages used -Swift, Objective-C with framework like Foundation, CoreData, SwiftUI, Combine to create innovative applications that enhance user experience and drive engagement, while maintaining a strong focus on code quality and performance optimisation.
+
+
+    imageUrl: "home/formal-pic-small.PNG"
+    imageWidth: 160
+    imageHeight: 180
+    # buttons:
+    #   - name: Resume
+    #     url: ""
+
+  # List View
+  hideDescriptionInList: false
+
+  # cover image for posts
+  cover:
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  socialIcons:
+    - name: "email"
+      url: "mailto:abhishekshuklaa666@gmail.com"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/abhishekshuklaa666"
+    - name: "github"
+      url: "https://github.com/abhishekshukla666"
+
+  # text search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# for search using Fuse.js
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# allow HTML in MD
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
