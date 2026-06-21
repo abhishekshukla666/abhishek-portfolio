@@ -1,7 +1,7 @@
 ---
 title: "How Copy-on-Write(CoW) in Swift works and optimizes memory"
 # description: ""
-date: "2026-06-21T13:47:17+05:30"
+date: "2026-03-03T13:47:17+05:30"
 draft: false
 tags: ["Swift", "CoW", "Memory-Managment"]
 weight: 101

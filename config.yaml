@@ -1,4 +1,5 @@
 baseURL: "https://abhishekshukla.dev/"
+# baseURL: ""
 languageCode: en-us
 title: Abhishek Shukla
 theme: PaperMod

@@ -1,9 +1,9 @@
 ---
 title: "Swift Sendable Explained - Compile Time Data Race Prevention in Swift Concurrency"
 # description: ""
-date: "2026-06-21T17:40:17+05:30"
+date: "2026-03-10T18:40:17+05:30"
 draft: false
-tags: ["Swift", "Sendable", "Concurrency"]
+tags: ["Swift", "Memory-Managment", "Concurrency"]
 weight: 102
 # cover:
     # image: "blog/Swift.jpeg"

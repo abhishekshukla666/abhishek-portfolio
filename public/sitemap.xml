@@ -3,34 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/blog/copy-on-writecow/</loc>
-    <lastmod>2026-06-21T13:47:17+05:30</lastmod>
+    <lastmod>2026-03-03T13:47:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/swift-sendable/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <lastmod>2026-03-10T18:40:17+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/swift-task-life-cycle/</loc>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/concurrency/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sendable/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <loc>http://localhost:1313/tags/datarace/</loc>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/swift/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-06-21T17:40:17+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cow/</loc>
-    <lastmod>2026-06-21T13:47:17+05:30</lastmod>
+    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/memory-managment/</loc>
-    <lastmod>2026-06-21T13:47:17+05:30</lastmod>
+    <lastmod>2026-03-10T18:40:17+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cow/</loc>
+    <lastmod>2026-03-03T13:47:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url>
