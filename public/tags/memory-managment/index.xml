@@ -6,12 +6,12 @@
     <description>Recent content in Memory-Managment on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2026 13:47:17 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2026 13:47:17 +0530</lastBuildDate>
     <atom:link href="//localhost:1313/tags/memory-managment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
       <link>//localhost:1313/blog/copy-on-writecow/</link>
-      <pubDate>Sat, 20 Jun 2026 13:47:17 +0530</pubDate>
+      <pubDate>Sun, 21 Jun 2026 13:47:17 +0530</pubDate>
       <guid>//localhost:1313/blog/copy-on-writecow/</guid>
       <description>&lt;p&gt;Swift is designed around two core principles: &lt;strong&gt;safety&lt;/strong&gt; and &lt;strong&gt;performance&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;At first glance, these goals often appear to conflict. Value types provide safety and predictability, but copying large values repeatedly can be expensive. Reference types provide efficiency through shared storage, but they introduce shared mutable state.&lt;/p&gt;

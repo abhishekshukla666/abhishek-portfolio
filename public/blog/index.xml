@@ -6,6 +6,26 @@
     <description>Recent content in Blogs on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 21 Jun 2026 17:40:17 +0530</lastBuildDate>
     <atom:link href="//localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
+      <link>//localhost:1313/blog/copy-on-writecow/</link>
+      <pubDate>Sun, 21 Jun 2026 13:47:17 +0530</pubDate>
+      <guid>//localhost:1313/blog/copy-on-writecow/</guid>
+      <description>&lt;p&gt;Swift is designed around two core principles: &lt;strong&gt;safety&lt;/strong&gt; and &lt;strong&gt;performance&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;At first glance, these goals often appear to conflict. Value types provide safety and predictability, but copying large values repeatedly can be expensive. Reference types provide efficiency through shared storage, but they introduce shared mutable state.&lt;/p&gt;
+&lt;p&gt;Swift solves this tension elegantly through a memory optimization technique called &lt;strong&gt;Copy-on-Write (CoW).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you’ve used Array, Dictionary, Set, or String, you’ve already relied on Copy-on-Write — even if you didn’t realize it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Swift Sendable Explained - Compile Time Data Race Prevention in Swift Concurrency</title>
+      <link>//localhost:1313/blog/swift-sendable/</link>
+      <pubDate>Sun, 21 Jun 2026 17:40:17 +0530</pubDate>
+      <guid>//localhost:1313/blog/swift-sendable/</guid>
+      <description>&lt;p&gt;Swift Concurrency introduced one of the most important safety improvements in the language: compile-time data race detection.&lt;/p&gt;
+&lt;p&gt;Before Swift Concurrency, it was possible to accidentally access mutable state from multiple threads at the same time. These bugs were notoriously difficult to reproduce because they depended on timing and thread scheduling. An application might work perfectly for months and then suddenly crash or corrupt data in production.&lt;/p&gt;
+&lt;p&gt;Swift&amp;rsquo;s concurrency model takes a different approach:&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
