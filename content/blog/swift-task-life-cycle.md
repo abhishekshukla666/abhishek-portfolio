@@ -352,7 +352,7 @@ This makes it ideal for:
 ### *Task.isCancelled vs Task.checkCancellation()*
 
 | API | Throws Error | Best For |
-|:-------------|:-------------|
+|:-------------|:-------------:|:-------------|
 | Task.checkCancellation() | Yes | Throwing async workflows |
 | Task.isCancelled | No | Manual cleanup and graceful exits |
 
@@ -521,7 +521,7 @@ This behavior surprises many developers.
 Here is the practical difference.
 
 | Feature | Structured | Unstructured |
-|:-------------|:-------------|
+|:-------------|:-------------:|:-------------:|
 | Parent-child relationship | Yes | No |
 | Automatic cancellation | Yes | No |
 | Automatic waiting | Yes | No |
