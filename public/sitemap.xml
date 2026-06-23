@@ -11,22 +11,37 @@
     <loc>http://localhost:1313/blog/swift-task-life-cycle/</loc>
     <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/solid-priciples/</loc>
+    <lastmod>2026-06-22T14:52:03+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/singleton-design-pattern/</loc>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/architecture/</loc>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/design-patterns/</loc>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/swift/</loc>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-06-23T07:52:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/solid/</loc>
+    <lastmod>2026-06-22T14:52:03+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/concurrency/</loc>
     <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/datarace/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/swift/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/memory-managment/</loc>

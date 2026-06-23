@@ -6,7 +6,7 @@
     <description>Recent content in Swift on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Mar 2026 17:40:17 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 07:52:19 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -34,6 +34,27 @@
       <guid>http://localhost:1313/blog/swift-task-life-cycle/</guid>
       <description>&lt;p&gt;Swift Concurrency fundamentally changed how asynchronous programming works in Swift. Before async/await arrived, developers relied heavily on completion handlers, delegates, Combine pipelines, and Grand Central Dispatch (GCD). These approaches worked, but they often made asynchronous code difficult to reason about, debug, and maintain.&lt;/p&gt;
 &lt;p&gt;With Swift Concurrency, Apple introduced a model centered around &lt;strong&gt;tasks, structured concurrency&lt;/strong&gt;, and &lt;strong&gt;actor isolation&lt;/strong&gt;. One of the most important concepts to understand in this model is the difference between &lt;strong&gt;structured&lt;/strong&gt; and &lt;strong&gt;unstructured&lt;/strong&gt; concurrency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding SOLID Principles in Swift: Violations, Fixes, and Real-World Examples</title>
+      <link>http://localhost:1313/blog/solid-priciples/</link>
+      <pubDate>Mon, 22 Jun 2026 14:52:03 +0530</pubDate>
+      <guid>http://localhost:1313/blog/solid-priciples/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;SOLID&lt;/strong&gt; principles are five fundamental design guidelines in object-oriented programming intended to make software designs more understandable, flexible, and maintainable. These principles help developers avoid code smells, refactor easily, and build robust architectures.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s break down each principle with a real-world scenario, showing how it is commonly violated and how to properly fix it using Swift.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-single-responsibility-principle-srp&#34;&gt;1. Single Responsibility Principle (SRP)&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A class should have one, and only one, reason to change. Meaning it should only have one job or responsibility.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Singleton Design Pattern in Swift: Why, How, and When NOT to Use It</title>
+      <link>http://localhost:1313/blog/singleton-design-pattern/</link>
+      <pubDate>Tue, 23 Jun 2026 07:52:19 +0530</pubDate>
+      <guid>http://localhost:1313/blog/singleton-design-pattern/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;Singleton&lt;/strong&gt; is one of the most well-known—and heavily debated—creational design patterns in software engineering. Apple uses it extensively throughout the iOS SDK (&lt;code&gt;UserDefaults.standard&lt;/code&gt;, &lt;code&gt;URLSession.shared&lt;/code&gt;, &lt;code&gt;NotificationCenter.default&lt;/code&gt;), which often leads developers to believe it should be used everywhere.&lt;/p&gt;
+&lt;p&gt;However, while Singletons are incredibly easy to create in Swift, they are equally easy to abuse.&lt;/p&gt;
+&lt;p&gt;In this post, we will explore what the Singleton pattern is, why and how to implement it, where it makes sense, and most importantly, where you should avoid it.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

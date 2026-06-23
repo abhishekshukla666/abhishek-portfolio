@@ -44,7 +44,7 @@ A **data race** occurs when:
 3. Access is not synchronized
 
 Consider:
-```
+```swift
 class Counter {
     var value = 0
 }
@@ -62,7 +62,7 @@ DispatchQueue.global().async {
 Both threads are modifying the same memory location.
 
 Possible outcomes:
-```
+```swift
 Expected: 2
 
 Actual:
@@ -85,7 +85,7 @@ Data races can cause:
 * Bugs that are impossible to reproduce consistently
 
 For example:
-```
+```swift
 class BankAccount {
     var balance = 1000
 
@@ -95,15 +95,15 @@ class BankAccount {
 }
 ```
 Two threads simultaneously execute:
-```
+```swift
 account.withdraw(500)
 ```
 You might expect:
-```
+```swift
 Balance = 0
 ```
 But race conditions can produce:
-```
+```swift
 Balance = 500
 ```
 because both threads read the original value before either write occurs.
@@ -128,7 +128,7 @@ This is where Sendable comes in.
 ## What is *Sendable?*
 
 *Sendable* is a marker protocol.
-```
+```swift
 protocol Sendable { }
 ```
 At first glance it looks empty.
@@ -154,13 +154,13 @@ If a type conforms to Sendable, Swift assumes it can safely move between those c
 ## Understanding "Sending" Values
 
 Consider:
-```
+```swift
 Task {
     await processUser(user)
 }
 ```
 The value:
-```
+```swift
 user
 ```
 
@@ -171,11 +171,11 @@ The compiler asks:
 > Is this value safe to share with another concurrent task?
 
 If the answer is yes:
-```
+```swift
 Sendable
 ```
 If not:
-```
+```swift
 Compiler Warning/Error
 ```
 
@@ -184,7 +184,7 @@ Compiler Warning/Error
 Most value types naturally work well with concurrency.
 
 Example:
-```
+```swift
 struct User: Sendable {
     let id: UUID
     let name: String
@@ -192,7 +192,7 @@ struct User: Sendable {
 ```
 
 Because structs are copied on assignment:
-```
+```swift
 let user = User(id: UUID(), name: "John")
 
 let user1 = user
@@ -210,7 +210,7 @@ This makes value types ideal candidates for Sendable.
 Swift can automatically synthesize conformance when all stored properties are already Sendable.
 
 Example:
-```
+```swift
 struct Product: Sendable {
     let id: Int
     let name: String
@@ -226,7 +226,7 @@ No additional work is required.
 ## When Automatic Conformance Fails
 
 Consider:
-```
+```swift
 class UserManager {
     var users: [String] = []
 }
@@ -237,7 +237,7 @@ struct AppState: Sendable {
 ```
 
 Compiler error:
-```
+```swift
 Stored property 'manager' of 'Sendable'-conforming struct 'AppState' has non-Sendable type 'UserManager'
 ```
 
@@ -246,13 +246,13 @@ Why?
 Because classes are reference types.
 
 Multiple tasks could share the same instance:
-```
+```swift
 taskA ---> UserManager
 taskB ---> UserManager
 ```
 
 Both tasks could mutate:
-```
+```swift
 users
 ```
 
@@ -263,14 +263,14 @@ Swift therefore rejects it.
 ## Why Classes Are Not Automatically Sendable
 
 Consider:
-```
+```swift
 class Counter {
     var value = 0
 }
 ```
 
 Now:
-```
+```swift
 let counter = Counter()
 
 Task {
@@ -293,7 +293,7 @@ Swift therefore assumes ordinary classes are not Sendable.
 Sometimes a class never changes after creation.
 
 Example:
-```
+```swift
 final class Configuration: Sendable {
     let apiKey: String
     let baseURL: URL
@@ -314,7 +314,7 @@ The compiler accepts this conformance.
 ## Mutable Classes and Sendable
 
 Now consider:
-```
+```swift
 final class Configuration: Sendable {
     var apiKey: String
     let baseURL: URL
@@ -327,7 +327,7 @@ final class Configuration: Sendable {
 ```
 
 Compiler error:
-```
+```swift
 Stored property 'apiKey' of 'Sendable'-conforming class 'Configuration' is mutable
 ```
 
@@ -340,7 +340,7 @@ Therefore conformance is rejected.
 Actors are designed specifically for shared mutable state.
 
 Example:
-```
+```swift
 actor BankAccount {
     private var balance = 1000
 
@@ -355,7 +355,7 @@ actor BankAccount {
 ```
 
 Usage:
-```
+```swift
 let account = BankAccount()
 
 await account.withdraw(500)
@@ -364,7 +364,7 @@ await account.withdraw(500)
 
 The actor guarantees:
 
-```
+```swift
 Only one task accesses actor state at a time.
 ```
 
@@ -373,13 +373,13 @@ This eliminates many race conditions.
 ## Actors Are Sendable
 
 Actor references automatically conform to Sendable.
-```
+```swift
 actor Logger {
     func log(_ message: String) { }
 }
 ```
 This is allowed:
-```
+```swift
 let logger = Logger()
 
 Task {
@@ -392,7 +392,7 @@ because actor isolation provides safety.
 ## Sendable with Enums
 
 Enums can also conform automatically.
-```
+```swift
 enum NetworkState: Sendable {
     case idle
     case loading
@@ -407,21 +407,21 @@ As long as associated values are Sendable, the enum is Sendable.
 Generics require additional constraints.
 
 Example:
-```
+```swift
 struct Container<T>: Sendable {
     let value: T
 }
 ```
 
 Compiler error:
-```
+```swift
 Stored property 'value' of 'Sendable'-conforming generic struct 'Container' has non-Sendable type 'T'
 ```
 
 The compiler knows nothing about **T**.
 
 Fix:
-```
+```swift
 struct Container<T: Sendable>: Sendable {
     let value: T
 }
@@ -429,7 +429,7 @@ struct Container<T: Sendable>: Sendable {
 
 Now Swift guarantees:
 
-```
+```swift
 Every T used here must also be Sendable.
 ```
 
@@ -440,7 +440,7 @@ So far we've discussed types.
 Closures can also cross concurrency boundaries.
 
 Example:
-```
+```swift
 Task.detached {
     print("Hello")
 }
@@ -448,14 +448,14 @@ Task.detached {
 The closure is executed concurrently.
 
 Swift therefore treats it as:
-```
+```swift
 @Sendable
 ```
 
 ## Why *@Sendable* Exists
 
 Consider:
-```
+```swift
 var count = 0
 
 let closure = {
@@ -463,7 +463,7 @@ let closure = {
 }
 ```
 The closure captures:
-```
+```swift
 count
 ```
 
@@ -474,7 +474,7 @@ A race condition becomes possible.
 **@Sendable** prevents unsafe captures.
 
 ## Example of a Compiler Error
-```
+```swift
 class Counter {
     var value = 0
 }
@@ -487,7 +487,7 @@ Task.detached {
 ```
 You may see warning:
 
-```
+```swift
 Main actor-isolated property 'value' can not be mutated from a nonisolated context
 ```
 
@@ -496,7 +496,7 @@ Swift is warning that the detached task could access shared mutable state.
 ### Fixing the Problem
 
 One solution is to use an actor.
-```
+```swift
 actor Counter {
     var value = 0
 
@@ -506,7 +506,7 @@ actor Counter {
 }
 ```
 Now:
-```
+```swift
 let counter = Counter()
 
 Task.detached {
@@ -521,7 +521,7 @@ The compiler is satisfied because actor isolation guarantees safety.
 Detached tasks are one of the most common places where Sendable checks appear.
 
 Example:
-```
+```swift
 Task.detached {
     await performWork()
 }
@@ -539,12 +539,12 @@ Swift 6 dramatically strengthens concurrency checking.
 Code that previously produced warnings may now produce errors.
 
 Example:
-```
+```swift
 class SessionManager {
     var token = ""
 }
 ```
-```
+```swift
 let manager = SessionManager()
 
 Task.detached {
@@ -554,13 +554,13 @@ Task.detached {
 
 Swift 5.0:
 
-```
+```swift
 Warning
 ```
 
 Swift 6.0:
 
-```
+```swift
 Error
 ```
 
@@ -571,7 +571,7 @@ The goal is stronger compile-time race prevention.
 Sometimes you know a type is thread-safe but the compiler cannot verify it.
 
 Example:
-```
+```swift
 class ThreadSafeCache: @unchecked Sendable {
     private let lock = NSLock()
     private var storage: [String: String] = [:]
@@ -606,7 +606,7 @@ Incorrect usage can reintroduce data races.
 ## Real-World Example: Network Response Models
 
 A common pattern:
-```
+```swift
 struct UserResponse: Codable, Sendable {
     let id: Int
     let name: String
@@ -624,7 +624,7 @@ Now the model can safely travel through:
 without concurrency warnings.
 
 ## Real-World Example: Service Layer
-```
+```swift
 actor UserService {
     func fetchUser() async throws -> UserResponse {
         // Network call
@@ -633,12 +633,12 @@ actor UserService {
 ```
 
 Because:
-```
+```swift
 UserResponse
 ```
 
 is Sendable, it can safely cross the actor boundary.
-```
+```swift
 let user = try await service.fetchUser()
 ```
 
@@ -647,7 +647,7 @@ No race conditions occur.
 ## Common Sendable Compiler Errors
 
 ### Non-Sendable Class
-```
+```swift
 class Logger { }
 
 struct AppState: Sendable {
@@ -656,38 +656,38 @@ struct AppState: Sendable {
 ```
 
 Error:
-```
+```swift
 Stored property 'logger' of 'Sendable'-conforming struct 'AppState' has non-Sendable type 'Logger'
 ```
 
 ### Missing Generic Constraint
-```
+```swift
 struct Box<T>: Sendable {
     let value: T
 }
 ```
 
 Error:
-```
+```swift
 Stored property 'value' of 'Sendable'-conforming generic struct 'Box' has non-Sendable type 'T'
 ```
 
 Fix:
-```
+```swift
 struct Box<T: Sendable>: Sendable {
     let value: T
 }
 ```
 
 ### Non-Sendable Closure Capture
-```
+```swift
 Task.detached {
     self.updateUI()
 }
 ```
 
 Error:
-```
+```swift
 Main actor-isolated instance method 'updateUI()' cannot be called from outside of the actor
 ```
 
@@ -709,7 +709,7 @@ These concepts solve different problems.
 | *@unchecked Sendable* |	Manual thread-safety guarantee |
 
 Think of them together:
-```
+```swift
 Sendable
     ↓
 Can this value cross boundaries safely?
@@ -726,7 +726,7 @@ The real innovation is not the Sendable protocol itself.
 The innovation is that Swift uses it to build a static safety system.
 
 Before Swift Concurrency:
-```
+```swift
 Write code
 Run app
 Hope races don't happen
@@ -735,7 +735,7 @@ Debug production crashes
 
 With Swift Concurrency:
 
-```
+```swift
 Write code
 Compiler detects unsafe sharing
 Fix issue before shipping
@@ -748,27 +748,27 @@ That is a significant shift in software reliability.
 ## Best Practices
 
 ### Prefer Value Types
-```
+```swift
 struct User: Sendable
 ```
 
 is generally better than:
 
-```
+```swift
 class User
 ```
 
 for data models.
 
 ### Use Actors for Shared State
-```
+```swift
 actor Cache { }
 ```
 
 instead of manually managing locks whenever possible.
 
 ### Make Models Sendable
-```
+```swift
 struct Invoice: Codable, Sendable
 ```
 

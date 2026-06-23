@@ -32,7 +32,7 @@ Understanding task lifecycle management is essential if you want to write reliab
 Concurrency is easy to start but difficult to control.
 
 A common anti-pattern in older Swift codebases looked like this:
-```
+```swift
 DispatchQueue.global().async {
     fetchData()
 
@@ -63,7 +63,7 @@ Every async function runs inside a task.
 
 Example:
 
-```
+```swift
 func loadProfile() async {
     print("Loading profile")
 }
@@ -71,7 +71,7 @@ func loadProfile() async {
 
 When called asynchronously:
 
-```
+```swift
 Task {
     await loadProfile()
 }
@@ -128,7 +128,7 @@ Structured tasks have:
 One of the simplest forms of structured concurrency is *async let*.
 
 Example:
-```
+```swift
 func fetchUser() async -> String {
     return "John"
 }
@@ -150,7 +150,7 @@ func loadDashboard() async {
 ### How *async* *let* Works
 
 Here Swift creates two child tasks:
-```
+```swift
 async let user = fetchUser()
 async let posts = fetchPosts()
 ```
@@ -163,7 +163,7 @@ These tasks:
 * Automatically cancel if parent cancels
 
 When execution reaches:
-```
+```swift
 await (user, posts)
 ```
 
@@ -185,7 +185,7 @@ Without structured concurrency, developers often manually coordinated async work
 ## Structured Concurrency with *TaskGroup*
 
 *TaskGroup* is used when the number of concurrent tasks is dynamic.
-```
+```swift
 func downloadImage(id: Int) async -> String {
     return "Image \(id)"
 }
@@ -208,7 +208,7 @@ func loadGallery() async {
 ### Understanding Task Groups
 
 This code creates a hierarchy:
-```
+```swift
 Parent Task
  ├── Child Task 1
  ├── Child Task 2
@@ -232,7 +232,7 @@ Without structured concurrency, some child tasks could continue running even aft
 Cancellation propagation is one of the biggest benefits of structured concurrency.
 
 Example:
-```
+```swift
 func processData() async {
     await withTaskGroup(of: Void.self) { group in
         for i in 1...10 {
@@ -280,7 +280,7 @@ Swift provides two primary ways to observe cancellation:
 *Task.checkCancellation()* is useful in throwing async functions.
 
 Example:
-```
+```swift
 func heavyWork() async throws {
     for i in 1...1000 {
         try Task.checkCancellation()
@@ -291,7 +291,7 @@ func heavyWork() async throws {
 ```
 
 If the task is cancelled:
-```
+```swift
 try Task.checkCancellation()
 ```
 
@@ -315,7 +315,7 @@ Sometimes you simply want to:
 Swift provides *Task.isCancelled* for these situations.
 
 Example:
-```
+```swift
 func processImages() async {
     for image in images {
         if Task.isCancelled {
@@ -332,7 +332,7 @@ func processImages() async {
 ### Why Task.isCancelled Matters
 
 Unlike:
-```
+```swift
 try Task.checkCancellation()
 ```
 
@@ -359,7 +359,7 @@ This makes it ideal for:
 ### SwiftUI Cancellation Example 
 
 Imagine a search screen:
-```
+```swift
 class SearchViewModel: ObservableObject {
     @Published var results: [String] = []
 
@@ -397,7 +397,7 @@ This is where many developers accidentally introduce lifecycle bugs.
 ## Unstructured Tasks with *Task*
 
 Example:
-```
+```swift
 func loadData() {
     Task {
         let data = await fetchRemoteData()
@@ -420,7 +420,7 @@ This is unstructured concurrency.
 ## Why Unstructured Tasks Can Be Dangerous
 
 Imagine this SwiftUI example:
-```
+```swift
 struct ProfileView: View {
     var body: some View {
         Text("Profile")
@@ -445,7 +445,7 @@ Structured concurrency tries to avoid these issues.
 ## SwiftUI’s *.task* Modifier Is Structured
 
 Apple introduced .task in SwiftUI specifically to improve lifecycle management.
-```
+```swift
 struct ProfileView: View {
     @State private var profile: String = ""
 
@@ -473,7 +473,7 @@ This is structured lifecycle management in practice.
 *Task.detached* creates a completely independent task.
 
 Example:
-```
+```swift
 Task.detached {
     print("Detached task")
 }
@@ -491,7 +491,7 @@ This is the most dangerous form of concurrency if misused.
 ## Actor Isolation and Detached Tasks
 
 Consider this example:
-```
+```swift
 @MainActor
 class ViewModel {
 
@@ -508,7 +508,7 @@ class ViewModel {
 ```
 
 Because detached tasks do not inherit actor context:
-```
+```swift
 await self.updateUI()
 ```
 
@@ -564,7 +564,7 @@ Examples:
 * Long-lived daemon-style operations
 
 Example:
-```
+```swift
 Task.detached(priority: .background) {
     await analytics.uploadLogs()
 }
@@ -574,7 +574,7 @@ Even here, caution is important.
 ### Common Mistake: Launching Too Many Detached Tasks
 
 Bad example:
-```
+```swift
 for item in items {
     Task.detached {
         await process(item)
@@ -590,7 +590,7 @@ Problems:
 * Harder debugging
 
 Better approach:
-```
+```swift
 await withTaskGroup(of: Void.self) { group in
     for item in items {
         group.addTask {
@@ -606,7 +606,7 @@ This keeps the work structured and manageable.
 Structured tasks inherit priority automatically.
 
 Example:
-```
+```swift
 Task(priority: .userInitiated) {
     async let a = fetchA()
     async let b = fetchB()
@@ -628,7 +628,7 @@ Detached tasks do not.
 Unstructured tasks can accidentally retain objects.
 
 Example:
-```
+```swift
 class ViewModel {
     func startTask() {
         Task {
@@ -655,7 +655,7 @@ Structured concurrency reduces this risk because lifetimes are more bounded.
 Structured concurrency propagates errors naturally.
 
 Example:
-```
+```swift
 func fetchUser() async throws -> String {
     throw URLError(.badServerResponse)
 }
@@ -692,7 +692,7 @@ before reaching for detached tasks.
 ### 2. Avoid Fire-and-Forget UI Tasks
 
 This is risky:
-```
+```swift
 Task {
     await saveData()
 }
@@ -706,7 +706,7 @@ Tie work to view or model ownership whenever possible.
 Always check cancellation in long-running operations.
 
 Example:
-```
+```swift
 try Task.checkCancellation()
 ```
 
@@ -732,7 +732,7 @@ You should always know:
 ## SwiftUI Example
 
 Here is a practical example.
-```
+```swift
 struct FeedView: View {
     @State private var posts: [String] = []
 
