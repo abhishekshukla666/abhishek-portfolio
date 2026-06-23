@@ -49,7 +49,7 @@ This achieves:
 ## The Problem Copy-on-Write Solves
 
 Consider this example:
-```
+```swift
 var numbers = Array(0...1_000_000)
 var copy = numbers
 ```
@@ -68,7 +68,7 @@ This lazy copying is the essence of Copy-on-Write.
 
 ### Example 1 — Assignment Without Mutation
 
-```
+```swift
 var a = [1, 2, 3]
 var b = a
 ```
@@ -79,7 +79,7 @@ At this moment:
 
 ### Example 2 — Mutation Triggers Copy
 
-```
+```swift
 b.append(4)
 ```
 
@@ -90,7 +90,7 @@ Now Swift performs a check:
 
 Final result:
 
-```
+```swift
 a = [1, 2, 3]
 b = [1, 2, 3, 4]
 ```
@@ -103,7 +103,7 @@ Even though *Array* is a *struct*, it stores its elements in a hidden reference-
 
 Before mutating that buffer, Swift performs a runtime check:
 
-```
+```swift
 isKnownUniquelyReferenced(_:)
 ```
 
@@ -113,7 +113,7 @@ This function determines whether the underlying storage is exclusively owned.
 
 The function signature is:
 
-```
+```swift
 func isKnownUniquelyReferenced<T>(_ object: inout T) -> Bool where T : AnyObject
 ```
 
@@ -182,7 +182,7 @@ For example:
 
 But a simple struct like this:
 
-```
+```swift
 struct Point {
     var x: Int
     var y: Int
@@ -224,7 +224,7 @@ To understand the mechanism fully, let’s build our own CoW type.
 
 ### Step 1 — Reference Storage
 
-```
+```swift
 final class Storage {
     var value: Int
 
@@ -241,7 +241,7 @@ We use a *final class* because:
 
 ### Step 2 — Struct Wrapper
 
-```
+```swift
 struct Counter {
     private var storage: Storage
 
@@ -265,7 +265,7 @@ Internally, it shares reference storage.
 
 ## The Critical Mutation Gate: ensureUnique()
 
-```
+```swift
 extension Counter {
     private mutating func ensureUnique() {
         if !isKnownUniquelyReferenced(&storage) {
@@ -294,7 +294,7 @@ Think of it as a safety checkpoint before modification.
 
 Consider:
 
-```
+```swift
 var a = Counter(value: 10)
 var b = a
 
@@ -302,7 +302,7 @@ b.value = 20
 ```
 
 ### Step 1 — Assignment
-```
+```swift
 a ──┐
     ├── Storage(value: 10)
 b ──┘
@@ -312,20 +312,20 @@ Reference count = 2.
 ### Step 2 — Mutation Begins
 
 b.value = 20 calls:
-```
+```swift
 ensureUnique()
 ```
 
 Swift checks:
 
-```
+```swift
 isKnownUniquelyReferenced(&storage)
 ```
 Result: false
 
 ### Step 3 — Copy Created
 
-```
+```swift
 storage = Storage(value: storage.value)
 ```
 
@@ -333,12 +333,12 @@ Now each instance has its own storage.
 
 ### Step 4 — Safe Mutation
 
-```
+```swift
 storage.value = 20
 ```
 
 Final state:
-```
+```swift
 a.value // 10
 b.value // 20
 ```
@@ -347,7 +347,7 @@ Value semantics preserved.
 ### Why This Pattern Is Essential
 
 If you skipped *ensureUnique()*:
-```
+```swift
 storage.value = newValue
 ```
 

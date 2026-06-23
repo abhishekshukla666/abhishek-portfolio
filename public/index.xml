@@ -6,7 +6,7 @@
     <description>Recent content on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 08:28:30 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 12:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -64,6 +64,15 @@
       <description>&lt;p&gt;As your application grows, the way you create and manage objects becomes just as important as how those objects behave. If your code is littered with complex initialization logic or massive &lt;code&gt;switch&lt;/code&gt; statements deciding which object to create, you are likely creating tightly coupled, fragile code.&lt;/p&gt;
 &lt;p&gt;Enter the &lt;strong&gt;Factory Method&lt;/strong&gt; pattern.&lt;/p&gt;
 &lt;p&gt;This creational design pattern provides an interface for creating objects, but delegates the exact type of object being created to a dedicated &amp;ldquo;factory.&amp;rdquo; In modern Swift, this pattern is often implemented using protocols and static methods, keeping our business logic incredibly clean.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Builder Pattern in Modern Swift: Beyond the Gang of Four</title>
+      <link>http://localhost:1313/blog/builder-design-pattern/</link>
+      <pubDate>Tue, 23 Jun 2026 12:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/builder-design-pattern/</guid>
+      <description>&lt;p&gt;The Builder Pattern is a creational design pattern designed to separate the construction of a complex object from its representation.&lt;/p&gt;
+&lt;p&gt;In classic Gang of Four (GoF) object-oriented languages like Java, the Builder is essential for avoiding the &amp;ldquo;telescoping constructor&amp;rdquo; anti-pattern (where you have a dozen different initializers for every combination of parameters).&lt;/p&gt;
+&lt;p&gt;However, in modern Swift, the classic Builder pattern is often redundant. Swift’s native features—like named parameters, default values, and structs—solve the telescoping constructor problem out of the box. Therefore, when we use the Builder pattern in Swift today, it usually takes on one of three highly optimized, modern forms.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

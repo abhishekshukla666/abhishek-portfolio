@@ -50,7 +50,7 @@
     <item>
       <title>The Singleton Design Pattern in Swift: Why, How, and When NOT to Use It</title>
       <link>http://localhost:1313/blog/singleton-design-pattern/</link>
-      <pubDate>Tue, 03 Mar 2026 13:47:17 +0530</pubDate>
+      <pubDate>Tue, 23 Jun 2026 05:47:17 +0530</pubDate>
       <guid>http://localhost:1313/blog/singleton-design-pattern/</guid>
       <description>&lt;p&gt;The &lt;strong&gt;Singleton&lt;/strong&gt; is one of the most well-known—and heavily debated—creational design patterns in software engineering. Apple uses it extensively throughout the iOS SDK (&lt;code&gt;UserDefaults.standard&lt;/code&gt;, &lt;code&gt;URLSession.shared&lt;/code&gt;, &lt;code&gt;NotificationCenter.default&lt;/code&gt;), which often leads developers to believe it should be used everywhere.&lt;/p&gt;
 &lt;p&gt;However, while Singletons are incredibly easy to create in Swift, they are equally easy to abuse.&lt;/p&gt;

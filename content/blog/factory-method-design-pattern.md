@@ -3,11 +3,10 @@ title: "The Factory Method Pattern in Swift: Decoupling Object Creation"
 # description: "Learn how to use the Factory Method pattern in Swift to clean up complex object creation, adhere to SOLID principles, and prevent tight coupling."
 draft: false
 date: "2026-06-23T08:28:30+05:30"
-tags: ["Swift", "Architecture", "Design Patterns"]
+tags: ["Swift", "Architecture", "Creational Design Patterns"]
 weight: 106
 # cover:
     # image: "blog/FactoryMethod.jpeg"
-
 # ShowWordCount: true
 ShowReadingTime: true
 ---
@@ -181,8 +180,9 @@ class UserFactory {
 let user = User(name: "Alice") 
 
 ```
+---
 
-**Rule of Thumb:**
+> **Rule of Thumb:**
 If a standard `init()` is clean, obvious, and doesn't require conditional logic (like `if` or `switch` statements), stick with `init()`. Only introduce a Factory when object creation becomes a burden to the surrounding code.
 
 ---

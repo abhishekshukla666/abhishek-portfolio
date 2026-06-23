@@ -242,9 +242,9 @@ If you’ve used Array, Dictionary, Set, or String, you’ve already relied on C
 </ul>
 <h2 id="the-problem-copy-on-write-solves">The Problem Copy-on-Write Solves<a hidden class="anchor" aria-hidden="true" href="#the-problem-copy-on-write-solves">#</a></h2>
 <p>Consider this example:</p>
-<pre tabindex="0"><code>var numbers = Array(0...1_000_000)
-var copy = numbers
-</code></pre><p>If Swift eagerly copied one million integers during assignment, performance would suffer significantly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> numbers = Array(<span style="color:#ae81ff">0.</span>..<span style="color:#ae81ff">1_000_000</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> copy = numbers
+</span></span></code></pre></div><p>If Swift eagerly copied one million integers during assignment, performance would suffer significantly.</p>
 <p>Instead:</p>
 <ul>
 <li>numbers and copy share the same storage.</li>
@@ -254,33 +254,33 @@ var copy = numbers
 <p>This lazy copying is the essence of Copy-on-Write.</p>
 <h2 id="observing-copy-on-write-in-action">Observing Copy-on-Write in Action<a hidden class="anchor" aria-hidden="true" href="#observing-copy-on-write-in-action">#</a></h2>
 <h3 id="example-1--assignment-without-mutation">Example 1 — Assignment Without Mutation<a hidden class="anchor" aria-hidden="true" href="#example-1--assignment-without-mutation">#</a></h3>
-<pre tabindex="0"><code>var a = [1, 2, 3]
-var b = a
-</code></pre><p>At this moment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> a = [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b = a
+</span></span></code></pre></div><p>At this moment:</p>
 <ul>
 <li>a and b share the same storage.</li>
 <li>No copy has been made.</li>
 </ul>
 <h3 id="example-2--mutation-triggers-copy">Example 2 — Mutation Triggers Copy<a hidden class="anchor" aria-hidden="true" href="#example-2--mutation-triggers-copy">#</a></h3>
-<pre tabindex="0"><code>b.append(4)
-</code></pre><p>Now Swift performs a check:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>b.append(<span style="color:#ae81ff">4</span>)
+</span></span></code></pre></div><p>Now Swift performs a check:</p>
 <ul>
 <li>Is the underlying storage uniquely referenced?</li>
 <li>If not, create a copy before mutating.</li>
 </ul>
 <p>Final result:</p>
-<pre tabindex="0"><code>a = [1, 2, 3]
-b = [1, 2, 3, 4]
-</code></pre><p>Value semantics are preserved, but copying only happens when necessary.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>a = [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>b = [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]
+</span></span></code></pre></div><p>Value semantics are preserved, but copying only happens when necessary.</p>
 <h2 id="how-swift-knows-when-to-copy">How Swift Knows When to Copy<a hidden class="anchor" aria-hidden="true" href="#how-swift-knows-when-to-copy">#</a></h2>
 <p>Even though <em>Array</em> is a <em>struct</em>, it stores its elements in a hidden reference-type buffer internally.</p>
 <p>Before mutating that buffer, Swift performs a runtime check:</p>
-<pre tabindex="0"><code>isKnownUniquelyReferenced(_:)
-</code></pre><p>This function determines whether the underlying storage is exclusively owned.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>isKnownUniquelyReferenced(<span style="color:#66d9ef">_</span>:)
+</span></span></code></pre></div><p>This function determines whether the underlying storage is exclusively owned.</p>
 <h2 id="deep-dive-isknownuniquelyreferenced">Deep Dive: <em>isKnownUniquelyReferenced</em><a hidden class="anchor" aria-hidden="true" href="#deep-dive-isknownuniquelyreferenced">#</a></h2>
 <p>The function signature is:</p>
-<pre tabindex="0"><code>func isKnownUniquelyReferenced&lt;T&gt;(_ object: inout T) -&gt; Bool where T : AnyObject
-</code></pre><p>It returns:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">isKnownUniquelyReferenced</span>&lt;T&gt;(<span style="color:#66d9ef">_</span> object: <span style="color:#66d9ef">inout</span> T) -&gt; Bool <span style="color:#66d9ef">where</span> T : AnyObject
+</span></span></code></pre></div><p>It returns:</p>
 <ul>
 <li>true → if exactly one strong reference exists</li>
 <li>false → if multiple strong references exist</li>
@@ -327,11 +327,11 @@ b = [1, 2, 3, 4]
 <li>String uses Copy-on-Write.</li>
 </ul>
 <p>But a simple struct like this:</p>
-<pre tabindex="0"><code>struct Point {
-    var x: Int
-    var y: Int
-}
-</code></pre><p>does not use Copy-on-Write.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Point</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> x: Int
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> y: Int
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>does not use Copy-on-Write.</p>
 <p>When you assign <em>Point</em>, its stored properties are copied immediately because they are small and inexpensive.</p>
 <h2 id="why-some-types-use-copy-on-write">Why Some Types Use Copy-on-Write<a hidden class="anchor" aria-hidden="true" href="#why-some-types-use-copy-on-write">#</a></h2>
 <p>Copy-on-Write exists purely for performance optimization.</p>
@@ -357,45 +357,45 @@ b = [1, 2, 3, 4]
 <h2 id="implementing-copy-on-write-manually">Implementing Copy-on-Write Manually<a hidden class="anchor" aria-hidden="true" href="#implementing-copy-on-write-manually">#</a></h2>
 <p>To understand the mechanism fully, let’s build our own CoW type.</p>
 <h3 id="step-1--reference-storage">Step 1 — Reference Storage<a hidden class="anchor" aria-hidden="true" href="#step-1--reference-storage">#</a></h3>
-<pre tabindex="0"><code>final class Storage {
-    var value: Int
-
-    init(value: Int) {
-        self.value = value
-    }
-}
-</code></pre><p>We use a <em>final class</em> because:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Storage</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> value: Int
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(value: Int) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.value = value
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We use a <em>final class</em> because:</p>
 <ul>
 <li>Classes are reference types.</li>
 <li>final avoids dynamic dispatch overhead.</li>
 </ul>
 <h3 id="step-2--struct-wrapper">Step 2 — Struct Wrapper<a hidden class="anchor" aria-hidden="true" href="#step-2--struct-wrapper">#</a></h3>
-<pre tabindex="0"><code>struct Counter {
-    private var storage: Storage
-
-    init(value: Int) {
-        self.storage = Storage(value: value)
-    }
-
-    var value: Int {
-        get { storage.value }
-        set {
-            ensureUnique()
-            storage.value = newValue
-        }
-    }
-}
-</code></pre><p>Externally, Counter behaves like a value type.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Counter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> storage: Storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">init</span>(value: Int) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">self</span>.storage = Storage(value: value)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> value: Int {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">get</span> { storage.value }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">set</span> {
+</span></span><span style="display:flex;"><span>            ensureUnique()
+</span></span><span style="display:flex;"><span>            storage.value = newValue
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Externally, Counter behaves like a value type.</p>
 <p>Internally, it shares reference storage.</p>
 <h2 id="the-critical-mutation-gate-ensureunique">The Critical Mutation Gate: ensureUnique()<a hidden class="anchor" aria-hidden="true" href="#the-critical-mutation-gate-ensureunique">#</a></h2>
-<pre tabindex="0"><code>extension Counter {
-    private mutating func ensureUnique() {
-        if !isKnownUniquelyReferenced(&amp;storage) {
-            storage = Storage(value: storage.value)
-        }
-    }
-}
-</code></pre><p>This function guarantees:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">extension</span> <span style="color:#a6e22e">Counter</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">mutating</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ensureUnique</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">!</span>isKnownUniquelyReferenced(&amp;storage) {
+</span></span><span style="display:flex;"><span>            storage = Storage(value: storage.value)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This function guarantees:</p>
 <blockquote>
 <p>Before mutation occurs, the struct owns its storage exclusively.</p>
 </blockquote>
@@ -407,34 +407,34 @@ b = [1, 2, 3, 4]
 <p>Think of it as a safety checkpoint before modification.</p>
 <h2 id="step-by-step-execution-flow">Step-by-Step Execution Flow<a hidden class="anchor" aria-hidden="true" href="#step-by-step-execution-flow">#</a></h2>
 <p>Consider:</p>
-<pre tabindex="0"><code>var a = Counter(value: 10)
-var b = a
-
-b.value = 20
-</code></pre><h3 id="step-1--assignment">Step 1 — Assignment<a hidden class="anchor" aria-hidden="true" href="#step-1--assignment">#</a></h3>
-<pre tabindex="0"><code>a ──┐
-    ├── Storage(value: 10)
-b ──┘
-</code></pre><p>Reference count = 2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> a = Counter(value: <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b = a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>b.value = <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><h3 id="step-1--assignment">Step 1 — Assignment<a hidden class="anchor" aria-hidden="true" href="#step-1--assignment">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>a <span style="color:#960050;background-color:#1e0010">──┐</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">├──</span> Storage(value: <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#960050;background-color:#1e0010">──┘</span>
+</span></span></code></pre></div><p>Reference count = 2.</p>
 <h3 id="step-2--mutation-begins">Step 2 — Mutation Begins<a hidden class="anchor" aria-hidden="true" href="#step-2--mutation-begins">#</a></h3>
 <p>b.value = 20 calls:</p>
-<pre tabindex="0"><code>ensureUnique()
-</code></pre><p>Swift checks:</p>
-<pre tabindex="0"><code>isKnownUniquelyReferenced(&amp;storage)
-</code></pre><p>Result: false</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>ensureUnique()
+</span></span></code></pre></div><p>Swift checks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>isKnownUniquelyReferenced(&amp;storage)
+</span></span></code></pre></div><p>Result: false</p>
 <h3 id="step-3--copy-created">Step 3 — Copy Created<a hidden class="anchor" aria-hidden="true" href="#step-3--copy-created">#</a></h3>
-<pre tabindex="0"><code>storage = Storage(value: storage.value)
-</code></pre><p>Now each instance has its own storage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>storage = Storage(value: storage.value)
+</span></span></code></pre></div><p>Now each instance has its own storage.</p>
 <h3 id="step-4--safe-mutation">Step 4 — Safe Mutation<a hidden class="anchor" aria-hidden="true" href="#step-4--safe-mutation">#</a></h3>
-<pre tabindex="0"><code>storage.value = 20
-</code></pre><p>Final state:</p>
-<pre tabindex="0"><code>a.value // 10
-b.value // 20
-</code></pre><p>Value semantics preserved.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>storage.value = <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><p>Final state:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>a.value <span style="color:#75715e">// 10</span>
+</span></span><span style="display:flex;"><span>b.value <span style="color:#75715e">// 20</span>
+</span></span></code></pre></div><p>Value semantics preserved.</p>
 <h3 id="why-this-pattern-is-essential">Why This Pattern Is Essential<a hidden class="anchor" aria-hidden="true" href="#why-this-pattern-is-essential">#</a></h3>
 <p>If you skipped <em>ensureUnique()</em>:</p>
-<pre tabindex="0"><code>storage.value = newValue
-</code></pre><p>You would accidentally mutate shared storage.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>storage.value = newValue
+</span></span></code></pre></div><p>You would accidentally mutate shared storage.</p>
 <p>Your struct would behave like a class.</p>
 <p>Value semantics would be broken silently.</p>
 <p>The uniqueness check is what guarantees correctness.</p>
