@@ -6,7 +6,7 @@
     <description>Recent content in Swift on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 07:52:19 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 08:28:30 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -50,11 +50,20 @@
     <item>
       <title>The Singleton Design Pattern in Swift: Why, How, and When NOT to Use It</title>
       <link>http://localhost:1313/blog/singleton-design-pattern/</link>
-      <pubDate>Tue, 23 Jun 2026 07:52:19 +0530</pubDate>
+      <pubDate>Tue, 03 Mar 2026 13:47:17 +0530</pubDate>
       <guid>http://localhost:1313/blog/singleton-design-pattern/</guid>
       <description>&lt;p&gt;The &lt;strong&gt;Singleton&lt;/strong&gt; is one of the most well-known—and heavily debated—creational design patterns in software engineering. Apple uses it extensively throughout the iOS SDK (&lt;code&gt;UserDefaults.standard&lt;/code&gt;, &lt;code&gt;URLSession.shared&lt;/code&gt;, &lt;code&gt;NotificationCenter.default&lt;/code&gt;), which often leads developers to believe it should be used everywhere.&lt;/p&gt;
 &lt;p&gt;However, while Singletons are incredibly easy to create in Swift, they are equally easy to abuse.&lt;/p&gt;
 &lt;p&gt;In this post, we will explore what the Singleton pattern is, why and how to implement it, where it makes sense, and most importantly, where you should avoid it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Factory Method Pattern in Swift: Decoupling Object Creation</title>
+      <link>http://localhost:1313/blog/factory-method-design-pattern/</link>
+      <pubDate>Tue, 23 Jun 2026 08:28:30 +0530</pubDate>
+      <guid>http://localhost:1313/blog/factory-method-design-pattern/</guid>
+      <description>&lt;p&gt;As your application grows, the way you create and manage objects becomes just as important as how those objects behave. If your code is littered with complex initialization logic or massive &lt;code&gt;switch&lt;/code&gt; statements deciding which object to create, you are likely creating tightly coupled, fragile code.&lt;/p&gt;
+&lt;p&gt;Enter the &lt;strong&gt;Factory Method&lt;/strong&gt; pattern.&lt;/p&gt;
+&lt;p&gt;This creational design pattern provides an interface for creating objects, but delegates the exact type of object being created to a dedicated &amp;ldquo;factory.&amp;rdquo; In modern Swift, this pattern is often implemented using protocols and static methods, keeping our business logic incredibly clean.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

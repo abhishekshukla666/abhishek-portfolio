@@ -1,8 +1,8 @@
 ---
 title: "The Factory Method Pattern in Swift: Decoupling Object Creation"
 # description: "Learn how to use the Factory Method pattern in Swift to clean up complex object creation, adhere to SOLID principles, and prevent tight coupling."
-date: "2026-06-23T10:00:00+05:30"
 draft: false
+date: "2026-06-23T08:28:30+05:30"
 tags: ["Swift", "Architecture", "Design Patterns"]
 weight: 106
 # cover:

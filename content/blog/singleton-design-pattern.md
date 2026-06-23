@@ -1,7 +1,7 @@
 ---
 title: "The Singleton Design Pattern in Swift: Why, How, and When NOT to Use It"
 # description: "A deep dive into the Singleton design pattern in Swift. Learn how to implement it correctly, where it shines, and why it is often considered an anti-pattern."
-date: "2026-06-23T07:52:19+05:30"
+date: "2026-06-23T05:47:17+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Design Patterns"]
 weight: 105
