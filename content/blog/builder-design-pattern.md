@@ -2,10 +2,11 @@
 title: "The Builder Pattern in Modern Swift: Beyond the Gang of Four"
 date: 2026-06-23T12:00:00+05:30
 draft: false
-author: "Abhishek Shukla"
+# author: "Abhishek Shukla"
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
-categories: [""]
+weight: 107
 TocOpen: false
+ShowReadingTime: true
 ---
 
 The Builder Pattern is a creational design pattern designed to separate the construction of a complex object from its representation.

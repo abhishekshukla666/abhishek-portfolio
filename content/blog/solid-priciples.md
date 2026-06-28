@@ -3,7 +3,7 @@ title: "Understanding SOLID Principles in Swift: Violations, Fixes, and Real-Wor
 # description: "A practical guide to the SOLID principles with real-world Swift examples, showing common violations and how to fix them."
 date: "2026-06-22T14:52:03+05:30"
 draft: false
-tags: ["Swift", "Architecture", "SOLID", "Design Patterns"]
+tags: ["Swift", "Architecture", "SOLID"]
 weight: 104
 # cover:
     # image: "blog/SOLID.jpeg"

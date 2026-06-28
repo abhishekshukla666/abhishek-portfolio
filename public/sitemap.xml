@@ -20,23 +20,44 @@
     <loc>http://localhost:1313/blog/factory-method-design-pattern/</loc>
     <lastmod>2026-06-23T08:28:30+05:30</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/builder-design-pattern/</loc>
+    <lastmod>2026-06-23T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/adapter-design-pattern/</loc>
+    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/decorator-design-pattern/</loc>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/design-patterns/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <loc>http://localhost:1313/tags/decorator/</loc>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/structural-design-patterns/</loc>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/swift/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-06-23T08:28:30+05:30</lastmod>
+    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/adapter/</loc>
+    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/async/await/</loc>
+    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/creational-design-patterns/</loc>
+    <lastmod>2026-06-23T12:00:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/solid/</loc>
     <lastmod>2026-06-22T14:52:03+05:30</lastmod>

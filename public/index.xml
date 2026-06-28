@@ -6,7 +6,7 @@
     <description>Recent content on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 12:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 12:51:58 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -73,6 +73,22 @@
       <description>&lt;p&gt;The Builder Pattern is a creational design pattern designed to separate the construction of a complex object from its representation.&lt;/p&gt;
 &lt;p&gt;In classic Gang of Four (GoF) object-oriented languages like Java, the Builder is essential for avoiding the &amp;ldquo;telescoping constructor&amp;rdquo; anti-pattern (where you have a dozen different initializers for every combination of parameters).&lt;/p&gt;
 &lt;p&gt;However, in modern Swift, the classic Builder pattern is often redundant. Swift’s native features—like named parameters, default values, and structs—solve the telescoping constructor problem out of the box. Therefore, when we use the Builder pattern in Swift today, it usually takes on one of three highly optimized, modern forms.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Adapter Design Pattern in Swift: Bridging Legacy Code to Modern APIs</title>
+      <link>http://localhost:1313/blog/adapter-design-pattern/</link>
+      <pubDate>Sat, 27 Jun 2026 11:20:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/adapter-design-pattern/</guid>
+      <description>&lt;p&gt;In the real world, you cannot always control the code you work with. You will frequently need to integrate legacy systems, older Objective-C frameworks, or external SDKs into your modern Swift application.&lt;/p&gt;
+&lt;p&gt;The problem arises when these external systems have interfaces that are completely incompatible with your app&amp;rsquo;s existing architecture. If you force your app to accommodate these legacy interfaces directly—like dealing with &lt;code&gt;NSArray&lt;/code&gt;, untyped dictionaries, and completion handlers—your code quickly becomes a tightly coupled, unsafe mess.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Decorator Design Pattern in Swift: Enhancing Objects Dynamically</title>
+      <link>http://localhost:1313/blog/decorator-design-pattern/</link>
+      <pubDate>Sat, 27 Jun 2026 12:51:58 +0530</pubDate>
+      <guid>http://localhost:1313/blog/decorator-design-pattern/</guid>
+      <description>&lt;p&gt;As your application grows, you often need to add new responsibilities to existing objects. The default approach for many developers is subclassing. However, subclassing is static and applies to an entire class. If you need to combine multiple different behaviors, subclassing leads to a massive, unmaintainable &amp;ldquo;subclass explosion.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Decorator&lt;/strong&gt; pattern (also known as a Wrapper) solves this. It is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
