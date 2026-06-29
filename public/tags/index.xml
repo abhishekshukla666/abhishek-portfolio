@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2026 10:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 10:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concurrency</title>
+      <link>http://localhost:1313/tags/concurrency/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DataRace</title>
+      <link>http://localhost:1313/tags/datarace/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/tags/datarace/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protocols</title>
+      <link>http://localhost:1313/tags/protocols/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/tags/protocols/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sendable</title>
+      <link>http://localhost:1313/tags/sendable/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/tags/sendable/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Swift</title>
+      <link>http://localhost:1313/tags/swift/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/tags/swift/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Architecture</title>
       <link>http://localhost:1313/tags/architecture/</link>
@@ -27,13 +62,6 @@
       <link>http://localhost:1313/tags/reactive/</link>
       <pubDate>Sat, 27 Jun 2026 10:00:00 +0530</pubDate>
       <guid>http://localhost:1313/tags/reactive/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Swift</title>
-      <link>http://localhost:1313/tags/swift/</link>
-      <pubDate>Sat, 27 Jun 2026 10:00:00 +0530</pubDate>
-      <guid>http://localhost:1313/tags/swift/</guid>
       <description></description>
     </item>
     <item>
@@ -65,20 +93,6 @@
       <description></description>
     </item>
     <item>
-      <title>Concurrency</title>
-      <link>http://localhost:1313/tags/concurrency/</link>
-      <pubDate>Thu, 12 Mar 2026 17:40:17 +0530</pubDate>
-      <guid>http://localhost:1313/tags/concurrency/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DataRace</title>
-      <link>http://localhost:1313/tags/datarace/</link>
-      <pubDate>Thu, 12 Mar 2026 17:40:17 +0530</pubDate>
-      <guid>http://localhost:1313/tags/datarace/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Memory-Managment</title>
       <link>http://localhost:1313/tags/memory-managment/</link>
       <pubDate>Tue, 10 Mar 2026 18:40:17 +0530</pubDate>
@@ -100,6 +114,13 @@
       <description></description>
     </item>
     <item>
+      <title>Data Structures</title>
+      <link>http://localhost:1313/tags/data-structures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-structures/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Decorator</title>
       <link>http://localhost:1313/tags/decorator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -118,6 +139,13 @@
       <link>http://localhost:1313/tags/facade/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/facade/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Foundations</title>
+      <link>http://localhost:1313/tags/foundations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/foundations/</guid>
       <description></description>
     </item>
   </channel>

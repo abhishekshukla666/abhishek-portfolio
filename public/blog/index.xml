@@ -6,7 +6,7 @@
     <description>Recent content in Blogs on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2026 10:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 10:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -106,6 +106,23 @@
       <description>&lt;p&gt;In modern iOS applications, data is constantly changing. A user logs in, a network request finishes, or a background sync completes. When these events happen, multiple parts of your application—like the UI, analytics trackers, and local databases—need to react immediately.&lt;/p&gt;
 &lt;p&gt;If the object responsible for the data explicitly tells every other object to update, your app becomes a tightly coupled, unmaintainable mess.&lt;/p&gt;
 &lt;p&gt;This is exactly what the &lt;strong&gt;Observer&lt;/strong&gt; design pattern prevents. It defines a one-to-many subscription mechanism so that when one object changes state, all its dependents are notified automatically, without the objects needing to know about each other.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Sendable in Swift: Mastering Concurrency Safety</title>
+      <link>http://localhost:1313/blog/sendable-explained/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/sendable-explained/</guid>
+      <description>&lt;p&gt;With the introduction of Structured Concurrency and Actors, Apple fundamentally changed how we write asynchronous Swift code. However, simply using &lt;code&gt;async/await&lt;/code&gt; or &lt;code&gt;Task&lt;/code&gt; does not automatically make your code safe from data races.&lt;/p&gt;
+&lt;p&gt;To achieve true thread safety—and to compile under Swift 6&amp;rsquo;s Strict Concurrency checks—you must understand &lt;strong&gt;concurrency domains&lt;/strong&gt; and the &lt;strong&gt;&lt;code&gt;Sendable&lt;/code&gt;&lt;/strong&gt; protocol.&lt;/p&gt;
+&lt;p&gt;In this post, we will explore what &lt;code&gt;Sendable&lt;/code&gt; is, when and how to use it, and the dangerous anti-patterns you must avoid when trying to quiet the compiler.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Equatable, Comparable, and Hashable in Swift</title>
+      <link>http://localhost:1313/blog/equatable-comparable-hashable/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/equatable-comparable-hashable/</guid>
+      <description>&lt;p&gt;When building applications in Swift, you constantly need to compare objects, sort arrays, or store unique items in a &lt;code&gt;Set&lt;/code&gt; or &lt;code&gt;Dictionary&lt;/code&gt;. To do this efficiently, Swift relies on three fundamental protocols: &lt;strong&gt;Equatable&lt;/strong&gt;, &lt;strong&gt;Comparable&lt;/strong&gt;, and &lt;strong&gt;Hashable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;While these protocols are easy to adopt, their behavior differs significantly depending on whether you are using a &lt;code&gt;struct&lt;/code&gt; or a &lt;code&gt;class&lt;/code&gt;. Let&amp;rsquo;s break down why we need them and how to implement them correctly.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
