@@ -3,7 +3,7 @@ title: "Mastering Equatable, Comparable, and Hashable in Swift"
 # description: "A complete guide to understanding and implementing Equatable, Comparable, and Hashable protocols in Swift. Learn the crucial differences between structs and classes."
 date: "2026-06-29T10:00:00+05:30"
 draft: false
-tags: ["Swift", "Protocols"]
+tags: ["Swift", "Fundamentals", "Protocols"]
 weight: 113
 # cover:
     # image: "blog/Protocols.jpeg"

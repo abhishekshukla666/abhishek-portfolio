@@ -6,7 +6,7 @@
     <description>Recent content in Blogs on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jun 2026 10:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jun 2026 11:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -123,6 +123,14 @@
       <guid>http://localhost:1313/blog/equatable-comparable-hashable/</guid>
       <description>&lt;p&gt;When building applications in Swift, you constantly need to compare objects, sort arrays, or store unique items in a &lt;code&gt;Set&lt;/code&gt; or &lt;code&gt;Dictionary&lt;/code&gt;. To do this efficiently, Swift relies on three fundamental protocols: &lt;strong&gt;Equatable&lt;/strong&gt;, &lt;strong&gt;Comparable&lt;/strong&gt;, and &lt;strong&gt;Hashable&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;While these protocols are easy to adopt, their behavior differs significantly depending on whether you are using a &lt;code&gt;struct&lt;/code&gt; or a &lt;code&gt;class&lt;/code&gt;. Let&amp;rsquo;s break down why we need them and how to implement them correctly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Demystifying Optionals in Swift: ?, !, and Under the Hood</title>
+      <link>http://localhost:1313/blog/swift-optionals/</link>
+      <pubDate>Mon, 29 Jun 2026 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-optionals/</guid>
+      <description>&lt;p&gt;Swift is fundamentally designed to be a safe language, and one of its core safety features is how it handles the absence of values. In many languages, trying to access a null value leads to unexpected crashes. Swift solves this elegantly using &lt;strong&gt;Optionals&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;However, the differences between normal variables, Optionals (&lt;code&gt;?&lt;/code&gt;), and Implicitly Unwrapped Optionals (&lt;code&gt;!&lt;/code&gt;) often trip developers up. Let&amp;rsquo;s break down how they work, the dangers of misusing them, and even look under the hood by building our own Optional type from scratch.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
