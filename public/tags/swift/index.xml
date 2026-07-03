@@ -6,7 +6,7 @@
     <description>Recent content in Swift on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2026 12:51:58 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 09:30:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -77,7 +77,7 @@
     <item>
       <title>The Adapter Design Pattern in Swift: Bridging Legacy Code to Modern APIs</title>
       <link>http://localhost:1313/blog/adapter-design-pattern/</link>
-      <pubDate>Sat, 27 Jun 2026 11:20:00 +0530</pubDate>
+      <pubDate>Wed, 24 Jun 2026 11:20:00 +0530</pubDate>
       <guid>http://localhost:1313/blog/adapter-design-pattern/</guid>
       <description>&lt;p&gt;In the real world, you cannot always control the code you work with. You will frequently need to integrate legacy systems, older Objective-C frameworks, or external SDKs into your modern Swift application.&lt;/p&gt;
 &lt;p&gt;The problem arises when these external systems have interfaces that are completely incompatible with your app&amp;rsquo;s existing architecture. If you force your app to accommodate these legacy interfaces directly—like dealing with &lt;code&gt;NSArray&lt;/code&gt;, untyped dictionaries, and completion handlers—your code quickly becomes a tightly coupled, unsafe mess.&lt;/p&gt;</description>
@@ -85,10 +85,73 @@
     <item>
       <title>The Decorator Design Pattern in Swift: Enhancing Objects Dynamically</title>
       <link>http://localhost:1313/blog/decorator-design-pattern/</link>
-      <pubDate>Sat, 27 Jun 2026 12:51:58 +0530</pubDate>
+      <pubDate>Thu, 25 Jun 2026 12:51:58 +0530</pubDate>
       <guid>http://localhost:1313/blog/decorator-design-pattern/</guid>
       <description>&lt;p&gt;As your application grows, you often need to add new responsibilities to existing objects. The default approach for many developers is subclassing. However, subclassing is static and applies to an entire class. If you need to combine multiple different behaviors, subclassing leads to a massive, unmaintainable &amp;ldquo;subclass explosion.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;Decorator&lt;/strong&gt; pattern (also known as a Wrapper) solves this. It is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Facade Design Pattern in Swift: Simplifying Complex Systems</title>
+      <link>http://localhost:1313/blog/facade-design-pattern/</link>
+      <pubDate>Fri, 26 Jun 2026 14:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/facade-design-pattern/</guid>
+      <description>&lt;p&gt;Modern iOS applications rely on multiple subsystems: networking, local databases, image caching, and third-party SDKs. If your UI or business logic interacts with all of these internal classes directly, your code becomes incredibly dense and difficult to read.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Facade&lt;/strong&gt; design pattern is a structural pattern that provides a simplified, high-level interface to a complex body of code. It hides the underlying complexity of multiple subsystems behind a single, easy-to-use class.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Observer Design Pattern in Swift: Mastering Reactive Communication</title>
+      <link>http://localhost:1313/blog/observer-design-pattern/</link>
+      <pubDate>Sat, 27 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/observer-design-pattern/</guid>
+      <description>&lt;p&gt;In modern iOS applications, data is constantly changing. A user logs in, a network request finishes, or a background sync completes. When these events happen, multiple parts of your application—like the UI, analytics trackers, and local databases—need to react immediately.&lt;/p&gt;
+&lt;p&gt;If the object responsible for the data explicitly tells every other object to update, your app becomes a tightly coupled, unmaintainable mess.&lt;/p&gt;
+&lt;p&gt;This is exactly what the &lt;strong&gt;Observer&lt;/strong&gt; design pattern prevents. It defines a one-to-many subscription mechanism so that when one object changes state, all its dependents are notified automatically, without the objects needing to know about each other.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Sendable in Swift: Mastering Concurrency Safety</title>
+      <link>http://localhost:1313/blog/sendable-explained/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/sendable-explained/</guid>
+      <description>&lt;p&gt;With the introduction of Structured Concurrency and Actors, Apple fundamentally changed how we write asynchronous Swift code. However, simply using &lt;code&gt;async/await&lt;/code&gt; or &lt;code&gt;Task&lt;/code&gt; does not automatically make your code safe from data races.&lt;/p&gt;
+&lt;p&gt;To achieve true thread safety—and to compile under Swift 6&amp;rsquo;s Strict Concurrency checks—you must understand &lt;strong&gt;concurrency domains&lt;/strong&gt; and the &lt;strong&gt;&lt;code&gt;Sendable&lt;/code&gt;&lt;/strong&gt; protocol.&lt;/p&gt;
+&lt;p&gt;In this post, we will explore what &lt;code&gt;Sendable&lt;/code&gt; is, when and how to use it, and the dangerous anti-patterns you must avoid when trying to quiet the compiler.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mastering Equatable, Comparable, and Hashable in Swift</title>
+      <link>http://localhost:1313/blog/equatable-comparable-hashable/</link>
+      <pubDate>Mon, 29 Jun 2026 10:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/equatable-comparable-hashable/</guid>
+      <description>&lt;p&gt;When building applications in Swift, you constantly need to compare objects, sort arrays, or store unique items in a &lt;code&gt;Set&lt;/code&gt; or &lt;code&gt;Dictionary&lt;/code&gt;. To do this efficiently, Swift relies on three fundamental protocols: &lt;strong&gt;Equatable&lt;/strong&gt;, &lt;strong&gt;Comparable&lt;/strong&gt;, and &lt;strong&gt;Hashable&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;While these protocols are easy to adopt, their behavior differs significantly depending on whether you are using a &lt;code&gt;struct&lt;/code&gt; or a &lt;code&gt;class&lt;/code&gt;. Let&amp;rsquo;s break down why we need them and how to implement them correctly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Demystifying Optionals in Swift: ?, !, and Under the Hood</title>
+      <link>http://localhost:1313/blog/swift-optionals/</link>
+      <pubDate>Mon, 29 Jun 2026 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-optionals/</guid>
+      <description>&lt;p&gt;Swift is fundamentally designed to be a safe language, and one of its core safety features is how it handles the absence of values. In many languages, trying to access a null value leads to unexpected crashes. Swift solves this elegantly using &lt;strong&gt;Optionals&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;However, the differences between normal variables, Optionals (&lt;code&gt;?&lt;/code&gt;), and Implicitly Unwrapped Optionals (&lt;code&gt;!&lt;/code&gt;) often trip developers up. Let&amp;rsquo;s break down how they work, the dangers of misusing them, and even look under the hood by building our own Optional type from scratch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Opaque Types in Swift and SwiftUI: The Power of `some`</title>
+      <link>http://localhost:1313/blog/swift-opaque-type/</link>
+      <pubDate>Tue, 30 Jun 2026 10:38:19 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-opaque-type/</guid>
+      <description>&lt;p&gt;If you have ever written a single line of SwiftUI, you have seen this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That tiny word—&lt;code&gt;some&lt;/code&gt;—represents one of the most powerful and complex features introduced in modern Swift: &lt;strong&gt;Opaque Return Types&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;But what exactly does &lt;code&gt;some&lt;/code&gt; do? Why can&amp;rsquo;t we just return &lt;code&gt;View&lt;/code&gt;? And when should you use opaque types in your own non-UI Swift code? Let&amp;rsquo;s break down the &lt;em&gt;what&lt;/em&gt;, &lt;em&gt;why&lt;/em&gt;, &lt;em&gt;where&lt;/em&gt;, and the common violations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Actor Reentrancy in Swift: The Hidden Concurrency Trap</title>
+      <link>http://localhost:1313/blog/swift-actor-reentrancy/</link>
+      <pubDate>Thu, 02 Jul 2026 09:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-actor-reentrancy/</guid>
+      <description>&lt;p&gt;With the introduction of Swift Concurrency, &lt;strong&gt;Actors&lt;/strong&gt; became the ultimate tool for protecting shared mutable state. By isolating their state and ensuring that only one task can access that state at a time, actors eliminate traditional data races.&lt;/p&gt;
+&lt;p&gt;However, they introduce a new, subtle, and incredibly dangerous concept that trips up even experienced developers: &lt;strong&gt;Actor Reentrancy&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If you assume that an actor behaves exactly like a serial &lt;code&gt;DispatchQueue&lt;/code&gt; or an &lt;code&gt;NSLock&lt;/code&gt;, you are going to write buggy code. Let’s explore what actor reentrancy is, why it breaks your logic, and how to fix it using a real-world banking scenario.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

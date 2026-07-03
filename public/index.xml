@@ -6,7 +6,7 @@
     <description>Recent content on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jun 2026 11:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2026 09:30:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -131,6 +131,27 @@
       <guid>http://localhost:1313/blog/swift-optionals/</guid>
       <description>&lt;p&gt;Swift is fundamentally designed to be a safe language, and one of its core safety features is how it handles the absence of values. In many languages, trying to access a null value leads to unexpected crashes. Swift solves this elegantly using &lt;strong&gt;Optionals&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;However, the differences between normal variables, Optionals (&lt;code&gt;?&lt;/code&gt;), and Implicitly Unwrapped Optionals (&lt;code&gt;!&lt;/code&gt;) often trip developers up. Let&amp;rsquo;s break down how they work, the dangers of misusing them, and even look under the hood by building our own Optional type from scratch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Opaque Types in Swift and SwiftUI: The Power of `some`</title>
+      <link>http://localhost:1313/blog/swift-opaque-type/</link>
+      <pubDate>Tue, 30 Jun 2026 10:38:19 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-opaque-type/</guid>
+      <description>&lt;p&gt;If you have ever written a single line of SwiftUI, you have seen this code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-swift&#34; data-lang=&#34;swift&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; body: some View {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Text(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That tiny word—&lt;code&gt;some&lt;/code&gt;—represents one of the most powerful and complex features introduced in modern Swift: &lt;strong&gt;Opaque Return Types&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;But what exactly does &lt;code&gt;some&lt;/code&gt; do? Why can&amp;rsquo;t we just return &lt;code&gt;View&lt;/code&gt;? And when should you use opaque types in your own non-UI Swift code? Let&amp;rsquo;s break down the &lt;em&gt;what&lt;/em&gt;, &lt;em&gt;why&lt;/em&gt;, &lt;em&gt;where&lt;/em&gt;, and the common violations.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Actor Reentrancy in Swift: The Hidden Concurrency Trap</title>
+      <link>http://localhost:1313/blog/swift-actor-reentrancy/</link>
+      <pubDate>Thu, 02 Jul 2026 09:30:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/swift-actor-reentrancy/</guid>
+      <description>&lt;p&gt;With the introduction of Swift Concurrency, &lt;strong&gt;Actors&lt;/strong&gt; became the ultimate tool for protecting shared mutable state. By isolating their state and ensuring that only one task can access that state at a time, actors eliminate traditional data races.&lt;/p&gt;
+&lt;p&gt;However, they introduce a new, subtle, and incredibly dangerous concept that trips up even experienced developers: &lt;strong&gt;Actor Reentrancy&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;If you assume that an actor behaves exactly like a serial &lt;code&gt;DispatchQueue&lt;/code&gt; or an &lt;code&gt;NSLock&lt;/code&gt;, you are going to write buggy code. Let’s explore what actor reentrancy is, why it breaks your logic, and how to fix it using a real-world banking scenario.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

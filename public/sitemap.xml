@@ -24,49 +24,88 @@
     <lastmod>2026-06-23T12:00:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/adapter-design-pattern/</loc>
-    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+    <lastmod>2026-06-24T11:20:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/decorator-design-pattern/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <lastmod>2026-06-25T12:51:58+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/facade-design-pattern/</loc>
+    <lastmod>2026-06-26T14:30:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/observer-design-pattern/</loc>
+    <lastmod>2026-06-27T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/sendable-explained/</loc>
+    <lastmod>2026-06-29T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/equatable-comparable-hashable/</loc>
+    <lastmod>2026-06-29T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/swift-optionals/</loc>
+    <lastmod>2026-06-29T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/swift-opaque-type/</loc>
+    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/swift-actor-reentrancy/</loc>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <loc>http://localhost:1313/tags/actors/</loc>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/decorator/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <loc>http://localhost:1313/tags/concurrency/</loc>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/structural-design-patterns/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <loc>http://localhost:1313/tags/datarace/</loc>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/swift/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-06-27T12:51:58+05:30</lastmod>
+    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/adapter/</loc>
-    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+    <loc>http://localhost:1313/tags/architecture/</loc>
+    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fundamentals/</loc>
+    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/opaque-types/</loc>
+    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/swiftui/</loc>
+    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/protocols/</loc>
+    <lastmod>2026-06-29T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sendable/</loc>
+    <lastmod>2026-06-29T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/behavioral-design-patterns/</loc>
+    <lastmod>2026-06-27T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/reactive/</loc>
+    <lastmod>2026-06-27T10:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/structural-design-patterns/</loc>
+    <lastmod>2026-06-26T14:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/async/await/</loc>
-    <lastmod>2026-06-27T11:20:00+05:30</lastmod>
+    <lastmod>2026-06-24T11:20:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/creational-design-patterns/</loc>
     <lastmod>2026-06-23T12:00:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/solid/</loc>
     <lastmod>2026-06-22T14:52:03+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/concurrency/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/datarace/</loc>
-    <lastmod>2026-03-12T17:40:17+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/memory-managment/</loc>
     <lastmod>2026-03-10T18:40:17+05:30</lastmod>
