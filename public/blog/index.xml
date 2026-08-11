@@ -6,7 +6,7 @@
     <description>Recent content in Blogs on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2026 09:30:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 12:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -131,6 +131,15 @@
       <guid>http://localhost:1313/blog/swift-optionals/</guid>
       <description>&lt;p&gt;Swift is fundamentally designed to be a safe language, and one of its core safety features is how it handles the absence of values. In many languages, trying to access a null value leads to unexpected crashes. Swift solves this elegantly using &lt;strong&gt;Optionals&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;However, the differences between normal variables, Optionals (&lt;code&gt;?&lt;/code&gt;), and Implicitly Unwrapped Optionals (&lt;code&gt;!&lt;/code&gt;) often trip developers up. Let&amp;rsquo;s break down how they work, the dangers of misusing them, and even look under the hood by building our own Optional type from scratch.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Resilient Networking in Swift: Building a Retry Mechanism</title>
+      <link>http://localhost:1313/blog/retry-logic-networklayer/</link>
+      <pubDate>Mon, 06 Jul 2026 12:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/retry-logic-networklayer/</guid>
+      <description>&lt;p&gt;Mobile devices are inherently mobile. Your users will walk into elevators, drive through tunnels, and seamlessly hop between Wi-Fi and 5G. Because of this, network requests fail—a lot.&lt;/p&gt;
+&lt;p&gt;If your application instantly shows an error alert the millisecond a connection drops, you are providing a poor user experience. Instead, your app should gracefully handle transient network errors behind the scenes.&lt;/p&gt;
+&lt;p&gt;This is where a &lt;strong&gt;Retry Mechanism&lt;/strong&gt; comes in. Let’s explore &lt;em&gt;why&lt;/em&gt;, &lt;em&gt;when&lt;/em&gt;, &lt;em&gt;where&lt;/em&gt;, and &lt;em&gt;how&lt;/em&gt; to implement a robust retry strategy using modern Swift Concurrency.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Understanding Opaque Types in Swift and SwiftUI: The Power of `some`</title>

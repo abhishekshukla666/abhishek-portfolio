@@ -6,7 +6,7 @@
     <description>Recent content in Swift on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2026 09:30:00 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2026 12:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How Copy-on-Write(CoW) in Swift works and optimizes memory</title>
@@ -133,6 +133,15 @@
 &lt;p&gt;However, the differences between normal variables, Optionals (&lt;code&gt;?&lt;/code&gt;), and Implicitly Unwrapped Optionals (&lt;code&gt;!&lt;/code&gt;) often trip developers up. Let&amp;rsquo;s break down how they work, the dangers of misusing them, and even look under the hood by building our own Optional type from scratch.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Resilient Networking in Swift: Building a Retry Mechanism</title>
+      <link>http://localhost:1313/blog/retry-logic-networklayer/</link>
+      <pubDate>Mon, 06 Jul 2026 12:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/blog/retry-logic-networklayer/</guid>
+      <description>&lt;p&gt;Mobile devices are inherently mobile. Your users will walk into elevators, drive through tunnels, and seamlessly hop between Wi-Fi and 5G. Because of this, network requests fail—a lot.&lt;/p&gt;
+&lt;p&gt;If your application instantly shows an error alert the millisecond a connection drops, you are providing a poor user experience. Instead, your app should gracefully handle transient network errors behind the scenes.&lt;/p&gt;
+&lt;p&gt;This is where a &lt;strong&gt;Retry Mechanism&lt;/strong&gt; comes in. Let’s explore &lt;em&gt;why&lt;/em&gt;, &lt;em&gt;when&lt;/em&gt;, &lt;em&gt;where&lt;/em&gt;, and &lt;em&gt;how&lt;/em&gt; to implement a robust retry strategy using modern Swift Concurrency.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Understanding Opaque Types in Swift and SwiftUI: The Power of `some`</title>
       <link>http://localhost:1313/blog/swift-opaque-type/</link>
       <pubDate>Tue, 30 Jun 2026 10:38:19 +0530</pubDate>
@@ -152,6 +161,14 @@
       <description>&lt;p&gt;With the introduction of Swift Concurrency, &lt;strong&gt;Actors&lt;/strong&gt; became the ultimate tool for protecting shared mutable state. By isolating their state and ensuring that only one task can access that state at a time, actors eliminate traditional data races.&lt;/p&gt;
 &lt;p&gt;However, they introduce a new, subtle, and incredibly dangerous concept that trips up even experienced developers: &lt;strong&gt;Actor Reentrancy&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;If you assume that an actor behaves exactly like a serial &lt;code&gt;DispatchQueue&lt;/code&gt; or an &lt;code&gt;NSLock&lt;/code&gt;, you are going to write buggy code. Let’s explore what actor reentrancy is, why it breaks your logic, and how to fix it using a real-world banking scenario.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sorting Algorithms in Production: When, Why, and Time Complexity</title>
+      <link>http://localhost:1313/about/swift-tim-sorting/</link>
+      <pubDate>Sun, 05 Jul 2026 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/about/swift-tim-sorting/</guid>
+      <description>&lt;p&gt;With over a decade in software engineering, you quickly realize that sorting isn&amp;rsquo;t just a hurdle for technical interviews—it is a fundamental system design decision. Choosing the wrong sorting algorithm can lead to memory spikes, UI frame drops, and battery drain, especially on mobile devices.&lt;/p&gt;
+&lt;p&gt;Most modern languages (including Swift) abstract sorting behind a simple &lt;code&gt;.sort()&lt;/code&gt; method. However, understanding the underlying mechanisms is critical when building custom data pipelines, handling massive data sets, or optimizing for specific input distributions.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

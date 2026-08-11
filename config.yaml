@@ -10,13 +10,17 @@ menu:
       url: /
       weight: 10
     - identifier: blog
-      name: Blog
+      name: iOS
       url: /blog
       weight: 20
+    - identifier: about
+      name: DSA
+      url: /about
+      weight: 30
     - identifier: tags
       name: Tags
       url: /tags
-      weight: 30
+      weight: 40
 
 params:
   # theme

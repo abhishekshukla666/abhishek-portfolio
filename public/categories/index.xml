@@ -6,6 +6,14 @@
     <description>Recent content in Categories on Abhishek Shukla</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jul 2026 11:00:00 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Structures &amp; Algorithms</title>
+      <link>http://localhost:1313/categories/data-structures--algorithms/</link>
+      <pubDate>Sun, 05 Jul 2026 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/categories/data-structures--algorithms/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

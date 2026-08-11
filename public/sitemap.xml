@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/about/sorting-algorithms/</loc>
+    <lastmod>2026-06-24T11:20:00+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/copy-on-writecow/</loc>
     <lastmod>2026-03-03T13:47:17+05:30</lastmod>
   </url><url>
@@ -44,6 +47,9 @@
     <loc>http://localhost:1313/blog/swift-optionals/</loc>
     <lastmod>2026-06-29T11:00:00+05:30</lastmod>
   </url><url>
+    <loc>http://localhost:1313/blog/retry-logic-networklayer/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/swift-opaque-type/</loc>
     <lastmod>2026-06-30T10:38:19+05:30</lastmod>
   </url><url>
@@ -51,28 +57,58 @@
     <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
+    <lastmod>2026-08-11T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/privacy-policy/</loc>
+    <lastmod>2026-08-11T00:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/architecture/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/async/await/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/concurrency/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/networking/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/swift/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-07-06T12:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/data-structures--algorithms/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dsa/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/swift-tim-sorting/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/system-design/</loc>
+    <lastmod>2026-07-05T11:00:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/actors/</loc>
     <lastmod>2026-07-02T09:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/concurrency/</loc>
-    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/datarace/</loc>
     <lastmod>2026-07-02T09:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/swift/</loc>
-    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-07-02T09:30:00+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2026-06-30T10:38:19+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/fundamentals/</loc>
     <lastmod>2026-06-30T10:38:19+05:30</lastmod>
@@ -98,7 +134,7 @@
     <loc>http://localhost:1313/tags/structural-design-patterns/</loc>
     <lastmod>2026-06-26T14:30:00+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/async/await/</loc>
+    <loc>http://localhost:1313/tags/sorting/</loc>
     <lastmod>2026-06-24T11:20:00+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/creational-design-patterns/</loc>
@@ -112,7 +148,5 @@
   </url><url>
     <loc>http://localhost:1313/tags/cow/</loc>
     <lastmod>2026-03-03T13:47:17+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>
