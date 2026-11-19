@@ -1,0 +1,12 @@
+{{- /* The footer. Context: the words for this language. */ -}}
+{{- $base := cond (eq .lang "hi") "/pathya/hi/" "/pathya/" -}}
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="{{ printf "%sprivacy/" $base | relURL }}">{{ .footer.privacy }}</a>
+      <a href="{{ printf "%sterms/" $base | relURL }}">{{ .footer.terms }}</a>
+      <a href="{{ printf "%ssupport/" $base | relURL }}">{{ .footer.support }}</a>
+    </nav>
+    <span>© {{ now.Year }} Abhishek Shukla. {{ .footer.made }}</span>
+  </div>
+</footer>

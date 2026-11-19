@@ -1,0 +1,102 @@
+# Words for Pathya's pages in English. Name only what the app does today.
+lang: en
+htmlLang: en
+home: /pathya/
+other: { label: "हिन्दी", url: /pathya/hi/ }
+nav: { features: Features, sources: Sources, faq: FAQ, support: Support }
+footer:
+  privacy: Privacy Policy
+  terms: Terms of Service
+  support: Support
+  made: "Made in India by Abhishek Shukla."
+title: "Pathya — Ayurvedic food guide"
+description: "Pathya tells you which foods suit your body and the season, from the Charaka Samhita and other Ayurvedic texts, each tip with its source. In English and Hindi."
+
+hero:
+  over: "Ayurvedic food guide"
+  title: "Eat for your body and the season."
+  lede: "Pathya reads what the Charaka Samhita and other Ayurvedic texts say about food, and tells you what suits you today: for your Prakriti, the season and the vrat days ahead. Every tip shows where it comes from."
+  soon: "Coming soon on the App Store"
+  note: "Free, for iPhone. In English and Hindi."
+
+pillars:
+  title: "Know yourself. Eat for it. Move with the year."
+  items:
+    - title: "Know your Prakriti"
+      text: "A 24-question quiz built on Charaka's signs of each constitution (Vimanasthana 8). Your result shows how Vata, Pitta and Kapha combine in you, and what that tends to mean."
+    - title: "Eat for it"
+      text: "182 everyday Indian foods, each rated for your constitution and the season, with what goes well with it and what to avoid with it."
+    - title: "Move with the year"
+      text: "The six Ritus, the turns between them, and the vrat days, worked out from the sky where you are."
+
+features:
+  title: "What's inside"
+  items:
+    - title: "Today"
+      text: "What suits this season, a verse for the day, and an idea for tonight's dinner in the evening."
+    - title: "Foods"
+      text: "Search 182 foods. Each has its taste, qualities and effect on each dosha, with its source."
+    - title: "Plate Check"
+      text: "Put a meal together and see what works, which foods clash (viruddha ahara), and a swap to try."
+    - title: "Recipes"
+      text: "30 simple recipes, from khichdi to kadhi, each with its source and a plate to check."
+    - title: "Seasons"
+      text: "Where you are in the six-season wheel, the Ritu Sandhi between seasons, and a guide to each one."
+    - title: "Vrat days"
+      text: "Ekadashi, Navratri and Chaturmas: what to eat and avoid, a day of meals, and parana times."
+    - title: "Careful by default"
+      text: "Tell Pathya about allergies, pregnancy, diabetes or medication, and it adjusts what it shows and holds back fasting plans."
+    - title: "Gentle reminders"
+      text: "Optional nudges for meals, the turn of a season and vrat days. Nothing else."
+    - title: "English and हिन्दी"
+      text: "The whole app in either language, with Sanskrit verses in Devanagari."
+
+sources:
+  title: "Grounded in the texts"
+  text: "Pathya's guidance comes from classical Ayurvedic texts, dharmic customs and folk sayings. Every tip carries one of four labels, and classical tips cite text, chapter and verse, so you can tell scripture from tradition."
+  labels: [Classical, Dharmic, Folk, Modern]
+  booksTitle: "Drawn from"
+  books:
+    - "Charaka Samhita"
+    - "Ashtanga Hridaya"
+    - "Sushruta Samhita"
+    - "Bhavaprakasha"
+    - "Kshemakutuhala"
+    - "Bhojana Kutuhala"
+    - "Folk month-wise sayings"
+    - "Chaturmas, Ekadashi and Navratri customs"
+
+ritus:
+  title: "Six seasons, not four"
+  text: "Ayurveda divides the year into six Ritus, and each asks something different of how you eat."
+  items:
+    - { id: vasanta, name: Vasanta, when: "Spring" }
+    - { id: grishma, name: Grishma, when: "Summer" }
+    - { id: varsha, name: Varsha, when: "Monsoon" }
+    - { id: sharad, name: Sharad, when: "Autumn" }
+    - { id: hemanta, name: Hemanta, when: "Early winter" }
+    - { id: shishira, name: Shishira, when: "Late winter" }
+
+privacy:
+  title: "Yours, and only yours"
+  items:
+    - { title: "Stays on your phone", text: "Your Prakriti, diet and health details never leave your iPhone." }
+    - { title: "No account", text: "Nothing to sign up for. Open the app and start." }
+    - { title: "No tracking", text: "No analytics, no ads, no third-party tools." }
+  link: "Read the Privacy Policy"
+
+faq:
+  title: "Questions"
+  items:
+    - q: "Is this medical advice?"
+      a: "No. Pathya shares what Ayurvedic texts and Indian traditions say about food, for learning and reflection. It isn't a medical device and doesn't replace a doctor. Please consult your doctor before fasting or changing your diet, especially if you are pregnant, have a health condition or take medication."
+    - q: "Where does the content come from?"
+      a: "From classical texts such as the Charaka Samhita and Ashtanga Hridaya, from dharmic customs and from folk sayings. Each tip is labelled with its source, and classical tips give the chapter and verse."
+    - q: "What does it cost?"
+      a: "Pathya is free, with no ads and no in-app purchases."
+    - q: "Do I need an account?"
+      a: "No. There's no sign-up, and everything you enter stays on your phone. You can delete it all from the Me screen."
+    - q: "Why does it ask for my location?"
+      a: "To work out sunrise, the tithi, the season and vrat timings where you are. It's used on your phone and never sent anywhere. Without it, Pathya uses Ujjain's calendar."
+    - q: "Is there an Android version?"
+      a: "Not yet. Pathya is for iPhone first; an Android version is planned."
