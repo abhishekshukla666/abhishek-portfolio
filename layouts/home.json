@@ -1,13 +1,29 @@
-{{- /* /index.json: what the search page searches — every article and DSA note. */ -}}
+{{- /* /index.json: what the search page searches.
+       One entry per article and DSA note (full text), plus one entry per Q&A question
+       (read from the rendered page), linking straight to that question. */ -}}
 {{- $items := slice }}
 {{- range where site.RegularPages "Section" "in" (slice "blog" "dsa") }}
+  {{- $page := . }}
   {{- $topic := partial "site/topic-of.html" . }}
   {{- $items = $items | append (dict
       "title" .Title
       "url" .RelPermalink
       "topic" (cond (ne $topic false) $topic.name "")
       "notes" (.Params.keyPoints | default slice)
-      "text" (.Plain | htmlUnescape | strings.TrimSpace | truncate 4000 "")
+      "text" (.Plain | htmlUnescape | strings.TrimSpace)
   ) }}
+  {{- $content := string .Content }}
+  {{- if strings.Contains $content `class="qa"` }}
+    {{- range findRESubmatch `(?s)<details class="qa" id="([^"]+)">.*?<span class="qt">(.*?)(?:<br>|</span>).*?<div class="ans">(.*?)</div>\s*</details>` $content }}
+      {{- $items = $items | append (dict
+          "title" (index . 2 | plainify | htmlUnescape | strings.TrimSpace)
+          "url" (printf "%s#%s" $page.RelPermalink (index . 1))
+          "topic" "Question"
+          "in" $page.Title
+          "notes" slice
+          "text" (index . 3 | plainify | htmlUnescape | strings.TrimSpace)
+      ) }}
+    {{- end }}
+  {{- end }}
 {{- end }}
 {{- $items | jsonify -}}

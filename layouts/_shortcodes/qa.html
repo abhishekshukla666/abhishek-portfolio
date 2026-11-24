@@ -2,9 +2,13 @@
        {{< qa q="What does `await` give up on an actor?" level="Senior" >}}
        Markdown answer, code blocks included.
        {{< /qa >}}
-   `level` is optional (Junior, Mid, Senior). Questions are numbered by a CSS counter. */ -}}
+   `level` is optional (Junior, Mid, Senior). Questions are numbered by a CSS counter.
+   Each question gets an id, so a link to …/#id opens it; the search index lists each one. */ -}}
 {{- $level := .Get "level" -}}
-<details class="qa">
+{{- $question := .Get "q" | .Page.RenderString | plainify | htmlUnescape -}}
+{{- $id := $question | anchorize -}}
+{{- $answer := .Inner | .Page.RenderString (dict "display" "block") -}}
+<details class="qa" id="{{ $id }}">
   <summary>
     <span class="qn" aria-hidden="true"></span>
     <span class="qt">{{ .Get "q" | .Page.RenderString }}{{ with $level }}<br><span class="badge lvl-m{{ if eq . "Senior" }} accent{{ end }}">{{ . }}</span>{{ end }}</span>
@@ -12,6 +16,6 @@
     {{ partial "site/icon.html" (dict "name" "chev" "class" "chev") }}
   </summary>
   <div class="ans">
-    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+    {{ $answer }}
   </div>
 </details>

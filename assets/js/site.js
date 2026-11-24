@@ -133,7 +133,8 @@ if (searchBox) {
     for (const { item } of scored) {
       const li = document.createElement('li');
       const a = document.createElement('a'); a.href = item.url; a.className = 'ttl'; highlight(a, item.title, terms);
-      const topic = document.createElement('span'); topic.className = 't-label'; topic.textContent = item.topic;
+      const topic = document.createElement('span'); topic.className = 't-label';
+      topic.textContent = item.in ? `Question · ${item.in}` : item.topic;
       const p = document.createElement('p'); p.className = 't-small'; highlight(p, snippet(item, terms), terms);
       li.append(topic, a, p);
       results.append(li);
@@ -154,3 +155,12 @@ if (searchBox) {
     history.replaceState(null, '', url);
   });
 }
+
+// Opening a link to a question (…/post/#question-id) opens that question and scrolls to it.
+const openQuestionFromHash = () => {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const qa = id && document.getElementById(id);
+  if (qa && qa.matches('details.qa')) { qa.open = true; qa.scrollIntoView({ block: 'start' }); }
+};
+openQuestionFromHash();
+window.addEventListener('hashchange', openQuestionFromHash);
