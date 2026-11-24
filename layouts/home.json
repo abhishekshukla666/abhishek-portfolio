@@ -1,0 +1,13 @@
+{{- /* /index.json: what the search page searches — every article and DSA note. */ -}}
+{{- $items := slice }}
+{{- range where site.RegularPages "Section" "in" (slice "blog" "dsa") }}
+  {{- $topic := partial "site/topic-of.html" . }}
+  {{- $items = $items | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "topic" (cond (ne $topic false) $topic.name "")
+      "notes" (.Params.keyPoints | default slice)
+      "text" (.Plain | htmlUnescape | strings.TrimSpace | truncate 4000 "")
+  ) }}
+{{- end }}
+{{- $items | jsonify -}}

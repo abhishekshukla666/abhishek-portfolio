@@ -347,3 +347,14 @@ code, pre, .t-mono, .t-label, .badge { font-variant-ligatures: none; font-featur
 .toast a { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
 .toast a:hover { color: var(--bg); }
 .toast[hidden] { display: none; }
+
+/* Search */
+.search-input { width: 100%; height: 52px; padding: 0 16px; border-radius: 10px; border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--text); font: 400 17px Inter, system-ui, sans-serif; }
+.search-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.search-results { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.search-results li { display: flex; flex-direction: column; gap: 4px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+.search-results .ttl { font-size: 17px; line-height: 26px; font-weight: 500; color: var(--text); }
+.search-results .ttl:hover { color: var(--accent); }
+.search-results mark { background: var(--accent-soft); color: inherit; border-radius: 3px; padding: 0 2px; }
+.iconbtn[aria-current] { color: var(--accent); border-color: var(--accent); }

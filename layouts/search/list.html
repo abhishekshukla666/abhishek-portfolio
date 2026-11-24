@@ -1,0 +1,16 @@
+{{- define "main" }}
+<div class="wrap">
+  <div class="reading" style="padding:56px 0 96px">
+    <header class="stack g16" style="margin-bottom:24px">
+      <span class="t-label">Search</span>
+      <h1 class="t-h1">Search articles and notes</h1>
+    </header>
+    <form class="search-form" role="search" onsubmit="return false">
+      <label class="sr" for="q">Search</label>
+      <input id="q" class="search-input" type="search" placeholder="actor reentrancy, sliding window, Sendable…" autocomplete="off" autofocus data-search-index="{{ "index.json" | relURL }}">
+    </form>
+    <p class="t-small faint search-status" aria-live="polite" style="margin:12px 0 8px"></p>
+    <ol class="search-results"></ol>
+  </div>
+</div>
+{{- end }}

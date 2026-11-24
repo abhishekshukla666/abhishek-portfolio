@@ -12,6 +12,7 @@
       {{- end }}
     </nav>
     <div class="navend">
+      <a class="iconbtn" href="{{ "search/" | relURL }}" aria-label="Search (press /)" title="Search (press /)"{{ if eq .Section "search" }} aria-current="page"{{ end }}>{{ partial "site/icon.html" (dict "name" "search") }}</a>
       <button class="iconbtn theme-btn" type="button" data-theme-toggle aria-label="Change theme">
         {{ partial "site/icon.html" (dict "name" "sun" "class" "i-light") }}
         {{ partial "site/icon.html" (dict "name" "moon" "class" "i-dark") }}
