@@ -10,7 +10,7 @@
       <div class="btnrow">
         <a class="btn btn-primary" href="{{ "projects/" | relURL }}">View projects</a>
         <a class="btn btn-secondary" href="{{ $p.resumePDF | relURL }}" download>{{ partial "site/icon.html" (dict "name" "download" "size" 16) }}Download resume</a>
-        <a class="btn btn-secondary" href="mailto:{{ $p.email }}">Contact</a>
+        <a class="btn btn-secondary" href="mailto:{{ $p.email }}" data-email="{{ $p.email }}">Contact</a>
       </div>
     </div>
     <div class="photo"><img src="{{ $p.headshot | relURL }}" alt="Portrait of {{ $p.name }}" width="280" height="340"></div>

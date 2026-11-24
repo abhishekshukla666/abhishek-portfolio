@@ -14,7 +14,7 @@
         </div>
         {{- with .Params.links }}
         <div class="btnrow" style="margin-top:8px">
-          {{- range . }}<a class="btn {{ if .primary }}btn-primary{{ else }}btn-secondary{{ end }}" href="{{ .url | relURL }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ .label }}</a>{{ end }}
+          {{- range . }}<a class="btn {{ if .primary }}btn-primary{{ else }}btn-secondary{{ end }}" href="{{ .url | relURL }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .label }}</a>{{ end }}
         </div>
         {{- end }}
       </div>

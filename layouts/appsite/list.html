@@ -16,7 +16,7 @@
       <div class="buttons">
         {{- range $t.hero.buttons }}
         {{- if .url }}
-        <a class="button {{ cond .primary "solid" "outline" }}" href="{{ .url }}" rel="noopener">{{ partial "appsite/store-icon.html" .store }}{{ .label }}</a>
+        <a class="button {{ cond .primary "solid" "outline" }}" href="{{ .url }}" target="_blank" rel="noopener">{{ partial "appsite/store-icon.html" .store }}{{ .label }}</a>
         {{- else }}
         <span class="button soon" aria-disabled="true">{{ partial "appsite/store-icon.html" .store }}{{ .label }}</span>
         {{- end }}

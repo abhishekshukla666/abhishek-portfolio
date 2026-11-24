@@ -10,6 +10,7 @@
 {{ block "main" . }}{{ end }}
 </main>
 {{ partial "site/footer.html" . }}
+<div class="toast" role="status" aria-live="polite" hidden></div>
 {{ $js := resources.Get "js/site.js" | js.Build (dict "minify" true) | fingerprint }}
 <script src="{{ $js.RelPermalink }}" defer></script>
 </body>

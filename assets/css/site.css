@@ -339,3 +339,11 @@ code, pre, .t-mono, .t-label, .badge { font-variant-ligatures: none; font-featur
   .nav, .footer, .copy, .toc { display: none !important; }
   .qa .ans { display: flex !important; }
 }
+
+/* Contact notice: the email address, after the Contact button copies it */
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 20; max-width: calc(100% - 32px);
+  background: var(--text); color: var(--bg); border-radius: 10px; padding: 12px 18px; font-size: 15px; line-height: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18); overflow-wrap: anywhere; }
+.toast a { color: var(--bg); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.toast a:hover { color: var(--bg); }
+.toast[hidden] { display: none; }

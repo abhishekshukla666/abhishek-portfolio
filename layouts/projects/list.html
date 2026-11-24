@@ -55,7 +55,7 @@
         <h3 class="t-h3">{{ .title }}</h3>
         <p class="t-small">{{ .body }}</p>
         <div class="badges">{{ range .stack }}<span class="badge">{{ . }}</span>{{ end }}</div>
-        {{- if .link }}<a class="row g8" href="{{ .link }}" rel="noopener">{{ .linkLabel | default "View on the App Store" }} {{ partial "site/icon.html" (dict "name" "external" "size" 15) }}</a>{{ end }}
+        {{- if .link }}<a class="row g8" href="{{ .link }}" target="_blank" rel="noopener">{{ .linkLabel | default "View on the App Store" }} {{ partial "site/icon.html" (dict "name" "external" "size" 15) }}</a>{{ end }}
       </article>
       {{- end }}
     </div>
