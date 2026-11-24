@@ -5,6 +5,11 @@ draft: false
 # author: "Abhishek Shukla"
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "Swift's named parameters, default values and structs already solve the telescoping-constructor problem the classic Builder exists for."
+  - "A fluent builder (methods returning `Self`) suits configuration that needs validating before creation, like network requests."
+  - "A closure-based builder configures an object in one scope — handy for UI components or classes you don't own."
+  - "`@resultBuilder` (Swift 5.4) builds hierarchical DSLs; it is what powers SwiftUI's `ViewBuilder`."
 weight: 107
 TocOpen: false
 ShowReadingTime: true

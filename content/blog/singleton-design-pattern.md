@@ -5,6 +5,12 @@ date: "2026-06-23T05:47:17+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "A singleton is one shared instance with a global point of access."
+  - "In Swift: a `final class`, a `static let shared` (lazy and thread-safe by default) and a `private init()`."
+  - "It fits single physical resources and stateless utilities — logging, analytics, location, the audio session."
+  - "Singletons hide dependencies, leak state between tests, and race if they hold mutable state."
+  - "Prefer dependency injection: default the parameter to `.shared` if you like, but let tests pass a mock."
 weight: 105
 # cover:
     # image: "blog/Singleton.jpeg"

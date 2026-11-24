@@ -5,6 +5,12 @@ draft: false
 date: "2026-06-23T08:28:30+05:30"
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "A factory moves creation logic out of business code and returns a protocol, so callers never depend on concrete types."
+  - "Drive the factory with an `enum` rather than raw strings for type-safe choices."
+  - "Adding a new type means changing only the factory, never the client."
+  - "Good fits: assembling view controllers with their dependencies, decoding mixed JSON feeds, and platform- or theme-specific UI."
+  - "If a plain `init()` is clean and needs no `if` or `switch`, skip the factory."
 weight: 106
 # cover:
     # image: "blog/FactoryMethod.jpeg"

@@ -5,6 +5,12 @@ date: "2026-06-29T11:00:00+05:30"
 draft: false
 tags: ["Swift", "Fundamentals"]
 categories: ["Swift Fundamentals"]
+keyPoints:
+  - "An optional (`?`) must be unwrapped safely — `if let`, `guard let` — before you use it."
+  - "An implicitly unwrapped optional (`!`) is unwrapped for you, and crashes if it is `nil` when read."
+  - "The compiler blocks assigning a `?` to a non-optional but lets a `!` through — that is where crashes hide."
+  - "Reserve `!` for values guaranteed to be set before use, like `IBOutlet`s after `viewDidLoad()`."
+  - "`Optional` is just an `enum` with `.some(Wrapped)` and `.none`; force-unwrapping `.none` is a `fatalError`."
 weight: 114
 # cover:
     # image: "blog/Optionals.jpeg"

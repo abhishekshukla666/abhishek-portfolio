@@ -5,6 +5,12 @@ date: "2026-06-29T10:00:00+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "DataRace", "Sendable"]
 categories: ["Swift Concurrency"]
+keyPoints:
+  - "`Sendable` is a marker protocol: a compile-time promise that a type is safe to share across concurrency domains."
+  - "Structs and enums made only of `Sendable` members conform implicitly; classes never do."
+  - "To fix a non-Sendable type, prefer a struct; use an actor for shared mutable state, or a `final` class with only `let` properties."
+  - "`@unchecked Sendable` is only for types you synchronise yourself with locks or queues — never to silence warnings."
+  - "Closures passed into a task must be `@Sendable` and cannot capture mutable local state."
 weight: 112
 # cover:
     # image: "blog/Sendable.jpeg"

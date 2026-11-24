@@ -5,6 +5,12 @@ date: "2026-07-02T09:30:00+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "Actors", "DataRace"]
 categories: ["Swift Concurrency"]
+keyPoints:
+  - "Actor isolation guarantees mutual exclusion only within synchronous code; every `await` releases the actor to other calls."
+  - "An actor is not a serial `DispatchQueue` or a lock: state you read before an `await` may have changed after it."
+  - "Keep a check and the mutation it guards in one synchronous block, with no `await` between them."
+  - "Split cross-actor work into synchronous steps (`withdraw`, `deposit`) and orchestrate them from a coordinator that can roll back."
+  - "Reentrancy is by design — it keeps actors responsive and free of deadlocks."
 weight: 116
 # cover:
     # image: "blog/ActorReentrancy.jpeg"

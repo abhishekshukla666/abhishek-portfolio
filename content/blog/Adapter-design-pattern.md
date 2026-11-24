@@ -5,6 +5,12 @@ date: "2026-06-24T11:20:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns", "Async/Await"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "An adapter wraps an incompatible class (the adaptee) and exposes the interface your code already expects (the target)."
+  - "Hide a legacy SDK behind a protocol: the adapter parses untyped data into Swift structs and bridges completion handlers to `async/await` with continuations."
+  - "Client code then depends only on the protocol, so it is testable and never sees the legacy types."
+  - "Wrap third-party SDKs the same way: swapping the SDK later means writing one new adapter."
+  - "If you own both sides, refactor the class instead; if translation needs heavy logic, use a Facade or an anti-corruption layer."
 weight: 108
 # cover:
     # image: "blog/Adapter.jpeg"

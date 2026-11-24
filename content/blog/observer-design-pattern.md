@@ -5,6 +5,12 @@ date: "2026-06-27T10:00:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Behavioral Design Patterns", "Reactive"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "Observer is a one-to-many subscription: the subject broadcasts changes without knowing who is listening."
+  - "Constrain the observer protocol to `AnyObject` and hold observers weakly, or the subject keeps dismissed screens alive."
+  - "In modern apps, Combine's `@Published` or SwiftUI's `ObservableObject` manage subscriptions and memory for you."
+  - "`NotificationCenter` suits global events but is loosely typed; KVO is mainly for older Objective-C APIs."
+  - "Use a delegate or closure for one-to-one communication, and `async/await` when steps must run in order — observers guarantee no order."
 weight: 111
 # cover:
     # image: "blog/Observer.jpeg"

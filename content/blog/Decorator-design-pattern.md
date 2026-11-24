@@ -5,6 +5,12 @@ date: "2026-06-25T12:51:58+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "A decorator conforms to the same protocol as the object it wraps, adds one behaviour, and delegates the rest."
+  - "It replaces subclass explosion: logging, auth and caching combine by nesting wrappers, not by writing a class per combination."
+  - "Decorators stack and mix at runtime, and can wrap `final` classes you cannot subclass."
+  - "It is the Open/Closed Principle in practice — the base service stays untouched."
+  - "Avoid it when decorator order matters, or when the protocol is so large that every decorator must re-implement many methods."
 weight: 109
 # cover:
     # image: "blog/Decorator.jpeg"

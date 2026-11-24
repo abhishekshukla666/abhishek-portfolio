@@ -5,6 +5,12 @@ date: "2026-06-22T14:52:03+05:30"
 draft: false
 tags: ["Swift", "Architecture", "SOLID"]
 categories: ["Architecture"]
+keyPoints:
+  - "Single Responsibility: a class has one reason to change — split validation, persistence and notification apart."
+  - "Open/Closed: add behaviour through a protocol, such as a shipping strategy, not another `else if`."
+  - "Liskov Substitution: a subtype must work wherever its parent does; a `Penguin` that crashes on `fly()` breaks it."
+  - "Interface Segregation: prefer small, role-specific protocols to one fat protocol full of dummy methods."
+  - "Dependency Inversion: depend on an abstraction like `PaymentProvider` and inject the concrete service."
 weight: 104
 # cover:
     # image: "blog/SOLID.jpeg"

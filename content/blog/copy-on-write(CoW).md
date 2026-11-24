@@ -5,6 +5,13 @@ date: "2026-03-03T13:47:17+05:30"
 draft: false
 tags: ["Swift", "CoW", "Memory-Managment"]
 categories: ["Swift Fundamentals"]
+keyPoints:
+  - "Copy-on-Write copies a value only when it is mutated, not when it is assigned."
+  - "`Array`, `Dictionary`, `Set` and `String` use CoW; a plain struct does not — CoW is an optimisation a type opts into."
+  - "Value semantics is language behaviour, CoW is a storage pattern, and ARC is what makes the uniqueness check possible."
+  - "`isKnownUniquelyReferenced(&storage)` takes `inout` so the check adds no temporary retain and has exclusive access."
+  - "A custom CoW type keeps private `final class` storage and gates every mutation behind `ensureUnique()`."
+  - "CoW suits large data that is read often and mutated rarely; copying inside tight mutation loops is costly."
 weight: 101
 # cover:
     # image: "blog/Swift.jpeg"

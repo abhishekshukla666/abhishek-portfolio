@@ -4,6 +4,12 @@ date: "2026-06-24T11:20:00+05:30"
 draft: false
 tags: ["Sorting", "DSA"]
 categories: ["Sorting"]
+keyPoints:
+  - "Bubble, selection and insertion sort are O(n²) on average; of the three, only insertion sort is worth using, on small or nearly sorted input."
+  - "Selection sort makes at most n − 1 swaps, which matters only when writes are expensive."
+  - "Quick sort partitions around a pivot: O(n log n) on average, O(n²) in the worst case, in place but not stable."
+  - "Merge sort guarantees O(n log n) and is stable, at the cost of O(n) extra space."
+  - "Heap sort guarantees O(n log n) in O(1) extra space, but it is not stable."
 aliases: ["/about/sorting-algorithms/"]
 weight: 101
 ShowReadingTime: true

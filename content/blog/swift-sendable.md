@@ -5,6 +5,13 @@ date: "2026-03-10T18:40:17+05:30"
 draft: false
 tags: ["Swift", "Memory-Managment", "Concurrency"]
 categories: ["Swift Concurrency"]
+keyPoints:
+  - "A data race is two contexts touching the same memory, at least one of them writing, with no synchronisation."
+  - "Swift checks every value that crosses a concurrency boundary at compile time, instead of finding races at runtime."
+  - "A generic type needs a `T: Sendable` constraint before it can conform to `Sendable`."
+  - "Detached tasks inherit no actor, so everything they capture is checked strictly."
+  - "Swift 6 turns many concurrency warnings into errors — treat each one as a real race, not noise."
+  - "`Sendable` asks whether a value can cross a boundary, `@Sendable` whether a closure can run concurrently, and an actor how shared state is protected."
 weight: 102
 # cover:
     # image: "blog/Swift.jpeg"

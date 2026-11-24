@@ -5,6 +5,13 @@ date: "2026-06-30T10:38:19+05:30"
 draft: false
 tags: ["Swift", "Fundamentals", "SwiftUI", "Architecture", "Opaque Types"]
 categories: ["Swift Fundamentals"]
+keyPoints:
+  - "`some Protocol` returns one concrete type that the compiler knows and the caller does not."
+  - "A bare protocol return (`any Shape`) is an existential: boxed, dynamically dispatched, and unusable with an `associatedtype`."
+  - "Every return path of a `some` function must produce the same concrete type."
+  - "If you truly need different types at runtime, return `any` and accept dynamic dispatch."
+  - "In SwiftUI, branch inside `@ViewBuilder` instead of returning `any View`; it wraps the branches in one concrete type."
+  - "`some View` is what spares you from writing types like `VStack<TupleView<(Text, Button<Text>)>>`."
 weight: 115
 # cover:
     # image: "blog/OpaqueTypes.jpeg"

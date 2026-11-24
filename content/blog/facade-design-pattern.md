@@ -5,6 +5,12 @@ date: "2026-06-26T14:30:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns"]
 categories: ["Design Patterns"]
+keyPoints:
+  - "A facade puts one simple, high-level API in front of several subsystems and orchestrates them internally."
+  - "It keeps view models to UI state and couples them to one type instead of many (the Law of Demeter)."
+  - "Good fits: complex SDKs like `AVFoundation`, a repository that hides cache-then-network, and fencing off legacy code while you rewrite it."
+  - "A facade that only forwards dozens of methods has become a god object."
+  - "Code that needs fine-grained control should bypass the facade and use the subsystem directly."
 weight: 110
 # cover:
     # image: "blog/Facade.jpeg"

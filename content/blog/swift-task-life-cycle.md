@@ -5,6 +5,13 @@ date: "2026-03-12T17:40:17+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "DataRace"]
 categories: ["Swift Concurrency"]
+keyPoints:
+  - "Structured concurrency binds child tasks to their parent's scope: the parent waits for them, cancelling it cancels them, and errors propagate up."
+  - "Use `async let` for a small, fixed number of children and a `TaskGroup` when the count is only known at runtime."
+  - "Cancellation is cooperative: `Task.checkCancellation()` throws for throwing work; `Task.isCancelled` lets you clean up and exit gracefully."
+  - "`Task {}` and `Task.detached` are unstructured — nothing cancels them unless you keep the handle."
+  - "SwiftUI's `.task` modifier is structured: its task is cancelled when the view disappears."
+  - "Detached tasks inherit neither actor context nor priority; prefer a task group to launching many of them."
 weight: 103
 # cover:
     # image: "blog/Swift.jpeg"
@@ -94,7 +101,7 @@ The important distinction is **how tasks are created and managed.**
 
 That is where structured and unstructured concurrency differ.
 
-Understand## ing Structured Concurrency
+## Understanding Structured Concurrency
 
 Structured concurrency means:
 

@@ -5,6 +5,12 @@ date: "2026-07-06T12:00:00+05:30"
 draft: false
 tags: ["Swift", "Networking", "Architecture", "Concurrency", "Async/Await"]
 categories: ["Architecture"]
+keyPoints:
+  - "Retry only transient failures: timeouts, dropped connections and HTTP 500, 502, 503 and 504."
+  - "Never retry 4xx client errors, business-rule errors, or a task the user cancelled."
+  - "Use exponential backoff — wait 1, 2, then 4 seconds — so retries do not pile onto a struggling server."
+  - "Retry logic belongs in the network layer; the view model only hears about failures that are permanent."
+  - "`async/await` makes the backoff delay non-blocking."
 weight: 115
 # cover:
     # image: "blog/NetworkRetry.jpeg"

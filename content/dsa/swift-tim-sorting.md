@@ -4,6 +4,12 @@ date: 2026-07-05T11:00:00+05:30
 draft: false
 tags: ["DSA", "Algorithms", "System Design", "Swift"]
 categories: ["Sorting"]
+keyPoints:
+  - "Quick sort is the fastest general-purpose in-memory sort in practice, but it is unstable and O(N²) in the worst case."
+  - "Merge sort is stable and always O(N log N) — right for linked lists and data too big for RAM — but needs O(N) extra memory."
+  - "Insertion sort wins on tiny (under ~50 elements) or nearly sorted data, such as inserting one item into a sorted list."
+  - "Heap sort guarantees O(N log N) in O(1) space, but jumping around memory makes it slower than quick sort in practice."
+  - "Swift moved from IntroSort to a modified TimSort, which exploits already-sorted runs for an O(N) best case."
 aliases: ["/about/swift-tim-sorting/"]
 # showToc: true
 TocOpen: false
@@ -215,7 +221,7 @@ extension Array where Element: Comparable {
 
 ### A Note on TimSort
 
-You do not need to write out TimSort for the article. Because it is a highly complex hybrid of Merge and Insertion sort, writing it from scratch takes hundreds of lines of code. It is best to conclude the article by showing exactly how Apple implements it under the hood when a developer simply calls:
+TimSort is not implemented here: as a hybrid of merge sort and insertion sort, a full version runs to hundreds of lines. In practice you get Swift's tuned version for free whenever you call:
 
 ```swift
 // This natively triggers Swift's highly optimized, stable TimSort variant

@@ -5,6 +5,12 @@ date: "2026-06-29T10:00:00+05:30"
 draft: false
 tags: ["Swift", "Fundamentals", "Protocols"]
 categories: ["Swift Fundamentals"]
+keyPoints:
+  - "Structs get `Equatable` and `Hashable` synthesised when every stored property already conforms; classes never do."
+  - "Write `==` yourself to compare only the properties that define equality — and always on a class."
+  - "`Comparable` refines `Equatable`: implement `<` and Swift derives `>`, `<=` and `>=`, which is all `.sorted()` needs."
+  - "`Hashable` also refines `Equatable`; customise it with `hash(into:)`, and a class must implement both `hash(into:)` and `==`."
+  - "Hash values are stable within one run of the program but may change between runs."
 weight: 113
 # cover:
     # image: "blog/Protocols.jpeg"
