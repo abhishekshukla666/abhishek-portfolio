@@ -21,5 +21,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800{{ if eq $t.lang "hi" }}&family=Noto+Sans+Devanagari:wght@400;600;700{{ end }}&display=swap">
-<link rel="stylesheet" href="{{ "apps/app.css" | relURL }}">
-<link rel="stylesheet" href="{{ printf "apps/%s.css" $p.Params.app | relURL }}">
+{{- /* Fingerprinted: the file name changes whenever the CSS does, so browsers never keep a stale copy. */ -}}
+{{ with resources.Get "apps/app.css" | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
+{{ with resources.Get (printf "apps/%s.css" $p.Params.app) | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
