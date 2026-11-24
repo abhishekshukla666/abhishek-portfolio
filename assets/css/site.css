@@ -8,11 +8,12 @@
   --code-bg:#0E1117; --code-border:#0E1117; --code-head:#161B22; --code-rule:#222A35;
   color-scheme: light;
 }
+/* Dark: a soft slate rather than near-black, with brighter secondary text, so it reads easily. */
 :root[data-theme="dark"] {
-  --bg:#0B0D10; --surface:#111418; --surface-2:#171B21; --border:#242A32; --border-strong:#323A44;
-  --text:#E9EBEE; --text-2:#B4BAC3; --text-3:#8E96A1;
-  --accent:#7EA6FF; --accent-hover:#A3BFFF; --accent-soft:#16213A; --accent-on:#0B0D10;
-  --code-bg:#0E1117; --code-border:#242A32; --code-head:#141920; --code-rule:#222A35;
+  --bg:#16191F; --surface:#1D2129; --surface-2:#242933; --border:#2E3440; --border-strong:#3B4250;
+  --text:#F1F3F6; --text-2:#CBD1DA; --text-3:#A3ABB7;
+  --accent:#8DB2FF; --accent-hover:#B3CCFF; --accent-soft:#22304D; --accent-on:#0B0D10;
+  --code-bg:#0F1217; --code-border:#2E3440; --code-head:#181C23; --code-rule:#262C36;
   color-scheme: dark;
 }
 :root[data-theme="warm"] {
@@ -223,16 +224,25 @@ a.badge:hover { text-decoration: none; border-color: var(--border-strong); }
 .copy:hover { color: #FFFFFF; }
 .code pre { margin: 0; padding: 18px 20px; font: 400 14px/23px 'JetBrains Mono', ui-monospace, monospace; color: #D6DEEB; overflow-x: auto; background: transparent !important; }
 .code pre code { font: inherit; }
-code, pre, .t-mono, .t-label, .badge { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
-/* Chroma, Xcode-dark palette from the design */
-.chroma .k, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kc { color: #FF7AB2; }
-.chroma .kt, .chroma .nc, .chroma .nn, .chroma .bp { color: #7AC8FF; }
-.chroma .s, .chroma .s1, .chroma .s2, .chroma .sb, .chroma .sc, .chroma .se, .chroma .si, .chroma .sr, .chroma .ss { color: #FF8170; }
+code, pre, .code pre, .code pre code, .prose code, .qa code, .t-mono, .t-label, .badge {
+  font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0;
+}
+/* Swift highlighting, after Xcode's Default (Dark) theme. The x* classes come from the code block render hook. */
+.code pre { color: #DFDFE0; }
+.chroma .k, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kc { color: #FF7AB2; font-weight: 600; }
+.chroma .kt, .chroma .nb, .chroma .xt { color: #D0A8FF; }                 /* types: String, Int, NSArray, Image */
+.chroma .nc, .chroma .nn { color: #6BDFFF; }                              /* declared types: struct Counter */
+.chroma .nf { color: #4EB0CC; }                                           /* declared functions: func load */
+.chroma .xf, .chroma .bp, .chroma .fm { color: #B281EB; }                 /* calls: fetch(), print() */
+.chroma .xp, .chroma .nv, .chroma .vi, .chroma .na { color: #67B7A4; }   /* properties and variables */
+.chroma .xa, .chroma .nd { color: #CC9768; }                              /* attributes: @State, @MainActor */
+.chroma .s, .chroma .s1, .chroma .s2, .chroma .sb, .chroma .sc, .chroma .sr, .chroma .ss { color: #FF8170; }
+.chroma .si { color: #DFDFE0; }                                           /* string interpolation \( ) */
+.chroma .se { color: #D9C97C; }
 .chroma .m, .chroma .mi, .chroma .mf, .chroma .mh, .chroma .mb, .chroma .il { color: #D9C97C; }
-.chroma .nf, .chroma .fm, .chroma .nb { color: #B99AF0; }
-.chroma .c, .chroma .c1, .chroma .cm, .chroma .cs, .chroma .ch, .chroma .cp, .chroma .cpf { color: #7F8C98; font-style: normal; }
-.chroma .o, .chroma .ow, .chroma .p { color: #D6DEEB; }
-.chroma .na, .chroma .nv, .chroma .vi { color: #A3E3D2; }
+.chroma .c, .chroma .c1, .chroma .cm, .chroma .cs, .chroma .ch { color: #7F8C98; font-style: normal; }
+.chroma .cp, .chroma .cpf { color: #FFA14F; }
+.chroma .o, .chroma .ow, .chroma .p, .chroma .n { color: #DFDFE0; }
 .chroma .err { color: inherit; background: none; }
 .chroma .hl { background: rgba(255, 255, 255, .06); display: block; }
 

@@ -1,6 +1,17 @@
 {{- $lang := .Type | default "text" -}}
 {{- $label := .Attributes.title | default (cond (in (slice "text" "plaintext" "") $lang) "" $lang) -}}
+{{- $html := transform.Highlight .Inner $lang (merge .Options (dict "noClasses" false)) | string -}}
+{{- /* Chroma's Swift lexer marks most names as plain `n`. Tell them apart the way Xcode does:
+       @attributes, method calls, .properties and Capitalised type names each get their own class. */ -}}
+{{- if eq $lang "swift" -}}
+  {{- /* Keywords newer than Chroma's Swift lexer: concurrency, ownership, generics. */ -}}
+  {{- $html = replaceRE `<span class="n">(actor|async|await|some|any|nonisolated|isolated|sending|consuming|borrowing|consume|discard|macro|package|each|repeat)</span>` `<span class="k">$1</span>` $html -}}
+  {{- $html = replaceRE `<span class="p">@</span><span class="n">(\w+)</span>` `<span class="xa">@$1</span>` $html -}}
+  {{- $html = replaceRE `<span class="n">([a-z_]\w*)</span>(<span class="p">\()` `<span class="xf">$1</span>$2` $html -}}
+  {{- $html = replaceRE `<span class="n">([A-Z]\w*)</span>` `<span class="xt">$1</span>` $html -}}
+  {{- $html = replaceRE `(<span class="p">\.</span>)<span class="n">([a-z_]\w*)</span>` `$1<span class="xp">$2</span>` $html -}}
+{{- end -}}
 <div class="code">
   <div class="code-head"><span>{{ $label }}</span><button class="copy" type="button" data-copy aria-label="Copy code">{{ partial "site/icon.html" (dict "name" "copy" "size" 14) }}<span>Copy</span></button></div>
-  {{- transform.Highlight .Inner $lang (merge .Options (dict "noClasses" false)) -}}
+  {{- $html | safeHTML -}}
 </div>
