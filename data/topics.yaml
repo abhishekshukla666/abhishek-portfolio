@@ -33,46 +33,6 @@
   group: swift
   description: Designing iOS components end to end.
 
-- name: Arrays & Hashing
-  slug: arrays-hashing
-  group: dsa
-  description: Sets and dictionaries that turn nested loops into one pass.
-
-- name: Two Pointers
-  slug: two-pointers
-  group: dsa
-  description: Opposite ends, fast and slow, read and write pointers.
-
-- name: Sliding Window
-  slug: sliding-window
-  group: dsa
-  description: Fixed and variable windows over arrays and strings.
-
-- name: Stack
-  slug: stack
-  group: dsa
-  description: Matching pairs, undo, and monotonic stacks.
-
-- name: Binary Search
-  slug: binary-search
-  group: dsa
-  description: Sorted search, lower bounds, and searching the answer.
-
-- name: Linked List
-  slug: linked-list
-  group: dsa
-  description: Dummy heads, in-place reversal, fast and slow pointers.
-
-- name: Trees
-  slug: trees
-  group: dsa
-  description: Traversals, paths, BSTs, and building trees.
-
-- name: Heap / Priority Queue
-  slug: heap-priority-queue
-  group: dsa
-  description: Top-k, k-way merges, medians and scheduling.
-
 - name: Sorting
   slug: sorting
   group: dsa
