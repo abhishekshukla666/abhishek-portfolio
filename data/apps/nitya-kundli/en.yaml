@@ -1,0 +1,91 @@
+# Words for Nitya Kundli's pages in English. Name only what the app does today.
+lang: en
+name: Nitya Kundli
+home: /nitya-kundli/
+privacyUrl: /nitya-kundli/privacy/
+other: { label: "हिन्दी", url: /nitya-kundli/hi/ }
+nav: { features: Features, faq: FAQ, support: Support }
+footer:
+  privacy: Privacy Policy
+  terms: Terms of Service
+  support: Support
+  maker: About the maker
+  made: "Made in India by Abhishek Shukla."
+themeColor: { light: "#F1F7F6", dark: "#101716" }
+title: "Nitya Kundli — Vedic birth chart and Guna Milan"
+description: "Your Vedic birth chart, dasha, gochar and Guna Milan, calculated on your phone. Save the whole family's kundlis, in six Indian languages."
+iconAlt: "The Nitya Kundli app icon"
+shotsLabel: "Screenshots of Nitya Kundli"
+
+hero:
+  over: "Vedic birth chart · Kundli"
+  title: "Your Janam Kundli, worked out on your phone."
+  lede: "Nitya Kundli makes a Vedic birth chart from a date, time and place of birth, and shows every table a Jyotish student needs — each value labelled with what it is and how it is reckoned. Birth details never leave your phone."
+  buttons:
+    - { label: "Coming soon on the App Store", store: apple }
+    - { label: "Coming soon on Google Play", store: google }
+  note: "Free, with no ads. For iPhone and Android. In Hindi, English, Gujarati, Kannada, Telugu and Marathi."
+
+shots:
+  - { src: "apps/nitya-kundli/shots/01.jpg", caption: "Your complete Vedic birth chart" }
+  - { src: "apps/nitya-kundli/shots/02.jpg", caption: "16 divisional charts, with every planet's sign, house and dignity" }
+  - { src: "apps/nitya-kundli/shots/03.jpg", caption: "Bhav Chalit: which house each planet really gives results for" }
+  - { src: "apps/nitya-kundli/shots/04.jpg", caption: "Gochar: the planets on any day" }
+  - { src: "apps/nitya-kundli/shots/05.jpg", caption: "Indu Lagna, worked out step by step" }
+  - { src: "apps/nitya-kundli/shots/06.jpg", caption: "Vimshottari dasha, with the dasha running now" }
+
+pillars:
+  title: "A calculation tool, not a horoscope."
+  items:
+    - title: "The whole chart"
+      text: "The birth chart and all sixteen divisional charts, D1 to D60, drawn in the North, South or East Indian style."
+    - title: "Dasha and transits"
+      text: "Vimshottari maha, antar and pratyantar dashas with their exact dates, and Gochar on any date, with Sade Sati."
+    - title: "Guna Milan"
+      text: "The eight kootas and Mangal Dosha between two charts, with what each one means."
+
+features:
+  title: "What's inside"
+  items:
+    - title: "Planets"
+      text: "Each planet's sign, degree, nakshatra and pada, house and dignity, with retrograde and combust status."
+    - title: "Strength"
+      text: "Shadbala's six components, and the Ashtakavarga tables."
+    - title: "Bhav Chalit and Indu Lagna"
+      text: "Which planets change house and why, and the traditional lagna for wealth, worked out step by step."
+    - title: "The family's kundlis"
+      text: "Save kundlis grouped as Self, Family, Friends or Clients, each in its own colour — or look at one without saving it."
+    - title: "Birth time unknown?"
+      text: "Choose “Time unknown?” for an approximate chart."
+    - title: "Paste from WhatsApp"
+      text: "Paste birth details straight from a message, in any of the six languages."
+    - title: "Widgets"
+      text: "Your Day, Today's Tara, Next Good Day and Dasha, on the Home Screen and Lock Screen."
+    - title: "Share as PDF"
+      text: "Send a kundli or a Milan as a PDF, when you choose to."
+    - title: "Six languages"
+      text: "The whole app in Hindi, English, Gujarati, Kannada, Telugu or Marathi."
+
+privacy:
+  title: "Birth details stay on your phone"
+  items:
+    - { title: "On your phone", text: "Birth details are stored only on the device, and every chart is calculated there." }
+    - { title: "No account", text: "No sign-in and no server." }
+    - { title: "No tracking", text: "No advertising, no analytics and no tracking." }
+  link: "Read the Privacy Policy"
+
+faq:
+  title: "Questions"
+  items:
+    - q: "Is this a horoscope app?"
+      a: "No. It is a calculation tool for Jyotish students and practitioners: it works out the chart and its tables, and labels each value. It does not show daily horoscopes, sun-sign readings or fortune telling, and it does not give medical, financial or legal advice."
+    - q: "How are the positions calculated?"
+      a: "With the Swiss Ephemeris, run entirely on your phone, using the Lahiri ayanamsa by default. You can change the ayanamsa in Settings."
+    - q: "What if I don't know the birth time?"
+      a: "Choose “Time unknown?” when entering the birth details, and the app makes an approximate chart."
+    - q: "Does it share anything with Nitya Panchangam?"
+      a: "Only if you turn it on in Settings. Then each profile's name, rashi and nakshatra are made available to Nitya Panchangam on the same phone, so it can mark good days for you. Nothing leaves the device."
+    - q: "What does it cost?"
+      a: "Nitya Kundli is free, with no ads. There are no in-app purchases in the current version."
+    - q: "When can I get it?"
+      a: "Soon, on the App Store and Google Play."

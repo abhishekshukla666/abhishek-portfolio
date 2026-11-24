@@ -1,4 +1,5 @@
-# Professional work shown on /projects/. Industry names only — no client names.
+# Professional work shown on /projects/. Described by industry; `link` points to the live app.
+# `linkLabel` defaults to "View on the App Store".
 
 - industry: Insurance & banking
   years: 2025 – 2026
@@ -8,6 +9,8 @@
     without leaving their banking app. I led iOS: a modular architecture, MVVM + Coordinator
     navigation, and unit-test coverage of the new space to 80%.
   stack: [Swift, SwiftUI, Swift Concurrency, MVVM + Coordinator]
+  link: https://www.scottishwidows.co.uk/app.html
+  linkLabel: View the app
 
 - industry: Pet pharmacy · US retail
   years: 2024 – 2025
@@ -17,6 +20,7 @@
     test coverage went from 10% to 60%, and a reusable URLSession networking layer made
     live data 20% quicker to load.
   stack: [Swift, SwiftUI, Swift Concurrency, Clean Architecture]
+  link: https://apps.apple.com/us/app/petmeds/id1195712445
 
 - industry: Aviation
   years: 2018 – 2024

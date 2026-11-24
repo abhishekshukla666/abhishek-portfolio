@@ -1,0 +1,17 @@
+/* Nitya Panchangam: a morning sky by day, the night sky after dark, saffron for actions. */
+:root {
+  --bg: #F3F7FC; --surface: #FFFFFF; --sunk: #E4EDF8; --border: #DCE6F2;
+  --primary: #8A3F0E; --on-primary: #FFFFFF; --accent: #A8550F;
+  --text: #16202C; --body: #334150; --muted: #56636F;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0C1422; --surface: #131D2E; --sunk: #101A2A; --border: #233149;
+    --primary: #F2B26B; --on-primary: #0C1422; --accent: #F2C27E;
+    --text: #EEF2F8; --body: #CFD8E3; --muted: #A7B3C1;
+  }
+}
+.hero { background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(255, 240, 200, .55), transparent 70%); }
+@media (prefers-color-scheme: dark) {
+  .hero { background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(242, 194, 126, .10), transparent 70%); }
+}

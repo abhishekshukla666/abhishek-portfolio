@@ -1,0 +1,13 @@
+{{- /* A Nitya app's top bar. Context: dict "page" "t". */ -}}
+{{- $p := .page }}{{ $t := .t -}}
+<header class="top">
+  <a class="brand" href="{{ $t.home | relURL }}"><img src="{{ printf "apps/%s/apple-touch-icon.png" $p.Params.app | relURL }}" alt="" width="34" height="34">{{ $t.name }}</a>
+  <nav>
+    {{- if $p.IsSection }}
+    <a class="hide-sm" href="#features">{{ $t.nav.features }}</a>
+    <a class="hide-sm" href="#faq">{{ $t.nav.faq }}</a>
+    {{- end }}
+    <a class="hide-sm" href="{{ printf "%ssupport/" $t.home | relURL }}">{{ $t.nav.support }}</a>
+    <a class="lang" href="{{ with $p.Params.otherUrl }}{{ . | relURL }}{{ else }}{{ $t.other.url | relURL }}{{ end }}" lang="{{ if eq $t.lang "en" }}hi{{ else }}en{{ end }}">{{ $t.other.label }}</a>
+  </nav>
+</header>

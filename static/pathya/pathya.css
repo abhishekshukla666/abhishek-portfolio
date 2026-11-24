@@ -64,7 +64,7 @@ h1 { font: 500 clamp(36px, 6vw, 60px)/1.08 var(--serif); color: var(--text); mar
 h2 { font: 500 clamp(28px, 4vw, 40px)/1.15 var(--serif); color: var(--text); margin: 0 0 14px; }
 h3 { font: 600 21px/1.3 var(--serif); color: var(--text); margin: 0 0 6px; }
 .lede { font-size: 19px; margin: 0 0 26px; max-width: 34em; }
-.hero-icon { justify-self: center; width: min(280px, 70vw); border-radius: 22%; box-shadow: var(--shadow); }
+.hero-icon { justify-self: center; width: min(280px, 70vw); height: auto; aspect-ratio: 1; border-radius: 22%; box-shadow: var(--shadow); }
 .buttons { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .button { display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 22px;
   border-radius: 14px; font-weight: 800; text-decoration: none; }

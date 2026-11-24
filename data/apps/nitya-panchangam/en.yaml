@@ -1,0 +1,90 @@
+# Words for Nitya Panchangam's pages in English. Name only what the shipped app does today.
+lang: en
+name: Nitya Panchangam
+home: /nitya-panchangam/
+privacyUrl: /privacy-policy/
+other: { label: "हिन्दी", url: /nitya-panchangam/hi/ }
+nav: { features: Features, faq: FAQ, support: Support }
+footer:
+  privacy: Privacy Policy
+  terms: Terms of Service
+  support: Support
+  maker: About the maker
+  made: "Made in India by Abhishek Shukla."
+themeColor: { light: "#F3F7FC", dark: "#0C1422" }
+title: "Nitya Panchangam — Hindu calendar and panchang"
+description: "A Hindu calendar that works out sunrise, tithi, nakshatra, muhurat and festivals for exactly where you are, on your phone. For iPhone, Apple Watch and Android, in six Indian languages."
+iconAlt: "The Nitya Panchangam app icon"
+shotsLabel: "Screenshots of Nitya Panchangam"
+
+hero:
+  over: "Hindu calendar · Panchang"
+  title: "Today's panchang, for exactly where you are."
+  lede: "Nitya Panchangam works out sunrise, tithi, nakshatra, yoga, karana and the day's muhurats from the sky above you — on your phone, with no account and no server. Festivals and vrat days follow the published panchangs."
+  buttons:
+    - { label: "Download on the App Store", store: apple, primary: true, url: "https://apps.apple.com/in/app/nitya-panchangam/id6798105874" }
+    - { label: "Get it on Google Play", store: google, url: "https://play.google.com/store/apps/details?id=com.shukla.nityapanchangam" }
+  note: "Free, with no ads. iPhone, Apple Watch and Android. In Hindi, English, Gujarati, Kannada, Telugu and Marathi."
+
+shots:
+  - { src: "projects/nitya-panchangam/today.webp", caption: "Today: the tithi, paksha, month and samvat" }
+  - { src: "projects/nitya-panchangam/month.webp", caption: "The month, with every festival and vrat" }
+  - { src: "projects/nitya-panchangam/muhurat.webp", caption: "Muhurat for buying a vehicle, marked for your rashi" }
+  - { src: "projects/nitya-panchangam/festivals.webp", caption: "Festivals and vrat in the weeks ahead" }
+  - { src: "projects/nitya-panchangam/launch.webp", caption: "Nitya Panchangam" }
+
+pillars:
+  title: "A panchang you can glance at, and trust."
+  items:
+    - title: "Worked out where you are"
+      text: "Sunrise, sunset and every timing that depends on them are calculated on your phone for your location, with the Swiss Ephemeris. Without location, the app uses Ujjain, the traditional reference of the Hindu calendar, and says so."
+    - title: "Festivals as the panchangs keep them"
+      text: "Festivals and vrat days follow the published panchangs. When the Smarta and Vaishnava traditions keep an Ekadashi a day apart, both days are shown, each with its own Paran time."
+    - title: "On your wrist and home screen"
+      text: "Widgets that change at the moment a tithi or nakshatra ends, and an Apple Watch app with the day's muhurat on your watch face."
+
+features:
+  title: "What's inside"
+  items:
+    - title: "Today"
+      text: "The tithi and when it ends, the paksha, month and samvat, what part of the day it is now, and the day's festivals."
+    - title: "Panchang calendar"
+      text: "A whole month at a glance, each day with its tithi, and every festival and vrat marked."
+    - title: "Muhurat"
+      text: "Good days for marriage, griha pravesh, buying a vehicle, naming and more. Choose your rashi to see which days suit you — no birth details needed."
+    - title: "Festivals and vrat"
+      text: "Everything coming up, from Ekadashi to Sankashti Chaturthi, with puja timings and a reminder for each."
+    - title: "Notifications you choose"
+      text: "The morning panchang, festivals, tithi, muhurat, chaughariya, hora and lagna — each one on or off."
+    - title: "Widgets"
+      text: "Home Screen and Lock Screen widgets that update at the exact moment a tithi, nakshatra or muhurat changes."
+    - title: "Apple Watch"
+      text: "Six screens — Today, Muhurat, Panchang, Now, Sun and Moon, Grahas — a muhurat complication, and a reminder before the next good muhurat."
+    - title: "Six languages"
+      text: "The whole app in Hindi, English, Gujarati, Kannada, Telugu or Marathi."
+    - title: "A bell each morning"
+      text: "A temple bell the first time you open the app each day, a conch on festival days — or silence, if you prefer."
+
+privacy:
+  title: "Nothing leaves your phone"
+  items:
+    - { title: "Calculated on your phone", text: "Every timing is worked out on the device. There is no server." }
+    - { title: "No account", text: "Nothing to sign up for. Open the app and see today." }
+    - { title: "No tracking", text: "No ads and no third-party analytics or tracking." }
+  link: "Read the Privacy Policy"
+
+faq:
+  title: "Questions"
+  items:
+    - q: "Why does it ask for my location?"
+      a: "To work out sunrise, sunset and the timings that depend on them, for where you are. Your location is used only on your phone. If you decline, the app uses Ujjain and tells you so, and you can choose a city yourself."
+    - q: "Why do some Ekadashis show two dates?"
+      a: "The Smarta and Vaishnava traditions sometimes keep an Ekadashi a day apart. Both days are shown, each marked, with its own Paran time. Choose your tradition in Settings › Ekadashi tradition to see yours first."
+    - q: "What does it cost?"
+      a: "Nitya Panchangam is free, with no ads. There are no in-app purchases in the current version."
+    - q: "Do I need an account?"
+      a: "No. There is no sign-in and no server. Everything is calculated and kept on your device."
+    - q: "Is this a horoscope or a prediction app?"
+      a: "No. It is traditional calendar reckoning — tithi, nakshatra, muhurat and festivals. It does not make predictions, and it does not give medical, financial or legal advice."
+    - q: "Where did the Kundli and Milan features go?"
+      a: "Birth charts and Guna Milan now have their own app, Nitya Kundli, coming soon."

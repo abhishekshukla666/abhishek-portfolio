@@ -4,11 +4,15 @@ weight: 3
 status: dev
 statusLabel: "In development"
 icon: "projects/icons/nitya-kundli.png"
-summary: "Birth-chart (Kundli) generation and compatibility matching for iOS, built on the same astronomy engine and localisation layer as Nitya Panchangam."
-cardSummary: "Birth charts and compatibility matching for iOS, built on the same astronomy engine as Panchangam."
-platforms: ["iPhone"]
-languages: "English · हिन्दी"
+summary: "Vedic birth charts, dashas, transits and Guna Milan for iPhone and Android, built on the same astronomy engine and localisation layer as Nitya Panchangam."
+cardSummary: "Vedic birth charts, dashas and Guna Milan, built on the same astronomy engine as Panchangam."
+platforms: ["iPhone", "Widgets", "Android"]
+languages: "6 Indian languages"
 cardStack: "SwiftUI · Swift Concurrency"
+links:
+  - label: "Visit the Nitya Kundli page"
+    url: "/nitya-kundli/"
+    primary: true
 problemTitle: "A second app should not mean a second engine"
 problem: "A Kundli app needs the same planetary positions, the same Jyotish rules and the same Hindi terms as the Panchang app. Copying that code would let the two apps slowly disagree about the same chart."
 role: "Sole engineer and designer — extracting the shared layers out of Nitya Panchangam into packages, and building the Kundli app on top of them."

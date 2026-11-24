@@ -7,7 +7,7 @@ icon: "projects/icons/nitya-panchangam.png"
 summary: "A Hindu calendar that calculates sunrise, tithi, nakshatra and festivals for your exact location — with real astronomical math, on iPhone, Apple Watch and the home screen."
 cardSummary: "A Hindu calendar with real astronomical math — sunrise, tithi, nakshatra and festivals for your exact location."
 platforms: ["iPhone", "Apple Watch", "Widgets", "Android", "Wear OS"]
-languages: "English · हिन्दी"
+languages: "6 Indian languages"
 cardStack: "SwiftUI · WidgetKit · Swiss Ephemeris"
 links:
   - label: "View on the App Store"
@@ -15,18 +15,22 @@ links:
     primary: true
   - label: "Get it for Android"
     url: "https://play.google.com/store/apps/details?id=com.shukla.nityapanchangam"
+  - label: "Visit the app's page"
+    url: "/nitya-panchangam/"
 screenshots:
   - src: "projects/nitya-panchangam/today.webp"
     caption: "Today"
   - src: "projects/nitya-panchangam/month.webp"
     caption: "Month calendar"
+  - src: "projects/nitya-panchangam/muhurat.webp"
+    caption: "Muhurat, marked for your rashi"
   - src: "projects/nitya-panchangam/festivals.webp"
     caption: "Festivals and vrat"
   - src: "projects/nitya-panchangam/launch.webp"
     caption: "Launch"
 problemTitle: "Panchang data is only useful if it is right for where you are"
 problem: "A tithi or festival depends on the exact moment of local sunrise, so a calendar computed for one city is wrong for another. Most Panchang apps are ad-heavy, show one city's data, and do not explain where their numbers come from. I wanted a calm, accurate, bilingual Panchang that works offline and glances well on the wrist."
-role: "Sole engineer and designer — product definition, iOS, watchOS and widgets, the Android and Wear OS versions, astronomy-engine integration, Hindi localisation and both store releases."
+role: "Sole engineer and designer — product definition, iOS, watchOS and widgets, the Android and Wear OS versions, astronomy-engine integration, localisation in six Indian languages, and both store releases."
 stack: ["Swift", "SwiftUI", "Swift Concurrency", "WidgetKit", "watchOS", "Core Location", "Swiss Ephemeris (C)", "Swift Testing", "String Catalogs", "Kotlin", "Jetpack Compose"]
 problems:
   - title: "Wrapping a C astronomy library safely"

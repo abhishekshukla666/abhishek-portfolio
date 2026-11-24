@@ -7,6 +7,7 @@ disableShare: true
 ShowToc: true
 TocOpen: false
 description: "Privacy Policy for the Nitya Panchangam iOS app, Apple Watch companion, and widgets."
+aliases: ["/nitya-panchangam/privacy/"]
 ---
 
 **Last updated:** August 11, 2026

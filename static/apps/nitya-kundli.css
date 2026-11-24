@@ -1,0 +1,14 @@
+/* Nitya Kundli: peacock teal by day, gold by night, as in the app. */
+:root {
+  --bg: #F1F7F6; --surface: #FFFFFF; --sunk: #E0EEEC; --border: #D5E6E3;
+  --primary: #0C6464; --on-primary: #FFFFFF; --accent: #8C6410;
+  --text: #122220; --body: #2F4442; --muted: #4F6563;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101716; --surface: #172120; --sunk: #141D1C; --border: #263432;
+    --primary: #E2B650; --on-primary: #101716; --accent: #6FCFC7;
+    --text: #F2EEE3; --body: #D9D3C4; --muted: #B2AC9D;
+  }
+}
+.shots img { border-radius: 18px; }

@@ -7,7 +7,7 @@
   place: Gurugram
   summary: Designing, building and shipping my own apps end to end, while looking for my next Lead or Senior iOS role.
   achievements:
-    - Shipped Nitya Panchangam to the App Store and Google Play — iPhone, Apple Watch, widgets, Android and Wear OS.
+    - Shipped Nitya Panchangam to the App Store and Google Play — iPhone, Apple Watch, widgets and Android — in six Indian languages.
     - Built a shared stack of Swift packages (astronomy engine, Jyotish rules, core UI) that two apps use at pinned versions.
     - Backed the calculations with hundreds of automated tests across the app and its packages.
 

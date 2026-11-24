@@ -1,0 +1,95 @@
+{{- /* A Nitya app's landing page, in English or Hindi. Words come from data/apps/<app>/<lang>.yaml. */ -}}
+{{- $t := partial "appsite/words.html" . -}}
+<!doctype html>
+<html lang="{{ $t.lang }}">
+<head>
+{{ partial "appsite/head.html" (dict "page" . "t" $t) }}
+</head>
+<body class="{{ $t.lang }}">
+{{ partial "appsite/header.html" (dict "page" . "t" $t) }}
+<main>
+  <div class="wrap hero">
+    <div>
+      <p class="over">{{ $t.hero.over }}</p>
+      <h1>{{ $t.hero.title }}</h1>
+      <p class="lede">{{ $t.hero.lede }}</p>
+      <div class="buttons">
+        {{- range $t.hero.buttons }}
+        {{- if .url }}
+        <a class="button {{ cond .primary "solid" "outline" }}" href="{{ .url }}" rel="noopener">{{ partial "appsite/store-icon.html" .store }}{{ .label }}</a>
+        {{- else }}
+        <span class="button soon" aria-disabled="true">{{ partial "appsite/store-icon.html" .store }}{{ .label }}</span>
+        {{- end }}
+        {{- end }}
+      </div>
+      <p class="note">{{ $t.hero.note }}</p>
+    </div>
+    <img class="hero-icon" src="{{ printf "apps/%s/icon.png" .Params.app | relURL }}" alt="{{ $t.iconAlt }}" width="260" height="260">
+  </div>
+
+  {{- with $t.shots }}
+  <div class="shots" role="list" aria-label="{{ $t.shotsLabel }}">
+    {{- range . }}
+    <figure role="listitem">
+      <img src="{{ .src | relURL }}" alt="{{ .caption }}" loading="lazy">
+      {{- if .showCaption }}<figcaption>{{ .caption }}</figcaption>{{ end }}
+    </figure>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  <section>
+    <div class="wrap">
+      <h2 class="intro">{{ $t.pillars.title }}</h2>
+      <div class="grid">
+        {{- range $i, $p := $t.pillars.items }}
+        <div class="card pillar">
+          <p class="num">{{ add $i 1 }}</p>
+          <h3>{{ $p.title }}</h3>
+          <p>{{ $p.text }}</p>
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <h2 class="intro">{{ $t.features.title }}</h2>
+      <div class="grid">
+        {{- range $t.features.items }}
+        <div class="card"><h3>{{ .title }}</h3><p>{{ .text }}</p></div>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="privacy">
+        <h2>{{ $t.privacy.title }}</h2>
+        <ul>
+          {{- range $t.privacy.items }}
+          <li><strong>{{ .title }}</strong>{{ .text }}</li>
+          {{- end }}
+        </ul>
+        <p><a href="{{ $t.privacyUrl | relURL }}">{{ $t.privacy.link }} →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="intro">{{ $t.faq.title }}</h2>
+      {{- range $t.faq.items }}
+      <details>
+        <summary>{{ .q }}</summary>
+        <p>{{ .a }}</p>
+      </details>
+      {{- end }}
+    </div>
+  </section>
+</main>
+{{ partial "appsite/footer.html" $t }}
+</body>
+</html>

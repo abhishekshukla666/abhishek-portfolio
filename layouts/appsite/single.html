@@ -1,0 +1,19 @@
+{{- /* A Nitya app's text pages: privacy, terms and support, in English or Hindi. */ -}}
+{{- $t := partial "appsite/words.html" . -}}
+<!doctype html>
+<html lang="{{ $t.lang }}">
+<head>
+{{ partial "appsite/head.html" (dict "page" . "t" $t) }}
+</head>
+<body class="{{ $t.lang }}">
+{{ partial "appsite/header.html" (dict "page" . "t" $t) }}
+<main class="wrap">
+  <article class="doc">
+    <h1>{{ .Title }}</h1>
+    {{- with .Params.meta }}<p class="meta">{{ . | markdownify }}</p>{{ end }}
+    {{ .Content }}
+  </article>
+</main>
+{{ partial "appsite/footer.html" $t }}
+</body>
+</html>

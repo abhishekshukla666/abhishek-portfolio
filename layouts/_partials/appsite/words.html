@@ -1,0 +1,3 @@
+{{- /* The words for a Nitya app's page: data/apps/<app>/<lang>.yaml. Context: the page. */ -}}
+{{- $app := index hugo.Data.apps .Params.app -}}
+{{- return index $app (.Params.appLang | default "en") -}}

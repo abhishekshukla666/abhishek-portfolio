@@ -48,7 +48,7 @@
     <div class="contact">
       <a href="mailto:{{ $p.email }}">{{ $p.email }}</a>
       <a href="https://{{ $p.website }}/">{{ $p.website }}</a>
-      <a href="{{ $p.linkedin }}">{{ strings.TrimPrefix "https://www." $p.linkedin }}</a>
+      <a href="{{ $p.linkedin }}">{{ strings.TrimSuffix "/" (strings.TrimPrefix "https://www." $p.linkedin) }}</a>
       <a href="{{ $p.github }}">{{ strings.TrimPrefix "https://" $p.github }}</a>
       <span>{{ $p.location }}</span>
     </div>
@@ -59,7 +59,7 @@
     <li>iOS engineer with 12+ years of experience building mobile apps, most recently as Lead iOS Engineer at Publicis Sapient.</li>
     <li>Builds with Swift, Objective-C and SwiftUI, with a strong focus on code quality, performance and testability.</li>
     <li>Leads iOS teams through Agile delivery — architecture, code review, mentoring and App Store release.</li>
-    <li>Currently shipping my own apps: Nitya Panchangam is live on the App Store and Google Play, on iPhone, Apple Watch, Android and Wear OS.</li>
+    <li>Currently shipping my own apps: Nitya Panchangam is live on the App Store and Google Play, on iPhone, Apple Watch and Android, in six Indian languages.</li>
   </ul>
 
   <h2>Skills</h2>

@@ -1,0 +1,12 @@
+{{- /* A Nitya app's footer. Context: the words for this language. */ -}}
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="{{ .privacyUrl | relURL }}">{{ .footer.privacy }}</a>
+      <a href="{{ printf "%sterms/" .home | relURL }}">{{ .footer.terms }}</a>
+      <a href="{{ printf "%ssupport/" .home | relURL }}">{{ .footer.support }}</a>
+      <a href="{{ "/" | relURL }}">{{ .footer.maker }}</a>
+    </nav>
+    <span>© {{ now.Year }} Abhishek Shukla. {{ .footer.made }}</span>
+  </div>
+</footer>

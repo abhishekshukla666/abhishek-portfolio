@@ -1,0 +1,25 @@
+{{- /* A Nitya app's <head>. Context: dict "page" "t" (the words for this language). */ -}}
+{{- $p := .page }}{{ $t := .t -}}
+{{- $title := cond $p.IsSection $t.title (printf "%s — %s" $p.Title $t.name) }}
+{{- $desc := $p.Description | default $t.description }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ $p.Permalink }}">
+{{- with $p.Params.otherUrl }}
+<link rel="alternate" hreflang="{{ if eq $t.lang "en" }}hi{{ else }}en{{ end }}" href="{{ . | absURL }}">
+{{- end }}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ printf "apps/%s/icon.png" $p.Params.app | absURL }}">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="{{ $t.themeColor.light }}" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="{{ $t.themeColor.dark }}" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="{{ printf "apps/%s/apple-touch-icon.png" $p.Params.app | relURL }}">
+<link rel="apple-touch-icon" href="{{ printf "apps/%s/apple-touch-icon.png" $p.Params.app | relURL }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800{{ if eq $t.lang "hi" }}&family=Noto+Sans+Devanagari:wght@400;600;700{{ end }}&display=swap">
+<link rel="stylesheet" href="{{ "apps/app.css" | relURL }}">
+<link rel="stylesheet" href="{{ printf "apps/%s.css" $p.Params.app | relURL }}">
