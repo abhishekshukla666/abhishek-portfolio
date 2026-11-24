@@ -22,8 +22,8 @@ hero:
   title: "Your Janam Kundli, worked out on your phone."
   lede: "Nitya Kundli makes a Vedic birth chart from a date, time and place of birth, and shows every table a Jyotish student needs — each value labelled with what it is and how it is reckoned. Birth details never leave your phone."
   buttons:
+    - { label: "Get it on Google Play", store: google, primary: true, url: "https://play.google.com/store/apps/details?id=com.shukla.nityakundli" }
     - { label: "Coming soon on the App Store", store: apple }
-    - { label: "Coming soon on Google Play", store: google }
   note: "Free, with no ads. For iPhone and Android. In Hindi, English, Gujarati, Kannada, Telugu and Marathi."
 
 shots:
@@ -87,5 +87,5 @@ faq:
       a: "Only if you turn it on in Settings. Then each profile's name, rashi and nakshatra are made available to Nitya Panchangam on the same phone, so it can mark good days for you. Nothing leaves the device."
     - q: "What does it cost?"
       a: "Nitya Kundli is free, with no ads. There are no in-app purchases in the current version."
-    - q: "When can I get it?"
-      a: "Soon, on the App Store and Google Play."
+    - q: "Is it on iPhone?"
+      a: "Not yet. Nitya Kundli is on Google Play for Android now, and the iPhone version is coming soon to the App Store."
