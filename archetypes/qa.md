@@ -2,8 +2,8 @@
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 date: {{ .Date }}
 draft: true
-tags: ["Swift", "Interview"]
-categories: ["Interview Questions"]
+tags: ["Swift"]
+categories: ["Q&A"]
 ShowReadingTime: true
 ShowToc: true
 TocOpen: false

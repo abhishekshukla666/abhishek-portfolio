@@ -4,6 +4,12 @@ date: 2026-11-24T11:00:00+05:30
 draft: false
 tags: ["System Design", "iOS", "Swift", "Caching", "Concurrency"]
 categories: ["System Design"]
+keyPoints:
+  - "Clarify requirements first: smooth scrolling, bounded memory, no duplicate downloads, offline for what was seen."
+  - "Check caches cheapest first: decoded images in memory, encoded bytes on disk, then the network."
+  - "Key the memory cache by URL and target size, and cost it in bytes, not image count."
+  - "Coalesce requests: one in-flight task per URL, kept in an actor so the check and insert cannot interleave."
+  - "Downsample with ImageIO off the main actor; a 12 MP photo in a small cell drops from about 48 MB to 360 KB."
 ShowReadingTime: true
 ShowToc: true
 TocOpen: false

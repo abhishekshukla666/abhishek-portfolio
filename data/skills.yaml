@@ -1,0 +1,9 @@
+# Skills grid on /experience/ and the resume.
+- group: Languages
+  items: [Swift, Objective-C, C interop, Kotlin]
+- group: Apple frameworks
+  items: [SwiftUI, UIKit, Swift Concurrency, Combine, Core Data, Core Location, WidgetKit, watchOS]
+- group: Architecture
+  items: [MVVM + Coordinator, Clean Architecture, Modular apps (SPM), SOLID & design patterns, Test-Driven Development]
+- group: Tooling
+  items: [Xcode & Instruments, XCTest & Swift Testing, Swift Package Manager, Git, CI/CD pipelines]

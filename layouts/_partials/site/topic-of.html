@@ -1,0 +1,7 @@
+{{- /* The topic (from data/topics.yaml) a page belongs to, or nil. */ -}}
+{{- $cats := .Params.categories | default slice -}}
+{{- $found := false -}}
+{{- range hugo.Data.topics }}
+  {{- if and (not $found) (in $cats .name) }}{{ $found = . }}{{ end -}}
+{{- end -}}
+{{- return $found -}}

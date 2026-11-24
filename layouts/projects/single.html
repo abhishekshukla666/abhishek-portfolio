@@ -1,0 +1,101 @@
+{{- define "main" }}
+<div class="wrap">
+  <header class="case-head stack g24">
+    <a class="row g8" href="{{ "projects/" | relURL }}" style="font-size:14px">{{ partial "site/icon.html" (dict "name" "back" "size" 15) }}All projects</a>
+    <div class="row g24" style="align-items:flex-start">
+      <div class="appicon"><img src="{{ .Params.icon | relURL }}" alt="{{ .Title }} app icon"></div>
+      <div class="stack g12">
+        <span class="status"><span class="dot{{ if eq .Params.status "live" }} live{{ end }}"></span>{{ .Params.statusLabel }}</span>
+        <h1 class="t-h1">{{ .Title }}</h1>
+        <p class="t-lead">{{ .Params.summary }}</p>
+        <div class="badges">
+          {{- range .Params.platforms }}<span class="badge">{{ . }}</span>{{ end }}
+          {{- with .Params.languages }}<span class="badge">{{ . }}</span>{{ end }}
+        </div>
+        {{- with .Params.links }}
+        <div class="btnrow" style="margin-top:8px">
+          {{- range . }}<a class="btn {{ if .primary }}btn-primary{{ else }}btn-secondary{{ end }}" href="{{ .url | relURL }}"{{ if hasPrefix .url "http" }} rel="noopener"{{ end }}>{{ .label }}</a>{{ end }}
+        </div>
+        {{- end }}
+      </div>
+    </div>
+  </header>
+</div>
+
+{{- with .Params.screenshots }}
+<div class="gallery" role="list" aria-label="Screenshots">
+  {{- range . }}
+  <figure role="listitem">
+    <div class="phone lg"><img src="{{ .src | relURL }}" alt="{{ .caption }} screen" loading="lazy" width="920" height="2000"></div>
+    <figcaption>{{ .caption }}</figcaption>
+  </figure>
+  {{- end }}
+</div>
+{{- end }}
+
+<div class="wrap">
+  <section class="kv" style="margin-top:24px">
+    <span class="t-label">The problem</span>
+    <div><h2>{{ .Params.problemTitle }}</h2><p>{{ .Params.problem }}</p></div>
+  </section>
+  <section class="kv">
+    <span class="t-label">My role</span>
+    <p>{{ .Params.role }}</p>
+  </section>
+  <section class="kv">
+    <span class="t-label">Tech stack</span>
+    <div class="badges">{{ range .Params.stack }}<span class="badge">{{ . }}</span>{{ end }}</div>
+  </section>
+</div>
+
+{{- with .Params.problems }}
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <div class="section-head"><div class="stack g8"><span class="t-label">Engineering</span><h2 class="t-h2">Hard problems I solved</h2></div></div>
+    <div class="grid-2">
+      {{- range $i, $p := . }}
+      <article class="card prob">
+        <span class="t-mono">{{ printf "%02d" (add $i 1) }}</span>
+        <h3 class="t-h3">{{ $p.title }}</h3>
+        <p class="t-small">{{ $p.problem | $.RenderString }}</p>
+        <p class="t-small"><b>Approach —</b> {{ $p.approach | $.RenderString }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.facts }}
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <div class="section-head"><div class="stack g8"><span class="t-label">Product</span><h2 class="t-h2">What makes it different</h2></div></div>
+    <div class="grid-3">
+      {{- range . }}
+      <article class="card prob"><h3 class="t-h3">{{ .title }}</h3><p class="t-small">{{ .body }}</p></article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{- with .Params.related }}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><div class="stack g8"><span class="t-label">Further reading</span><h2 class="t-h2">Related articles</h2></div></div>
+    <div class="grid-3">
+      {{- range . }}
+      {{- with site.GetPage . }}
+      {{- $topic := partial "site/topic-of.html" . }}
+      <a class="card related-card" href="{{ .RelPermalink }}">
+        {{- with $topic }}<span class="t-label">{{ .name }}</span>{{ end }}
+        <span class="ttl">{{ .Title }}</span>
+        <span class="t-mono">{{ .ReadingTime }} min read</span>
+      </a>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

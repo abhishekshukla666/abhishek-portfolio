@@ -1,0 +1,16 @@
+{{- /* Rows of articles. (dict "pages" … "topic" true|false "short" true|false) */ -}}
+<ul class="list">
+  {{- range .pages }}
+  {{- $topic := partial "site/topic-of.html" . }}
+  <li class="li">
+    <div class="stack g4">
+      <a class="ttl" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{- if and $.topic $topic }}<span class="t-small faint">{{ $topic.name }}</span>{{ end }}
+    </div>
+    <span class="meta">
+      {{- if not $.short }}{{ .Date | time.Format "02 Jan 2006" }} · {{ end }}{{ .ReadingTime }} min
+      {{- if .Draft }} · draft{{ end -}}
+    </span>
+  </li>
+  {{- end }}
+</ul>

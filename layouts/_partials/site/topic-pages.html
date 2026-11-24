@@ -1,0 +1,4 @@
+{{- /* The published pages in a topic, newest first. Takes the topic (from data/topics.yaml). */ -}}
+{{- $section := cond (eq .group "dsa") "dsa" "blog" -}}
+{{- $pages := where (where site.RegularPages "Section" $section) "Params.categories" "intersect" (slice .name) -}}
+{{- return $pages.ByDate.Reverse -}}

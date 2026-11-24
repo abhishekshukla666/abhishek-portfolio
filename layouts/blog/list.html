@@ -1,60 +1,32 @@
-{{- /* /blog/: posts grouped by topic. Topics and their order come from data/topics.yaml;
-       a post joins one through `categories` in its front matter. */ -}}
+{{- /* /blog/: articles grouped by topic. Topics and their order come from data/topics.yaml. */ -}}
 {{- define "main" }}
-
-<header class="page-header">
-  {{- partial "breadcrumbs.html" . }}
-  <h1>{{ .Title }}</h1>
-  {{- with .Description }}
-  <div class="post-description">{{ . | markdownify }}</div>
-  {{- end }}
-</header>
-
-{{- $pages := .RegularPages.ByDate.Reverse }}
-
-{{- /* Only topics that have at least one post. */ -}}
-{{- $topics := slice }}
-{{- range hugo.Data.topics }}
-  {{- $inTopic := where $pages "Params.categories" "intersect" (slice .name) }}
-  {{- if $inTopic }}
-    {{- $topics = $topics | append (dict "topic" . "pages" $inTopic) }}
-  {{- end }}
-{{- end }}
-
-{{- /* Posts that name no known topic still get listed, last. */ -}}
-{{- $known := slice }}
-{{- range hugo.Data.topics }}{{ $known = $known | append .name }}{{ end }}
-{{- $other := slice }}
-{{- range $pages }}
-  {{- if not (intersect (.Params.categories | default slice) $known) }}
-    {{- $other = $other | append . }}
-  {{- end }}
-{{- end }}
-
-<nav class="topic-chips" aria-label="Topics">
-  {{- range $topics }}
-  <a href="#{{ .topic.slug }}">{{ .topic.name }} <span class="topic-count">{{ len .pages }}</span></a>
-  {{- end }}
-  {{- with $other }}
-  <a href="#more">More <span class="topic-count">{{ len . }}</span></a>
-  {{- end }}
-</nav>
-
-{{- range $topics }}
-<section class="topic-section" id="{{ .topic.slug }}">
-  <header class="topic-header">
-    <h2><a href="{{ (printf "/categories/%s/" .topic.slug) | relURL }}">{{ .topic.name }}</a></h2>
-    {{- with .topic.description }}<p>{{ . }}</p>{{ end }}
+<div class="wrap">
+  <header class="page-head stack g16">
+    <span class="t-label">Writing</span>
+    <h1 class="t-h1">Notes from building iOS apps</h1>
+    <p class="t-lead">Long-form articles on Swift, concurrency, design patterns and app architecture — grouped by topic. <a href="{{ "blog/index.xml" | relURL }}">RSS feed</a></p>
   </header>
-  {{- partial "topic_post_list.html" .pages }}
-</section>
-{{- end }}
 
-{{- with $other }}
-<section class="topic-section" id="more">
-  <header class="topic-header"><h2>More</h2></header>
-  {{- partial "topic_post_list.html" . }}
-</section>
-{{- end }}
+  {{- $topics := slice }}
+  {{- range where hugo.Data.topics "group" "swift" }}
+    {{- $pages := partial "site/topic-pages.html" . }}
+    {{- if $pages }}{{ $topics = $topics | append (dict "t" . "pages" $pages) }}{{ end }}
+  {{- end }}
 
-{{- end }}{{- /* end main */ -}}
+  <nav class="chips" aria-label="Topics" style="margin-bottom:24px">
+    {{- range $topics }}<a class="chip" href="#{{ .t.slug }}">{{ .t.name }} <span class="n">{{ len .pages }}</span></a>{{ end }}
+  </nav>
+
+  {{- range $topics }}
+  <section class="topic-block" id="{{ .t.slug }}">
+    <div class="stack g8">
+      <h2 class="t-h3"><a href="{{ (printf "notes/%s/" .t.slug) | relURL }}">{{ .t.name }}</a></h2>
+      <p class="t-small">{{ .t.description }}</p>
+      <span class="t-mono">{{ len .pages }} {{ cond (eq (len .pages) 1) "post" "posts" }}</span>
+    </div>
+    {{ partial "site/post-list.html" (dict "pages" .pages) }}
+  </section>
+  {{- end }}
+  <div style="height:72px"></div>
+</div>
+{{- end }}

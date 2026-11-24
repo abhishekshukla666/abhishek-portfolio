@@ -1,14 +1,17 @@
-{{- /* An interview question with a hidden answer.
+{{- /* A question with a hidden answer.
        {{< qa q="What does `await` give up on an actor?" level="Senior" >}}
        Markdown answer, code blocks included.
        {{< /qa >}}
-   `level` is optional. Questions are numbered by the page's CSS counter. */ -}}
+   `level` is optional (Junior, Mid, Senior). Questions are numbered by a CSS counter. */ -}}
+{{- $level := .Get "level" -}}
 <details class="qa">
   <summary>
-    <span class="qa-q">{{ .Get "q" | .Page.RenderString }}</span>
-    {{- with .Get "level" }}<span class="qa-level">{{ . }}</span>{{ end }}
+    <span class="qn" aria-hidden="true"></span>
+    <span class="qt">{{ .Get "q" | .Page.RenderString }}{{ with $level }}<br><span class="badge lvl-m{{ if eq . "Senior" }} accent{{ end }}">{{ . }}</span>{{ end }}</span>
+    {{- with $level }}<span class="badge{{ if eq . "Senior" }} accent{{ end }}">{{ . }}</span>{{ else }}<span></span>{{ end }}
+    {{ partial "site/icon.html" (dict "name" "chev" "class" "chev") }}
   </summary>
-  <div class="qa-a">
+  <div class="ans">
     {{ .Inner | .Page.RenderString (dict "display" "block") }}
   </div>
 </details>

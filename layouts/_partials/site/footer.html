@@ -1,0 +1,15 @@
+{{- $p := hugo.Data.profile -}}
+<footer class="footer">
+  <div class="wrap">
+    <div class="stack g4">
+      <strong style="font-weight:600">{{ $p.name }}</strong>
+      <span class="t-small">{{ $p.role }} · <a href="mailto:{{ $p.email }}">{{ $p.email }}</a></span>
+    </div>
+    <nav class="flinks" aria-label="Elsewhere">
+      <a href="{{ $p.github }}" rel="me">GitHub</a>
+      <a href="{{ $p.linkedin }}" rel="me">LinkedIn</a>
+      <a href="mailto:{{ $p.email }}">Email</a>
+      <a href="{{ "index.xml" | relURL }}">RSS</a>
+    </nav>
+  </div>
+</footer>

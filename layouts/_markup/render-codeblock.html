@@ -1,0 +1,6 @@
+{{- $lang := .Type | default "text" -}}
+{{- $label := .Attributes.title | default (cond (in (slice "text" "plaintext" "") $lang) "" $lang) -}}
+<div class="code">
+  <div class="code-head"><span>{{ $label }}</span><button class="copy" type="button" data-copy aria-label="Copy code">{{ partial "site/icon.html" (dict "name" "copy" "size" 14) }}<span>Copy</span></button></div>
+  {{- transform.Highlight .Inner $lang (merge .Options (dict "noClasses" false)) -}}
+</div>

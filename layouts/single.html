@@ -1,0 +1,57 @@
+{{- /* An article: blog posts, DSA notes and plain pages such as the privacy policy. */ -}}
+{{- define "main" }}
+{{- $topic := partial "site/topic-of.html" . }}
+{{- $isDSA := eq .Section "dsa" }}
+<article class="wrap">
+  <div class="reading article stack g24">
+    <header class="stack g16">
+      {{- if $topic }}
+      <nav class="crumbs" aria-label="Breadcrumb">
+        {{- if $isDSA }}<a href="{{ "notes/" | relURL }}">Notes</a>{{ else }}<a href="{{ "blog/" | relURL }}">Writing</a>{{ end }}
+        <span aria-hidden="true">/</span>
+        <a href="{{ (printf "notes/%s/" $topic.slug) | relURL }}">{{ $topic.name }}</a>
+      </nav>
+      <div class="badges">
+        <a class="badge accent" href="{{ (printf "notes/%s/" $topic.slug) | relURL }}">{{ $topic.name }}</a>
+        {{- range first 2 (.GetTerms "tags") }}{{ if ne .LinkTitle $topic.name }}<a class="badge" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}{{ end }}
+      </div>
+      {{- end }}
+      <h1 class="t-h1">{{ .Title }}</h1>
+      {{- if not .Params.hideMeta }}
+      <p class="t-mono">{{ .Date | time.Format "02 Jan 2006" }} · {{ .ReadingTime }} min read · {{ hugo.Data.profile.name }}{{ if .Draft }} · draft{{ end }}</p>
+      {{- end }}
+    </header>
+
+    {{- with .Params.keyPoints }}
+    <aside class="takeaways" aria-label="Key takeaways">
+      <span class="t-label">Key takeaways</span>
+      <ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul>
+    </aside>
+    {{- end }}
+
+    {{- $headings := .Fragments.Headings }}
+    {{- $count := 0 }}{{ range .Fragments.HeadingsMap }}{{ $count = add $count 1 }}{{ end }}
+    {{- if and (ge $count 3) (ne .Params.toc false) }}
+    <details class="toc">
+      <summary>Contents · {{ $count }} sections {{ partial "site/icon.html" (dict "name" "chev" "class" "chev") }}</summary>
+      {{ .TableOfContents }}
+    </details>
+    {{- end }}
+
+    <div class="prose">{{ .Content }}</div>
+
+    {{- if $topic }}
+    {{- $more := where (partial "site/topic-pages.html" $topic) "Permalink" "ne" .Permalink }}
+    {{- with $more }}
+    <aside style="margin-top:48px">
+      <div class="row between" style="margin-bottom:12px">
+        <h2 class="t-h3">More in {{ $topic.name }}</h2>
+        <a href="{{ (printf "notes/%s/" $topic.slug) | relURL }}">All {{ len . | add 1 }} →</a>
+      </div>
+      {{ partial "site/post-list.html" (dict "pages" (first 3 .) "short" true) }}
+    </aside>
+    {{- end }}
+    {{- end }}
+  </div>
+</article>
+{{- end }}

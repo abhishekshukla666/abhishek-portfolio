@@ -1,0 +1,66 @@
+{{- define "main" }}
+{{- $p := hugo.Data.profile }}
+<div class="wrap">
+  <section class="hero">
+    <div class="stack g24">
+      <span class="t-label">{{ $p.kicker }}</span>
+      <h1 class="t-display">{{ $p.name }}</h1>
+      <p class="t-lead" style="max-width:640px">{{ $p.intro }}</p>
+      <span class="open-to"><span class="dot live"></span>{{ $p.openTo }}</span>
+      <div class="btnrow">
+        <a class="btn btn-primary" href="{{ "projects/" | relURL }}">View projects</a>
+        <a class="btn btn-secondary" href="{{ $p.resumePDF | relURL }}" download>{{ partial "site/icon.html" (dict "name" "download" "size" 16) }}Download resume</a>
+        <a class="btn btn-secondary" href="mailto:{{ $p.email }}">Contact</a>
+      </div>
+    </div>
+    <div class="photo"><img src="{{ $p.headshot | relURL }}" alt="Portrait of {{ $p.name }}" width="280" height="340"></div>
+  </section>
+
+  <div class="facts">
+    {{- range $p.highlights }}
+    <div class="fact"><b>{{ .value }}</b><span>{{ .label }}</span></div>
+    {{- end }}
+  </div>
+</div>
+
+<section class="section" style="border-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack g8"><span class="t-label">Selected work</span><h2 class="t-h2">Featured projects</h2></div>
+      <a href="{{ "projects/" | relURL }}">All projects →</a>
+    </div>
+    <div class="grid-3">
+      {{- range (where site.RegularPages "Section" "projects").ByWeight }}
+      {{ partial "site/project-card.html" . }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack g8"><span class="t-label">Career</span><h2 class="t-h2">Recent experience</h2></div>
+      <a href="{{ "experience/" | relURL }}">Full experience →</a>
+    </div>
+    <ul class="list">
+      {{- range first 3 hugo.Data.experience }}
+      <li class="li">
+        <div class="stack g4"><span class="ttl">{{ .company }}</span><span class="t-small">{{ .role }}</span></div>
+        <span class="meta">{{ .years }}</span>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack g8"><span class="t-label">Writing</span><h2 class="t-h2">Latest articles</h2></div>
+      <a href="{{ "blog/" | relURL }}">All writing →</a>
+    </div>
+    {{ partial "site/post-list.html" (dict "pages" (first 3 (where site.RegularPages "Section" "blog").ByDate.Reverse) "topic" true) }}
+  </div>
+</section>
+{{- end }}

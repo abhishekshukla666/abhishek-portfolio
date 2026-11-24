@@ -1,0 +1,31 @@
+{{- $p := hugo.Data.profile -}}
+{{- $current := . -}}
+{{- $section := .Section -}}
+{{- if eq $section "dsa" }}{{ $section = "notes" }}{{ end -}}
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="{{ "/" | relURL }}"><span class="mark" aria-hidden="true">{{ $p.initials }}</span>{{ $p.name }}</a>
+    <nav class="links" aria-label="Main">
+      {{- range site.Menus.main }}
+      {{- $active := or (and (eq .URL "/") $current.IsHome) (and (ne .URL "/") (eq (strings.Trim .URL "/") $section)) }}
+      <a href="{{ .URL | relURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+    </nav>
+    <div class="navend">
+      <button class="iconbtn theme-btn" type="button" data-theme-toggle aria-label="Change theme">
+        {{ partial "site/icon.html" (dict "name" "sun" "class" "i-light") }}
+        {{ partial "site/icon.html" (dict "name" "moon" "class" "i-dark") }}
+        {{ partial "site/icon.html" (dict "name" "paper" "class" "i-warm") }}
+      </button>
+      <details class="menu">
+        <summary class="iconbtn" aria-label="Menu">{{ partial "site/icon.html" (dict "name" "menu") }}</summary>
+        <nav class="menu-panel" aria-label="Main">
+          {{- range site.Menus.main }}
+          {{- $active := or (and (eq .URL "/") $current.IsHome) (and (ne .URL "/") (eq (strings.Trim .URL "/") $section)) }}
+          <a href="{{ .URL | relURL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
+          {{- end }}
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

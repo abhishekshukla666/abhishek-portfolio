@@ -1,0 +1,37 @@
+# Professional work shown on /projects/. Industry names only — no client names.
+
+- industry: Insurance & banking
+  years: 2025 – 2026
+  title: An insurance space inside a UK banking app
+  body: >-
+    Customers view and manage their home, life, motor, pet and critical-illness policies
+    without leaving their banking app. I led iOS: a modular architecture, MVVM + Coordinator
+    navigation, and unit-test coverage of the new space to 80%.
+  stack: [Swift, SwiftUI, Swift Concurrency, MVVM + Coordinator]
+
+- industry: Pet pharmacy · US retail
+  years: 2024 – 2025
+  title: A SwiftUI rebuild of a pet-medicine store
+  body: >-
+    Led the rewrite of a legacy Objective-C app in SwiftUI. The new app runs 80% faster,
+    test coverage went from 10% to 60%, and a reusable URLSession networking layer made
+    live data 20% quicker to load.
+  stack: [Swift, SwiftUI, Swift Concurrency, Clean Architecture]
+
+- industry: Aviation
+  years: 2018 – 2024
+  title: Crew calendar and role-based messaging
+  body: >-
+    A calendar app that saves crew time on daily events, and a chat app where crew message
+    each other by role. Together with other internal apps they replaced printed
+    communications — $83K a year saved — and CI on Azure made releases 30% faster.
+  stack: [Swift, UIKit, Core Data]
+
+- industry: Fintech · Payments
+  years: 2017 – 2018
+  title: Deals and offers in the Paytm app
+  body: >-
+    Built features for one of India's largest payments apps, at millions of requests a day,
+    and automated testing of a critical module with XCTest — 30% fewer regression bugs.
+  stack: [Swift, UIKit, Core Data, Core Location]
+  link: https://apps.apple.com/in/app/paytm-secure-upi-payments/id473941634

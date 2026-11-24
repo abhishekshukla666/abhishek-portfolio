@@ -1,0 +1,64 @@
+{{- define "main" }}
+<div class="wrap">
+  <header class="page-head stack g16">
+    <span class="t-label">{{ .Params.kicker }}</span>
+    <h1 class="t-h1">{{ .Params.heading }}</h1>
+    <p class="t-lead">{{ .Description }}</p>
+  </header>
+
+  <div class="plist">
+    {{- range .RegularPages.ByWeight }}
+    <article class="card prow">
+      {{- with .Params.screenshots }}
+      <div class="shot" aria-hidden="true">
+        {{- range first 2 . }}<div class="phone"><img src="{{ .src | relURL }}" alt="" loading="lazy" width="920" height="2000"></div>{{ end }}
+      </div>
+      {{- else }}
+      <div class="shot iconic" aria-hidden="true"><div class="appicon xl"><img src="{{ .Params.icon | relURL }}" alt="" loading="lazy"></div></div>
+      {{- end }}
+      <div class="pbody">
+        <div class="ptitle">
+          <div class="appicon sm"><img src="{{ .Params.icon | relURL }}" alt="" loading="lazy"></div>
+          <div class="stack g4">
+            <h2 class="t-h3">{{ .Title }}</h2>
+            <span class="status"><span class="dot{{ if eq .Params.status "live" }} live{{ end }}"></span>{{ .Params.statusLabel }}</span>
+          </div>
+        </div>
+        <p class="muted">{{ .Params.summary }}</p>
+        <div class="badges">
+          {{- range .Params.platforms }}<span class="badge">{{ . }}</span>{{ end }}
+          {{- with .Params.languages }}<span class="badge">{{ . }}</span>{{ end }}
+        </div>
+        <div class="row between g16" style="flex-wrap:wrap;margin-top:auto">
+          <a class="btn btn-secondary" href="{{ .RelPermalink }}">Read case study</a>
+          <span class="t-mono">{{ .Params.cardStack }}</span>
+        </div>
+      </div>
+    </article>
+    {{- end }}
+  </div>
+</div>
+
+<section class="section" style="margin-top:96px">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack g8"><span class="t-label">Professional work</span><h2 class="t-h2">Products I have built in teams</h2></div>
+      <span class="t-small faint">Clients described by industry</span>
+    </div>
+    <div class="grid-2">
+      {{- range hugo.Data.work }}
+      <article class="card work">
+        <div class="row between g12" style="flex-wrap:wrap">
+          <span class="t-label">{{ .industry }}</span>
+          <span class="t-mono">{{ .years }}</span>
+        </div>
+        <h3 class="t-h3">{{ .title }}</h3>
+        <p class="t-small">{{ .body }}</p>
+        <div class="badges">{{ range .stack }}<span class="badge">{{ . }}</span>{{ end }}</div>
+        {{- with .link }}<a class="row g8" href="{{ . }}" rel="noopener">View on the App Store {{ partial "site/icon.html" (dict "name" "external" "size" 15) }}</a>{{ end }}
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}

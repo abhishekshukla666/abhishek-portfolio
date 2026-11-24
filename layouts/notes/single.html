@@ -1,0 +1,46 @@
+{{- /* /notes/<topic>/: every key takeaway in the topic, grouped by the article it comes from. */ -}}
+{{- define "main" }}
+{{- $slug := .Params.topic }}
+{{- $topic := index (where hugo.Data.topics "slug" $slug) 0 }}
+{{- $pages := partial "site/topic-pages.html" $topic }}
+{{- $points := 0 }}{{ range $pages }}{{ $points = add $points (len (.Params.keyPoints | default slice)) }}{{ end }}
+{{- $latest := cond (gt (len $pages) 0) (index $pages 0).Lastmod now }}
+<div class="wrap">
+  <header class="page-head stack g16">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ "notes/" | relURL }}">Notes</a><span aria-hidden="true">/</span><span>{{ cond (eq $topic.group "dsa") "Data Structures & Algorithms" "Swift & iOS" }}</span></nav>
+    <h1 class="t-h1">{{ $topic.name }}</h1>
+    <p class="t-lead">{{ $topic.description }}{{ if $points }} Each point links to the article that explains it in full.{{ end }}</p>
+    <span class="t-mono">{{ if $points }}{{ $points }} notes · {{ end }}{{ len $pages }} {{ cond (eq (len $pages) 1) "article" "articles" }} · updated {{ $latest | time.Format "02 Jan 2006" }}</span>
+  </header>
+
+  {{- if $pages }}
+  <div class="split" style="padding-bottom:96px">
+    <nav class="sidenav" aria-label="Articles in this topic">
+      {{- range $pages }}<a href="#{{ .File.ContentBaseName | urlize }}">{{ .LinkTitle | truncate 34 }}</a>{{ end }}
+    </nav>
+    <div>
+      {{- $n := 0 }}
+      {{- range $pages }}
+      <section class="tk-group" id="{{ .File.ContentBaseName | urlize }}">
+        <div class="row between g16" style="padding-bottom:12px;border-bottom:1px solid var(--border);flex-wrap:wrap">
+          <h2 class="t-h3">{{ .Title }}</h2>
+          <span class="t-mono">{{ .ReadingTime }} min</span>
+        </div>
+        {{- with .Params.keyPoints }}
+          {{- range . }}
+          {{- $n = add $n 1 }}
+          <div class="tk"><span class="num">{{ printf "%02d" $n }}</span><p>{{ . | $.RenderString }}</p></div>
+          {{- end }}
+        {{- else }}
+          <div class="tk"><span class="num">—</span><p class="muted">{{ .Summary | plainify | truncate 220 }}</p></div>
+        {{- end }}
+        <p style="margin-top:12px"><a href="{{ .RelPermalink }}">Read the full article →</a></p>
+      </section>
+      {{- end }}
+    </div>
+  </div>
+  {{- else }}
+  <p class="muted" style="padding-bottom:96px">Nothing here yet.</p>
+  {{- end }}
+</div>
+{{- end }}

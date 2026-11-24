@@ -1,0 +1,9 @@
+{{- /* One Notes page per topic in data/topics.yaml, at /notes/<slug>/. */ -}}
+{{- range hugo.Data.topics }}
+  {{- $.AddPage (dict
+      "path" .slug
+      "kind" "page"
+      "title" .name
+      "params" (dict "topic" .slug "description" .description)
+  ) }}
+{{- end }}

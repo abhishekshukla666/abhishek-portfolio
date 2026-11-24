@@ -1,0 +1,54 @@
+{{- define "main" }}
+{{- $p := hugo.Data.profile }}
+<div class="wrap">
+  <header class="page-head row between g32" style="align-items:flex-end;flex-wrap:wrap">
+    <div class="stack g16" style="max-width:760px">
+      <span class="t-label">{{ .Params.kicker }}</span>
+      <h1 class="t-h1">{{ .Params.heading }}</h1>
+      <p class="t-lead">{{ .Description }}</p>
+      <span class="open-to"><span class="dot live"></span>{{ $p.openTo }}</span>
+    </div>
+    <div class="card resume-card">
+      <span class="t-label">Resume</span>
+      <span class="t-small">PDF · <a href="{{ "resume/" | relURL }}">or read it on the web</a></span>
+      <a class="btn btn-primary" href="{{ $p.resumePDF | relURL }}" download>{{ partial "site/icon.html" (dict "name" "download" "size" 16) }}Download resume</a>
+    </div>
+  </header>
+
+  <ol class="list" style="list-style:none">
+    {{- range hugo.Data.experience }}
+    <li class="tl">
+      <div class="stack g4"><span class="yrs">{{ .years }}</span><span class="t-mono">{{ .place }}</span></div>
+      <div>
+        <h2 class="t-h3">{{ .role }} · <span class="muted" style="font-weight:500">{{ .company }}</span></h2>
+        {{- with .summary }}<p class="muted" style="margin-top:6px">{{ . }}</p>{{ end }}
+        <ul class="ach">{{ range .achievements }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </li>
+    {{- end }}
+  </ol>
+</div>
+
+<section class="section" style="margin-top:72px">
+  <div class="wrap">
+    <div class="section-head"><div class="stack g8"><span class="t-label">Skills</span><h2 class="t-h2">What I work with</h2></div></div>
+    <div class="grid-4 skill-grid">
+      {{- range hugo.Data.skills }}
+      <div><span class="t-label">{{ .group }}</span><div class="badges">{{ range .items }}<span class="badge">{{ . }}</span>{{ end }}</div></div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="tl" style="border:0;padding:0">
+      <span class="t-label">Education</span>
+      <div class="stack g4">
+        <strong style="font-weight:600">{{ $p.education.degree }}</strong>
+        <span class="muted">{{ $p.education.school }}, {{ $p.education.place }} · {{ $p.education.years }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+{{- end }}

@@ -1,0 +1,91 @@
+{{- /* /resume/: the resume as one printable page, built from the same data as the site.
+       Tools/make-resume-pdf.swift prints it to static/resume/Abhishek-Shukla-Resume.pdf.
+       No phone number: this page and its PDF are public. */ -}}
+{{- $p := hugo.Data.profile -}}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $p.name }} — Resume</title>
+<meta name="description" content="Resume of {{ $p.name }}, {{ $p.role }}.">
+<link rel="canonical" href="{{ .Permalink }}">
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F2F3F5; color: #111418; font: 400 9.3pt/1.38 Inter, -apple-system, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  .sheet { max-width: 210mm; margin: 24px auto; background: #fff; padding: 16mm 17mm; box-shadow: 0 0 0 1px #E4E6EA; }
+  a { color: #1D4ED8; text-decoration: none; }
+  h1 { font-size: 22pt; line-height: 1.1; font-weight: 600; letter-spacing: -.02em; margin: 0; }
+  .role { font-size: 11pt; color: #454B54; margin-top: 3px; }
+  .contact { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font-size: 9pt; color: #454B54; }
+  h2 { font: 600 8.5pt/1 "JetBrains Mono", ui-monospace, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; color: #5F6670; margin: 12px 0 5px; padding-bottom: 4px; border-bottom: 1px solid #E4E6EA; }
+  ul { margin: 0; padding-left: 15px; }
+  li { margin: 1px 0; }
+  li::marker { color: #9AA1AA; }
+  .job { margin-top: 7px; break-inside: avoid; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .job-head b { font-weight: 600; font-size: 10.5pt; }
+  .job-head span { font-size: 9pt; color: #5F6670; white-space: nowrap; }
+  .job .sub { color: #454B54; font-size: 9.5pt; }
+  .skills { display: grid; grid-template-columns: 30mm 1fr; gap: 3px 10px; }
+  .skills dt { font-weight: 600; } .skills dd { margin: 0; color: #2A2F36; }
+  .proj { margin-top: 6px; break-inside: avoid; }
+  .proj b { font-weight: 600; }
+  .proj .stack { color: #5F6670; font-size: 9pt; }
+  .actions { max-width: 210mm; margin: 24px auto 0; display: flex; gap: 10px; font: 500 14px/1 Inter, -apple-system, sans-serif; }
+  .actions a { padding: 12px 16px; border: 1px solid #D1D5DB; border-radius: 8px; background: #fff; color: #111418; }
+  @media print { body { background: #fff; } .sheet { margin: 0; padding: 0; box-shadow: none; max-width: none; } .actions { display: none; } }
+  @media (max-width: 720px) { .sheet { margin: 0; padding: 24px 20px; } .actions { padding: 0 20px; } .skills { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="actions" aria-label="Resume actions"><a href="{{ "/" | relURL }}">← Back to the site</a><a href="{{ $p.resumePDF | relURL }}" download>Download PDF</a></nav>
+<main class="sheet">
+  <header>
+    <h1>{{ $p.name }}</h1>
+    <div class="role">{{ $p.role }} · 12+ years · Swift, SwiftUI, Swift Concurrency</div>
+    <div class="contact">
+      <a href="mailto:{{ $p.email }}">{{ $p.email }}</a>
+      <a href="https://{{ $p.website }}/">{{ $p.website }}</a>
+      <a href="{{ $p.linkedin }}">{{ strings.TrimPrefix "https://www." $p.linkedin }}</a>
+      <a href="{{ $p.github }}">{{ strings.TrimPrefix "https://" $p.github }}</a>
+      <span>{{ $p.location }}</span>
+    </div>
+  </header>
+
+  <h2>Summary</h2>
+  <ul>
+    <li>iOS engineer with 12+ years of experience building mobile apps, most recently as Lead iOS Engineer at Publicis Sapient.</li>
+    <li>Builds with Swift, Objective-C and SwiftUI, with a strong focus on code quality, performance and testability.</li>
+    <li>Leads iOS teams through Agile delivery — architecture, code review, mentoring and App Store release.</li>
+    <li>Currently shipping my own apps: Nitya Panchangam is live on the App Store and Google Play, on iPhone, Apple Watch, Android and Wear OS.</li>
+  </ul>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Core iOS</dt><dd>Swift, Objective-C, Swift Concurrency, memory management, Auto Layout</dd>
+    <dt>Frameworks</dt><dd>SwiftUI, UIKit, Core Data, Core Location, Combine, WidgetKit, watchOS, Google Maps SDK, XCTest</dd>
+    <dt>Concepts</dt><dd>Data structures and algorithms, app architecture (MVVM + Coordinator, Clean Architecture), SOLID, design patterns, networking, security, unit testing, debugging, Agile</dd>
+    <dt>Leadership</dt><dd>Mentoring, code review, planning, cross-functional delivery, decision making</dd>
+  </dl>
+
+  <h2>Experience</h2>
+  {{- range hugo.Data.experience }}
+  <section class="job">
+    <div class="job-head"><b>{{ .role }} · {{ .company }}</b><span>{{ .years }} · {{ .place }}</span></div>
+    {{- with .summary }}<div class="sub">{{ . }}</div>{{ end }}
+    <ul>{{ range .achievements }}<li>{{ . }}</li>{{ end }}</ul>
+  </section>
+  {{- end }}
+
+  <h2>My own apps</h2>
+  {{- range (where site.RegularPages "Section" "projects").ByWeight }}
+  <div class="proj"><b>{{ .Title }}</b> — {{ .Params.statusLabel }}. {{ .Params.cardSummary }} <span class="stack">{{ delimit (first 6 .Params.stack) ", " }}</span></div>
+  {{- end }}
+
+  <h2>Education</h2>
+  <div class="job-head"><b>{{ $p.education.degree }} · {{ $p.education.school }}</b><span>{{ $p.education.years }} · {{ $p.education.place }}</span></div>
+</main>
+</body>
+</html>

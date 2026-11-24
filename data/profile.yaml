@@ -1,0 +1,33 @@
+# Who the site is about. Read by the home page, header, footer and resume.
+name: Abhishek Shukla
+initials: AS
+role: Senior iOS Engineer
+kicker: Senior iOS Engineer · 12+ years · Swift, SwiftUI, Concurrency
+intro: >-
+  I build iOS apps that stay fast, correct and easy to change long after launch —
+  from payments, insurance and aviation apps to my own apps on iPhone and Apple Watch.
+  I care about Swift Concurrency done right, clear architecture, and tests that make change safe.
+openTo: Open to Lead and Senior iOS roles
+location: Gurugram, India
+email: abhishekshuklaa666@gmail.com
+website: abhishekshukla.dev
+github: https://github.com/abhishekshukla666
+linkedin: https://www.linkedin.com/in/abhishekshuklaa666
+headshot: home/headshot.jpg
+resumePDF: resume/Abhishek-Shukla-Resume.pdf
+
+highlights:
+  - value: 12+ years
+    label: Building mobile apps
+  - value: 80% faster
+    label: Legacy app rebuilt in SwiftUI
+  - value: 10% → 60%
+    label: Test coverage, as iOS lead
+  - value: 3 apps of my own
+    label: 1 live · 2 in development
+
+education:
+  degree: Bachelor of Science, Computer Science
+  school: Bangalore Institute of Technology
+  place: Bengaluru
+  years: 2007 – 2011

@@ -3,7 +3,8 @@ title: "Sorting Algorithms in Production: When, Why, and Time Complexity"
 date: 2026-07-05T11:00:00+05:30
 draft: false
 tags: ["DSA", "Algorithms", "System Design", "Swift"]
-categories: ["Data Structures & Algorithms"]
+categories: ["Sorting"]
+aliases: ["/about/swift-tim-sorting/"]
 # showToc: true
 TocOpen: false
 ---

@@ -2,7 +2,9 @@
 title: "Sorting Algorithms"
 date: "2026-06-24T11:20:00+05:30"
 draft: false
-tags: ["Sorting"]
+tags: ["Sorting", "DSA"]
+categories: ["Sorting"]
+aliases: ["/about/sorting-algorithms/"]
 weight: 101
 ShowReadingTime: true
 ---

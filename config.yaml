@@ -1,86 +1,37 @@
 baseURL: "https://abhishekshukla.dev/"
-languageCode: en-us
+locale: en-us
 title: Abhishek Shukla
-theme: PaperMod
+# No theme: every page is built from layouts/ in this repo. (themes/PaperMod is no longer used.)
 
 menu:
   main:
-    - identifier: home
-      name: Home
-      url: /
-      weight: 10
-    - identifier: blog
-      name: iOS
-      url: /blog
-      weight: 20
-    - identifier: about
-      name: DSA
-      url: /about
-      weight: 30
-    - identifier: tags
-      name: Tags
-      url: /tags
-      weight: 40
+    - { identifier: home, name: Home, url: /, weight: 10 }
+    - { identifier: projects, name: Projects, url: /projects/, weight: 20 }
+    - { identifier: experience, name: Experience, url: /experience/, weight: 30 }
+    - { identifier: writing, name: Writing, url: /blog/, weight: 40 }
+    - { identifier: notes, name: Notes, url: /notes/, weight: 50 }
 
 params:
-  # theme
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  hideMeta: false
-
-  # for enchanced SEO
+  description: "Abhishek Shukla — Senior iOS Engineer. Swift, SwiftUI and Swift Concurrency; apps on iPhone, Apple Watch and Android; articles on building iOS apps."
   env: production
 
-  # Home Page
-  profileMode:
-    enabled: true
-    title: "Abhishek Shukla"
-    subtitle: Hello 🙏🏼 I'm Abhishek, as a tech enthusiast I possess a robust background as an iOS Software Engineer, accumulating more than 12+ years of dedicated experience in the development of mobile applications. Proficient in leveraging advanced iOS development skills, app performance optimization, Test-Driven Development(TDD), languages used -Swift, Objective-C with framework like Foundation, CoreData, SwiftUI, Combine to create innovative applications that enhance user experience and drive engagement, while maintaining a strong focus on code quality and performance optimisation.
+taxonomies:
+  tag: tags
+  category: categories
 
-
-    imageUrl: "home/formal-pic-small.PNG"
-    imageWidth: 160
-    imageHeight: 180
-    # buttons:
-    #   - name: Resume
-    #     url: ""
-
-  # List View
-  hideDescriptionInList: false
-
-  # cover image for posts
-  cover:
-    hiddenInList: false # hide on list pages and home
-    hiddenInSingle: false # hide on single page
-
-  socialIcons:
-    - name: "email"
-      url: "mailto:abhishekshuklaa666@gmail.com"
-    - name: "linkedin"
-      url: "https://www.linkedin.com/in/abhishekshuklaa666"
-    - name: "github"
-      url: "https://github.com/abhishekshukla666"
-
-  # text search
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
-
-# for search using Fuse.js
 outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+  home: [HTML, RSS]
+  section: [HTML, RSS]
+  taxonomy: [HTML]
+  term: [HTML]
 
-# allow HTML in MD
 markup:
   goldmark:
     renderer:
       unsafe: true
-
+  highlight:
+    noClasses: false
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3

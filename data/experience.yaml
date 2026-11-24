@@ -1,0 +1,78 @@
+# Work history, newest first. Shown on /experience/, the home page (first three) and the resume.
+# Client names stay out: describe a client by its industry only.
+
+- company: Independent
+  role: iOS Engineer · Building my own apps
+  years: Apr 2026 – Present
+  place: Gurugram
+  summary: Designing, building and shipping my own apps end to end, while looking for my next Lead or Senior iOS role.
+  achievements:
+    - Shipped Nitya Panchangam to the App Store and Google Play — iPhone, Apple Watch, widgets, Android and Wear OS.
+    - Built a shared stack of Swift packages (astronomy engine, Jyotish rules, core UI) that two apps use at pinned versions.
+    - Backed the calculations with hundreds of automated tests across the app and its packages.
+
+- company: Publicis Sapient
+  role: Lead iOS Engineer
+  years: Jun 2025 – Mar 2026
+  place: Gurugram
+  summary: Led iOS for a UK insurance and banking group's customer app.
+  achievements:
+    - Architected and led end-to-end development of a secure, scalable banking app where customers view and manage their home, life, motor, pet and critical-illness insurance.
+    - Designed a modular iOS architecture for long-term maintainability, aligned with enterprise standards.
+    - Built navigation on MVVM + Coordinator and took unit-test coverage of the new space to 80%.
+
+- company: Encora Digital
+  role: Lead iOS Software Engineer
+  years: Feb 2024 – May 2025
+  place: Remote
+  summary: Led the iOS rebuild of a US pet-pharmacy retailer's app.
+  achievements:
+    - Rebuilt a legacy Objective-C app in SwiftUI — 80% faster and far easier to maintain.
+    - Raised unit and UI test coverage from 10% to 60%, cutting production issues.
+    - Reworked Core Data usage and memory management, making loading and data processing 60% faster.
+    - Led and mentored a team of 4 iOS engineers through code reviews and Swift and SwiftUI best practice.
+    - Owned the app lifecycle with product, design and QA — from prototype to App Store release and support.
+
+- company: Nagarro
+  role: Staff Engineer
+  years: Sep 2018 – Jan 2024
+  place: Remote
+  summary: Built internal iOS apps for an aviation group's crew and staff.
+  achievements:
+    - Replaced printed crew communications with mobile apps — newsletter costs down over 80% and $83K a year in printing eliminated.
+    - Designed a reusable networking framework that cut implementation time by over 60% across several iOS apps.
+    - Set up CI/CD with automated unit, integration and end-to-end tests, making builds and releases 30% faster.
+
+- company: Paytm (One97 Communications)
+  role: Senior Software Engineer
+  years: Jul 2017 – Aug 2018
+  place: Noida
+  summary: Worked on the Paytm iOS app and Paytm Mall.
+  achievements:
+    - Built new features for the Paytm iOS app, serving millions of customer requests a day (Swift, MVVM).
+    - Integrated the WEEX framework into Paytm Mall, making the app more modular and faster to develop.
+    - Automated testing of a critical module with XCTest, cutting regression bugs by 30%.
+    - Managed App Store releases end to end — build configuration, provisioning and release planning.
+
+- company: Appinventiv
+  role: Senior Software Engineer
+  years: Feb 2017 – Jul 2017
+  place: Noida
+  achievements:
+    - Built an iOS app from scratch with Swift, UIKit and Core Data, following MVC and SOLID principles.
+    - Improved performance and stability by 30% through business-logic optimisation and unit testing.
+
+- company: InnovationM
+  role: Software Engineer
+  years: Sep 2014 – Nov 2016
+  place: Noida
+  achievements:
+    - Led architecture and development of client apps end to end, reporting directly to the CTO.
+    - Shipped an app whose launch contributed to a 23% revenue increase in its first quarter.
+
+- company: Ahoy
+  role: Associate Software Engineer
+  years: Jul 2013 – Aug 2014
+  place: Noida
+  achievements:
+    - Built a deals-and-offers app for Windows Phone.

@@ -1,9 +1,16 @@
 ---
-title: "Swift Concurrency Interview Questions: Tasks, Actors and Sendable"
+title: "Swift Concurrency in 11 Questions: Tasks, Actors and Sendable"
 date: 2026-11-24T10:00:00+05:30
 draft: false
-tags: ["Swift", "Concurrency", "Interview", "Actors", "Sendable"]
-categories: ["Interview Questions"]
+tags: ["Swift", "Concurrency", "Actors", "Sendable"]
+categories: ["Q&A"]
+aliases: ["/blog/swift-concurrency-interview-questions/"]
+keyPoints:
+  - "Structured tasks (`async let`, task groups) are cancelled with their parent; `Task {}` is not."
+  - "`Task {}` inherits the current actor, priority and task-locals; `Task.detached` inherits none of them."
+  - "Cancellation is cooperative: a task stops only when it checks `Task.isCancelled` or calls a throwing API."
+  - "Actors are reentrant: every `await` inside one lets other calls run, so re-check state after it."
+  - "`Sendable` is a compile-time promise that a value is safe to share across isolation domains."
 ShowReadingTime: true
 ShowToc: true
 TocOpen: false

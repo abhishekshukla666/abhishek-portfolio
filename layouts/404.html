@@ -1,0 +1,10 @@
+{{- define "main" }}
+<div class="wrap">
+  <header class="page-head stack g16" style="padding-bottom:160px">
+    <span class="t-label">404</span>
+    <h1 class="t-h1">This page is not here</h1>
+    <p class="t-lead">It may have moved when the site was reorganised.</p>
+    <div class="btnrow"><a class="btn btn-primary" href="{{ "/" | relURL }}">Home</a><a class="btn btn-secondary" href="{{ "blog/" | relURL }}">Writing</a><a class="btn btn-secondary" href="{{ "notes/" | relURL }}">Notes</a></div>
+  </header>
+</div>
+{{- end }}

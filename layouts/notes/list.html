@@ -1,0 +1,48 @@
+{{- /* /notes/: one card per topic, Swift & iOS first, then data structures and algorithms. */ -}}
+{{- define "main" }}
+<div class="wrap">
+  <header class="page-head stack g16">
+    <span class="t-label">{{ .Params.kicker }}</span>
+    <h1 class="t-h1">{{ .Params.heading }}</h1>
+    <p class="t-lead">{{ .Description }}</p>
+  </header>
+
+  {{- range $group := slice (dict "id" "swift" "name" "Swift & iOS") (dict "id" "dsa" "name" "Data Structures & Algorithms") }}
+  {{- $cards := slice }}
+  {{- $notes := 0 }}
+  {{- range where hugo.Data.topics "group" $group.id }}
+    {{- $pages := partial "site/topic-pages.html" . }}
+    {{- if $pages }}
+      {{- $points := slice }}
+      {{- range $pages }}{{ range .Params.keyPoints }}{{ $points = $points | append . }}{{ end }}{{ end }}
+      {{- $notes = add $notes (len $points) }}
+      {{- $cards = $cards | append (dict "t" . "pages" $pages "points" $points) }}
+    {{- end }}
+  {{- end }}
+  {{- with $cards }}
+  <section class="section" id="{{ $group.id }}" style="padding-top:56px">
+    <div class="section-head">
+      <h2 class="t-h2">{{ $group.name }}</h2>
+      <span class="t-mono">{{ len $cards }} {{ cond (eq (len $cards) 1) "topic" "topics" }}{{ if $notes }} · {{ $notes }} notes{{ end }}</span>
+    </div>
+    <div class="grid-3">
+      {{- range . }}
+      <article class="card note-card">
+        <div class="row between g12">
+          <h3 class="t-h3"><a href="{{ (printf "notes/%s/" .t.slug) | relURL }}">{{ .t.name }}</a></h3>
+          <span class="t-mono">{{ if .points }}{{ len .points }} notes{{ else }}{{ len .pages }} {{ cond (eq (len .pages) 1) "article" "articles" }}{{ end }}</span>
+        </div>
+        <ul>
+          {{- if .points }}{{ range first 3 .points }}<li>{{ . | $.RenderString }}</li>{{ end }}
+          {{- else }}{{ range first 3 .pages }}<li>{{ .Title }}</li>{{ end }}{{ end }}
+        </ul>
+        <a class="row g8" href="{{ (printf "notes/%s/" .t.slug) | relURL }}">Open topic {{ partial "site/icon.html" (dict "name" "arrow" "size" 16) }}</a>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+  <div style="height:48px"></div>
+</div>
+{{- end }}

@@ -1,27 +1,39 @@
-# The topics the blog is organized by, in the order they appear on /blog/.
-# A post joins a topic through its front matter:  categories: ["Swift Concurrency"]
-# `name` must match that category exactly. Topics with no published posts are hidden.
+# The topics Writing and Notes are organized by, in display order.
+# A page joins a topic through its front matter:  categories: ["Swift Concurrency"]
+# `name` must match that category exactly. Topics with no pages are hidden.
+# group: swift → Swift & iOS (articles in content/blog); dsa → Data Structures & Algorithms (content/dsa)
 
 - name: Swift Concurrency
   slug: swift-concurrency
-  description: Tasks, actors, Sendable and data-race safety in Swift 6.
+  group: swift
+  description: Tasks, actors, Sendable and the traps between them.
 
 - name: Swift Fundamentals
   slug: swift-fundamentals
-  description: The language under the hood — value semantics, optionals, protocols and generics.
+  group: swift
+  description: How the language works underneath — memory, protocols and types.
 
 - name: Design Patterns
   slug: design-patterns
-  description: Creational, structural and behavioral patterns, written for modern Swift.
+  group: swift
+  description: Classic patterns, rewritten for modern Swift.
 
 - name: Architecture
   slug: architecture
-  description: SOLID, layering and building resilient app infrastructure.
+  group: swift
+  description: Structuring apps that a team can keep changing.
 
-- name: Interview Questions
-  slug: interview-questions
-  description: Question-and-answer sets for iOS interviews. Try each one before opening the answer.
+- name: Q&A
+  slug: qa
+  group: swift
+  description: Questions and answers, from fundamentals to senior-level depth.
 
 - name: System Design
   slug: system-design
-  description: Mobile system design — requirements, components, trade-offs and how to talk through them.
+  group: swift
+  description: Designing iOS components end to end.
+
+- name: Sorting
+  slug: sorting
+  group: dsa
+  description: Which sort to use, why, and what it costs.

@@ -1,0 +1,26 @@
+{{- /* A project as a card (home) — screenshots or the app icon on top. */ -}}
+<article class="card pcard">
+  {{- with .Params.screenshots }}
+  <div class="shot" aria-hidden="true">
+    {{- range first 2 . }}
+    <div class="phone"><img src="{{ .src | relURL }}" alt="" loading="lazy" width="920" height="2000"></div>
+    {{- end }}
+  </div>
+  {{- else }}
+  <div class="shot iconic" aria-hidden="true">
+    <div class="appicon xl"><img src="{{ .Params.icon | relURL }}" alt="" loading="lazy"></div>
+  </div>
+  {{- end }}
+  <div class="pbody">
+    <div class="row between g12">
+      <h3 class="t-h3">{{ .Title }}</h3>
+      <span class="status"><span class="dot{{ if eq .Params.status "live" }} live{{ end }}"></span>{{ cond (eq .Params.status "live") "Live" .Params.statusLabel }}</span>
+    </div>
+    <p class="t-small grow">{{ .Params.cardSummary }}</p>
+    <div class="badges">
+      {{- range .Params.platforms }}<span class="badge">{{ . }}</span>{{ end }}
+      {{- with .Params.languages }}<span class="badge">{{ . }}</span>{{ end }}
+    </div>
+    <a class="btn-ghost row g8" href="{{ .RelPermalink }}">Read case study {{ partial "site/icon.html" (dict "name" "arrow" "size" 16) }}</a>
+  </div>
+</article>
