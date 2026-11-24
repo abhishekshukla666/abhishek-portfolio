@@ -4,6 +4,7 @@ title: "The Observer Design Pattern in Swift: Mastering Reactive Communication"
 date: "2026-06-27T10:00:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Behavioral Design Patterns", "Reactive"]
+categories: ["Design Patterns"]
 weight: 111
 # cover:
     # image: "blog/Observer.jpeg"

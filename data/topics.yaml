@@ -1,0 +1,27 @@
+# The topics the blog is organized by, in the order they appear on /blog/.
+# A post joins a topic through its front matter:  categories: ["Swift Concurrency"]
+# `name` must match that category exactly. Topics with no published posts are hidden.
+
+- name: Swift Concurrency
+  slug: swift-concurrency
+  description: Tasks, actors, Sendable and data-race safety in Swift 6.
+
+- name: Swift Fundamentals
+  slug: swift-fundamentals
+  description: The language under the hood — value semantics, optionals, protocols and generics.
+
+- name: Design Patterns
+  slug: design-patterns
+  description: Creational, structural and behavioral patterns, written for modern Swift.
+
+- name: Architecture
+  slug: architecture
+  description: SOLID, layering and building resilient app infrastructure.
+
+- name: Interview Questions
+  slug: interview-questions
+  description: Question-and-answer sets for iOS interviews. Try each one before opening the answer.
+
+- name: System Design
+  slug: system-design
+  description: Mobile system design — requirements, components, trade-offs and how to talk through them.

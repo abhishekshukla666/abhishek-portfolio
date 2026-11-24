@@ -4,6 +4,7 @@ title: "The Factory Method Pattern in Swift: Decoupling Object Creation"
 draft: false
 date: "2026-06-23T08:28:30+05:30"
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
+categories: ["Design Patterns"]
 weight: 106
 # cover:
     # image: "blog/FactoryMethod.jpeg"

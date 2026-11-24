@@ -4,6 +4,7 @@ title: "Understanding Opaque Types in Swift and SwiftUI: The Power of `some`"
 date: "2026-06-30T10:38:19+05:30"
 draft: false
 tags: ["Swift", "Fundamentals", "SwiftUI", "Architecture", "Opaque Types"]
+categories: ["Swift Fundamentals"]
 weight: 115
 # cover:
     # image: "blog/OpaqueTypes.jpeg"

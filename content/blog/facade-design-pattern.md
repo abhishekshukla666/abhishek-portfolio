@@ -4,6 +4,7 @@ title: "The Facade Design Pattern in Swift: Simplifying Complex Systems"
 date: "2026-06-26T14:30:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns"]
+categories: ["Design Patterns"]
 weight: 110
 # cover:
     # image: "blog/Facade.jpeg"

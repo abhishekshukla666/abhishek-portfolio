@@ -4,6 +4,7 @@ title: "The Adapter Design Pattern in Swift: Bridging Legacy Code to Modern APIs
 date: "2026-06-24T11:20:00+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns", "Async/Await"]
+categories: ["Design Patterns"]
 weight: 108
 # cover:
     # image: "blog/Adapter.jpeg"

@@ -4,6 +4,7 @@ title: "Resilient Networking in Swift: Building a Retry Mechanism"
 date: "2026-07-06T12:00:00+05:30"
 draft: false
 tags: ["Swift", "Networking", "Architecture", "Concurrency", "Async/Await"]
+categories: ["Architecture"]
 weight: 115
 # cover:
     # image: "blog/NetworkRetry.jpeg"

@@ -4,6 +4,7 @@ title: "Understanding Sendable in Swift: Mastering Concurrency Safety"
 date: "2026-06-29T10:00:00+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "DataRace", "Sendable"]
+categories: ["Swift Concurrency"]
 weight: 112
 # cover:
     # image: "blog/Sendable.jpeg"

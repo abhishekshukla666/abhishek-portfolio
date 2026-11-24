@@ -4,6 +4,7 @@ title: "The Decorator Design Pattern in Swift: Enhancing Objects Dynamically"
 date: "2026-06-25T12:51:58+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Structural Design Patterns"]
+categories: ["Design Patterns"]
 weight: 109
 # cover:
     # image: "blog/Decorator.jpeg"

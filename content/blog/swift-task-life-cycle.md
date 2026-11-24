@@ -4,6 +4,7 @@ title: "Swift Task Lifecycle Management - Structured vs Unstructured Concurrency
 date: "2026-03-12T17:40:17+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "DataRace"]
+categories: ["Swift Concurrency"]
 weight: 103
 # cover:
     # image: "blog/Swift.jpeg"

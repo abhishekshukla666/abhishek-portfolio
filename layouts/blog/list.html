@@ -1,0 +1,60 @@
+{{- /* /blog/: posts grouped by topic. Topics and their order come from data/topics.yaml;
+       a post joins one through `categories` in its front matter. */ -}}
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . | markdownify }}</div>
+  {{- end }}
+</header>
+
+{{- $pages := .RegularPages.ByDate.Reverse }}
+
+{{- /* Only topics that have at least one post. */ -}}
+{{- $topics := slice }}
+{{- range hugo.Data.topics }}
+  {{- $inTopic := where $pages "Params.categories" "intersect" (slice .name) }}
+  {{- if $inTopic }}
+    {{- $topics = $topics | append (dict "topic" . "pages" $inTopic) }}
+  {{- end }}
+{{- end }}
+
+{{- /* Posts that name no known topic still get listed, last. */ -}}
+{{- $known := slice }}
+{{- range hugo.Data.topics }}{{ $known = $known | append .name }}{{ end }}
+{{- $other := slice }}
+{{- range $pages }}
+  {{- if not (intersect (.Params.categories | default slice) $known) }}
+    {{- $other = $other | append . }}
+  {{- end }}
+{{- end }}
+
+<nav class="topic-chips" aria-label="Topics">
+  {{- range $topics }}
+  <a href="#{{ .topic.slug }}">{{ .topic.name }} <span class="topic-count">{{ len .pages }}</span></a>
+  {{- end }}
+  {{- with $other }}
+  <a href="#more">More <span class="topic-count">{{ len . }}</span></a>
+  {{- end }}
+</nav>
+
+{{- range $topics }}
+<section class="topic-section" id="{{ .topic.slug }}">
+  <header class="topic-header">
+    <h2><a href="{{ (printf "/categories/%s/" .topic.slug) | relURL }}">{{ .topic.name }}</a></h2>
+    {{- with .topic.description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  {{- partial "topic_post_list.html" .pages }}
+</section>
+{{- end }}
+
+{{- with $other }}
+<section class="topic-section" id="more">
+  <header class="topic-header"><h2>More</h2></header>
+  {{- partial "topic_post_list.html" . }}
+</section>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}

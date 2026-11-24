@@ -1,0 +1,158 @@
+/* Blog topics: the chip row and grouped lists on /blog/, "More in" after a post, and Q&A blocks. */
+
+.topic-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: calc(var(--content-gap) * 1.5);
+}
+
+.topic-chips a {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--entry);
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 0.15s;
+}
+
+.topic-chips a:hover {
+    border-color: var(--secondary);
+}
+
+.topic-count {
+    margin-left: 4px;
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+.topic-section {
+    margin-bottom: calc(var(--content-gap) * 2);
+    scroll-margin-top: calc(var(--header-height) + 8px);
+}
+
+.topic-header h2 {
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.topic-header h2 a:hover {
+    text-decoration: underline;
+}
+
+.topic-header p {
+    color: var(--secondary);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.topic-posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.topic-posts li + li {
+    border-top: 1px solid var(--border);
+}
+
+.topic-posts a {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 16px;
+}
+
+.topic-posts a:hover .topic-post-title {
+    text-decoration: underline;
+}
+
+.topic-post-title {
+    color: var(--primary);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.topic-post-meta {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+.topic-more {
+    margin-top: calc(var(--content-gap) * 2);
+}
+
+.topic-more h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.topic-more h3 a {
+    text-decoration: underline;
+}
+
+/* Interview Q&A */
+
+.post-content {
+    counter-reset: qa;
+}
+
+.post-content details.qa {
+    counter-increment: qa;
+    margin: 12px 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--entry);
+}
+
+.post-content details.qa summary {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+}
+
+.post-content details.qa summary::-webkit-details-marker {
+    display: none;
+}
+
+.post-content details.qa summary::before {
+    content: "Q" counter(qa);
+    flex: none;
+    color: var(--secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+.post-content details.qa .qa-q {
+    flex: 1;
+}
+
+.post-content details.qa .qa-q p {
+    margin: 0;
+}
+
+.post-content details.qa .qa-level {
+    flex: none;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: var(--code-bg);
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.post-content details.qa[open] summary {
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content details.qa .qa-a {
+    padding: 4px 16px 8px;
+}

@@ -4,6 +4,7 @@ title: "Understanding SOLID Principles in Swift: Violations, Fixes, and Real-Wor
 date: "2026-06-22T14:52:03+05:30"
 draft: false
 tags: ["Swift", "Architecture", "SOLID"]
+categories: ["Architecture"]
 weight: 104
 # cover:
     # image: "blog/SOLID.jpeg"

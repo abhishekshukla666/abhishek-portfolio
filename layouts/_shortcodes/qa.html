@@ -1,0 +1,14 @@
+{{- /* An interview question with a hidden answer.
+       {{< qa q="What does `await` give up on an actor?" level="Senior" >}}
+       Markdown answer, code blocks included.
+       {{< /qa >}}
+   `level` is optional. Questions are numbered by the page's CSS counter. */ -}}
+<details class="qa">
+  <summary>
+    <span class="qa-q">{{ .Get "q" | .Page.RenderString }}</span>
+    {{- with .Get "level" }}<span class="qa-level">{{ . }}</span>{{ end }}
+  </summary>
+  <div class="qa-a">
+    {{ .Inner | .Page.RenderString (dict "display" "block") }}
+  </div>
+</details>

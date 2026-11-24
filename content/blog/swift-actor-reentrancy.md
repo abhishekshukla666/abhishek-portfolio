@@ -4,6 +4,7 @@ title: "Understanding Actor Reentrancy in Swift: The Hidden Concurrency Trap"
 date: "2026-07-02T09:30:00+05:30"
 draft: false
 tags: ["Swift", "Concurrency", "Actors", "DataRace"]
+categories: ["Swift Concurrency"]
 weight: 116
 # cover:
     # image: "blog/ActorReentrancy.jpeg"

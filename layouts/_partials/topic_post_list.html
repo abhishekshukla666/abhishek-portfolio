@@ -1,0 +1,15 @@
+{{- /* A compact list of posts: title, then date and reading time. Takes a page collection. */ -}}
+<ol class="topic-posts">
+  {{- range . }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <span class="topic-post-title">{{ .Title }}</span>
+      <span class="topic-post-meta">
+        {{- .Date | time.Format ":date_medium" }}
+        {{- if .Param "ShowReadingTime" }} · {{ .ReadingTime }} min read{{ end }}
+        {{- if .Draft }} · draft{{ end -}}
+      </span>
+    </a>
+  </li>
+  {{- end }}
+</ol>

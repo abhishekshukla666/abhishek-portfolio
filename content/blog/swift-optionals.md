@@ -4,6 +4,7 @@ title: "Demystifying Optionals in Swift: ?, !, and Under the Hood"
 date: "2026-06-29T11:00:00+05:30"
 draft: false
 tags: ["Swift", "Fundamentals"]
+categories: ["Swift Fundamentals"]
 weight: 114
 # cover:
     # image: "blog/Optionals.jpeg"

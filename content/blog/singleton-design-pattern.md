@@ -4,6 +4,7 @@ title: "The Singleton Design Pattern in Swift: Why, How, and When NOT to Use It"
 date: "2026-06-23T05:47:17+05:30"
 draft: false
 tags: ["Swift", "Architecture", "Creational Design Patterns"]
+categories: ["Design Patterns"]
 weight: 105
 # cover:
     # image: "blog/Singleton.jpeg"

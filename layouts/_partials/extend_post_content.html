@@ -1,0 +1,16 @@
+{{- /* After a blog post: the other posts in the same topic, so a reader can keep going through it. */ -}}
+{{- if and (eq .Section "blog") .IsPage }}
+  {{- $page := . }}
+  {{- range hugo.Data.topics }}
+    {{- if in ($page.Params.categories | default slice) .name }}
+      {{- $siblings := where (where site.RegularPages "Section" "blog") "Params.categories" "intersect" (slice .name) }}
+      {{- $siblings = where $siblings "Permalink" "!=" $page.Permalink }}
+      {{- if $siblings }}
+<aside class="topic-more">
+  <h3>More in <a href="{{ (printf "/blog/#%s" .slug) | relURL }}">{{ .name }}</a></h3>
+  {{- partial "topic_post_list.html" (first 5 $siblings.ByDate.Reverse) }}
+</aside>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

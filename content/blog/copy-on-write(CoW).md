@@ -4,6 +4,7 @@ title: "How Copy-on-Write(CoW) in Swift works and optimizes memory"
 date: "2026-03-03T13:47:17+05:30"
 draft: false
 tags: ["Swift", "CoW", "Memory-Managment"]
+categories: ["Swift Fundamentals"]
 weight: 101
 # cover:
     # image: "blog/Swift.jpeg"
