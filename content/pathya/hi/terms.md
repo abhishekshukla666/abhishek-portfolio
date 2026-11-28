@@ -2,7 +2,7 @@
 title: "सेवा की शर्तें"
 pathyaLang: hi
 otherUrl: /pathya/terms/
-description: "पथ्य की सेवा की शर्तें, iPhone के लिए आयुर्वेदिक आहार मार्गदर्शिका।"
+description: "पथ्य की सेवा की शर्तें, iPhone और Android के लिए आयुर्वेदिक आहार मार्गदर्शिका।"
 meta: "अंतिम अद्यतन 19 नवंबर 2026"
 ---
 

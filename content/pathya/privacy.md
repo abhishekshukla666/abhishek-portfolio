@@ -2,9 +2,9 @@
 title: "Privacy Policy"
 pathyaLang: en
 otherUrl: /pathya/hi/privacy/
-description: "Privacy Policy for Pathya, the Ayurvedic food guide app for iPhone."
+description: "Privacy Policy for Pathya, the Ayurvedic food guide app for iPhone and Android."
 aliases: ["/pathya-privacy-policy/"]
-meta: "Effective 19 November 2026"
+meta: "Effective 28 November 2026"
 ---
 
 
@@ -13,8 +13,7 @@ meta: "Effective 19 November 2026"
 Pathya does not collect any personal data. Everything you tell the app, including your Prakriti,
 diet, allergies and health details, stays on your phone and is never sent to us or anyone else.
 
-This policy applies to the Pathya app for iPhone, published by Abhishek Shukla. It will be updated
-before an Android version is released.
+This policy applies to the Pathya app for iPhone and for Android, published by Abhishek Shukla.
 
 ## What Pathya keeps on your phone
 
@@ -61,14 +60,14 @@ Pathya asks for two permissions, both optional. The app works without either.
 
 You can change either at any time in your phone's Settings.
 
-## Backups and iCloud
+## Backups
 
-Pathya never stores your health details (health conditions and allergies) in iCloud or any other
-cloud service, and leaves them out of iPhone backups. If you move to a new phone or reinstall the
+Pathya never stores your health details (health conditions and allergies) in iCloud, Google Drive or
+any other cloud service, and leaves them out of iPhone and Android backups. If you move to a new phone or reinstall the
 app, you add them again.
 
 Your other settings, such as your name, diet choices and reminders, may be included in your phone's
-own backup, which Apple holds under its privacy policy, not ours.
+own backup, which Apple or Google holds under its own privacy policy, not ours.
 
 ## Your choices
 
@@ -83,7 +82,7 @@ own backup, which Apple holds under its privacy policy, not ours.
 **Children.** Pathya is not directed at children under 13 and doesn't knowingly collect anything
 from them; it collects nothing from anyone.
 
-**Purchases.** Pathya is free and has no in-app purchases. If paid features are added, Apple will
+**Purchases.** Pathya is free and has no in-app purchases. If paid features are added, Apple or Google will
 handle the payment under its own privacy policy; we will receive only a confirmation that a purchase
 was made, never your payment details, and this policy will be updated first.
 

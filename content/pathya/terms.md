@@ -2,7 +2,7 @@
 title: "Terms of Service"
 pathyaLang: en
 otherUrl: /pathya/hi/terms/
-description: "Terms of Service for Pathya, the Ayurvedic food guide app for iPhone."
+description: "Terms of Service for Pathya, the Ayurvedic food guide app for iPhone and Android."
 meta: "Last updated 19 November 2026"
 ---
 
